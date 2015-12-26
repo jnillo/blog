@@ -27,8 +27,6 @@ gem "dotenv-rails"
 # Haml files in views
 gem "haml"
 
-# Clean code
-gem 'rubocop', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -40,7 +38,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  # Clean code
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'guard-rubocop'
 end
 
 group :development do
