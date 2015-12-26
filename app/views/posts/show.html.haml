@@ -1,0 +1,17 @@
+%div{ id: "post_#{@post.id}", class: 'item-post-list single-post' }
+  %h2
+    = @post.title
+  %p{ class: 'post-info' }
+    %ul
+      %li
+        = @post.author
+      %li
+        = @post.published
+      %li{ class: 'right' }
+        = @post.category.name
+  %p{ class: 'post_resume'}
+    = @post.content
+%div{ class: 'actions' }
+  = link_to t('return'), root_path
+%div{ class: 'comments' }
+  = render partial: 'posts/comments', locals: { comments: @post.comments}

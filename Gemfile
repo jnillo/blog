@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
   # Clean code
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false

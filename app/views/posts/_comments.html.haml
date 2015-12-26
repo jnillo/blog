@@ -1,0 +1,6 @@
+- comments.each do |comment|
+  .comment
+    %p{ class: 'head-comment' }
+      = comment.user
+    %p{ class: 'content-comment' }
+      = comment.content

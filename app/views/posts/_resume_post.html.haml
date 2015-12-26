@@ -1,0 +1,16 @@
+%div{ id: "post_#{post.id}", class: 'item-post-list resume' }
+  %h2
+    = post.title
+  %p{ class: 'post-info' }
+    %ul
+      %li
+        = post.author
+      %li
+        = post.published
+      %li{ class: 'right' }
+        = post.category.name
+  %p{ class: 'post_resume'}
+    = post.resume
+  %p{ class: 'post_actions'}
+    = link_to t('post.show'), post_path(post.id)
+
