@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
-  resources :posts, only: [:show]
+  resources :posts, only: [:show, :new, :create]
   root to: 'home#index'
 end

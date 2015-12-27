@@ -1,0 +1,31 @@
+@import "pagedown_bootstrap";
+
+#clear-form{
+  font-family: 'Droid Serif',serif;
+  .big-textarea{
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 500px;
+    font-size: 20px;
+    margin-top: 1em;
+    &:focus{
+      outline: 0;
+    }
+  }
+  .next-btn, .submit-btn, .cancel-btn{
+    float: right;
+  }
+  .btn{
+    margin-right: .5em;
+    margin-top: 1em;
+  }
+  .second-step{
+    display:none;
+  }
+  label{
+    width: 100%;
+    clear: both;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,32 @@
+= javascript_include_tag 'clean_form'
+= simple_form_for post, html: { id: 'clear-form' } do |f|
+  .first-step
+    .form-group
+      #wmd-button-bar-post_content
+      = f.input :content, input_html: { class: 'big-textarea' }, 'autofocus': true, as: :text, label: false
+    .form-group
+      =link_to '#',  class: 'btn btn-lg btn-default next-btn', onclick: 'clean_form.second_step();', id: 'wmd-input-big-textarea' do
+        Next
+  .second-step
+    .form-group
+      %h3
+        Preview
+      #wmd-preview-post_content.wmd-preview
+    .form-group
+      = f.input :title, input_html: { class: 'form-control' }, as: :string
+    .form-group
+      = f.input :resume, input_html: { class: 'form-control' }, as: :text
+    .form-group
+      = f.label :category, 'Category'
+      = f.select :category, get_categories_for_select, class: 'form-control'
+    .form-group
+      = f.input :author, input_html: { class: 'form-control col-md-4' }, as: :string
+    .form-group
+      = f.input :published, as: :datetime, order: [:day, :month, :year, :hour, :minute]
+    .form-group
+      =link_to '#',  class: 'btn btn-lg btn-default', onclick: 'clean_form.first_step();' do
+        Back
+      = f.submit 'Finalizar', class: 'btn btn-lg btn-primary submit-btn'
+      = link_to 'Cancel', root_path(), class: 'btn btn-lg btn-danger cancel-btn'
+%script
+  clean_form.init_textarea();
