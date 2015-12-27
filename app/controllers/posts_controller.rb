@@ -11,13 +11,27 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params['post'])
+    @post = Post.new(post_params)
     if @post.valid?
       @post.save
-      redirect_to posts_path(@post.id)
+      redirect_to post_path(id: @post.id)
     else
-      render templaste: 'posts/new'
+      render template: 'posts/new'
     end
   end
 
+
+  private
+
+  def post_params
+    post = params.require(:post).permit(:content, :title, :published, :resume, :author, :category)
+    post['published'] = Time.parse("#{params['post']['published(3i)']}-#{params['post']['published(2i)']}-#{params['post']['published(1i)']} #{params['post']['published(4i)']}:#{params['post']['published(5i)']}")
+    post['category'] = Category.find params['post']['category']
+    post.delete('published(1i)')
+    post.delete('published(2i)')
+    post.delete('published(3i)')
+    post.delete('published(4i)')
+    post.delete('published(5i)')
+    post
+  end
 end

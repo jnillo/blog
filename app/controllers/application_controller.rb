@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def user_logged
     cookies.signed[:username].present? &&
     cookies.signed[:session_expired] &&
-    cookies.signed[:session_expired] <= Time.now
+    cookies.signed[:session_expired] >= Time.now
   end
 
   def exist_user

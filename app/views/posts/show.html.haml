@@ -1,3 +1,4 @@
+= javascript_include_tag 'markdown_converter'
 %div{ id: "post_#{@post.id}", class: 'item-post-list single-post' }
   %h2
     = @post.title
@@ -9,9 +10,11 @@
         = @post.published
       %li{ class: 'right' }
         = @post.category.name
-  %p{ class: 'post_resume'}
-    = @post.content
+  %p{ class: 'post_content', id: 'post_content'}
 %div{ class: 'actions' }
   = link_to t('return'), root_path
 %div{ class: 'comments' }
   = render partial: 'posts/comments', locals: { comments: @post.comments}
+
+:javascript
+  markdown.render_text('#post_content', '#{escape_javascript(@post.content)}');
