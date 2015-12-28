@@ -1,0 +1,18 @@
+= javascript_include_tag 'markdown_converter'
+%div{ id: "post_#{@post.id}", class: 'item-post-list single-post' }
+  %h2
+    = @post.title
+
+  %p{ class: 'post_content', id: 'post_content'}
+%div{ class: 'actions' }
+  = link_to administration_posts_path, class: 'btn btn-default btn-lg left' do
+    %i{ class: 'fa fa-chevron-left'}
+    = t('return')
+  = link_to edit_administration_post_path(id: @post.id), class: 'btn btn-success btn-lg right' do
+    %i{ class: 'fa fa-pencil'}
+    = t('edit')
+%div{ class: 'comments' }
+  = render partial: 'posts/comments', locals: { comments: @post.comments}
+
+:javascript
+  markdown.render_text('#post_content', '#{escape_javascript(@post.content)}');

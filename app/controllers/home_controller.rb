@@ -9,6 +9,6 @@ class HomeController < ApplicationController
   private
 
   def load_posts
-    Post.all.order(published: :desc)
+    Post.where('published <= ?', DateTime.now).order(published: :desc)
   end
 end
