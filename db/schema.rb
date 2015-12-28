@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151226121169) do
+ActiveRecord::Schema.define(version: 20151228182200) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -43,7 +43,19 @@ ActiveRecord::Schema.define(version: 20151226121169) do
     t.integer  "category_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "slug"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
+  end
+
+  create_table "seo_datas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "seo_description"
+    t.string   "seo_title"
+    t.string   "seo_image"
+    t.string   "seo_tags"
+    t.integer  "post_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["post_id"], name: "index_seo_datas_on_post_id", using: :btree
   end
 
 end

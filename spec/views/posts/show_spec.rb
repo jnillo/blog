@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 describe "Home", type: :feature do
-  let(:category) { create(:category) }
-  let(:post) do
-    create :post, category: category
-  end
-
   describe 'Show post' do
-    let(:comment) do
+    let!(:category) { create(:category) }
+    let!(:post) do
+      create :post, category: category
+    end
+    let!(:comment) do
       create :comment, post: post
     end
-    it 'show posts and categories' do
-      visit post_path(post.id)
+    it 'show posts and categories', js: true do
+      visit post_path(id: post.id)
       expect(page).to have_content(post.title)
       expect(page).to have_content(post.author)
       expect(page).to have_content(category.name)

@@ -1,5 +1,5 @@
 = javascript_include_tag 'clean_form'
-= simple_form_for post,url: administration_post_path(id: post.id), html: { id: 'clear-form' } do |f|
+= simple_form_for [:administration, post], html: { id: 'clear-form' } do |f|
   .first-step
     .form-group
       #wmd-button-bar-post_content

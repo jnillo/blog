@@ -2,7 +2,10 @@
 %div{ id: "post_#{@post.id}", class: 'item-post-list single-post' }
   %h2
     = @post.title
-
+  %p
+    %b
+      = "Slug: "
+    = @post.slug
   %p{ class: 'post_content', id: 'post_content'}
 %div{ class: 'actions' }
   = link_to administration_posts_path, class: 'btn btn-default btn-lg left' do

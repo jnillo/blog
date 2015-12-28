@@ -21,7 +21,7 @@ module Administration
       @post = Post.new(post_params)
       if @post.valid?
         @post.save
-        redirect_to post_path(id: @post.id)
+        redirect_to administration_post_path(id: @post.id)
       else
         render template: 'administration/posts/new'
       end
@@ -57,7 +57,7 @@ module Administration
     def post_params
       post = params.require(:post).permit(:content, :title, :published, :resume, :author, :category)
       post['published'] = build_published_date(params)
-      post['category'] = Category.find params['post']['category']
+      post['category'] = Category.find params['post']['category'] if params['post']['category']
       post.delete('published(1i)')
       post.delete('published(2i)')
       post.delete('published(3i)')

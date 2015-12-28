@@ -12,5 +12,5 @@
   %p{ class: 'post_resume'}
     = post.resume
   %p{ class: 'post_actions'}
-    = link_to t('post.show'), post_path(post.id)
+    = link_to t('post.show'), show_post_path(post.slug)
 

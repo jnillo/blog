@@ -1,0 +1,2 @@
+class SeoData < ApplicationRecord
+end
