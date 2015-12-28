@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Home" ,type: :feature do
+describe "Home", type: :feature do
   let(:category) { create(:category) }
   let(:post) do
     create :post, category: category

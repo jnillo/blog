@@ -18,7 +18,7 @@
       = f.input :resume, input_html: { class: 'form-control' }, as: :text
     .form-group
       = f.label :category, 'Category'
-      = f.select :category, get_categories_for_select, class: 'form-control'
+      = f.select :category, categories_for_select, class: 'form-control'
     .form-group
       = f.input :author, input_html: { class: 'form-control col-md-4' }, as: :string
     .form-group

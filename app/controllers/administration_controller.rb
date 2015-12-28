@@ -9,19 +9,19 @@ class AdministrationController < ActionController::Base
     if @user
       set_cookies_session
     else
-      render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+      render file: "#{Rails.root}/public/404", layout: false, status: :not_found
     end
   end
 
   def set_cookies_session
     cookies.signed[:username] = true
-    cookies.signed[:session_expired] = Time.now + 30.minutes
+    cookies.signed[:session_expired] = Time.zone.now + 30.minutes
   end
 
   def user_logged
     cookies.signed[:username].present? &&
-    cookies.signed[:session_expired] &&
-    cookies.signed[:session_expired] >= Time.now
+      cookies.signed[:session_expired] &&
+      cookies.signed[:session_expired] >= Time.zone.now
   end
 
   def exist_user

@@ -7,13 +7,13 @@ RSpec.describe HomeController, type: :controller do
       create :post, category: category
     end
 
-    def  do_action( params = {} )
+    def do_action(params = {})
       get :index, params
     end
 
     it 'assigns variables' do
       do_action
-      # TODO check if cookies is set
+      # TODO, check if cookies is set
     end
   end
 end

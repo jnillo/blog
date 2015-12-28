@@ -1,3 +1,4 @@
+# Controller to build the initial view of the blog
 class HomeController < ApplicationController
   layout 'home'
 
@@ -9,6 +10,6 @@ class HomeController < ApplicationController
   private
 
   def load_posts
-    Post.where('published <= ?', DateTime.now).order(published: :desc)
+    Post.where('published <= ?', Time.zone.now).order(published: :desc)
   end
 end
