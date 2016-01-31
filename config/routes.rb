@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
   namespace :administration do
     resources :posts
+    resources :categories
   end
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'

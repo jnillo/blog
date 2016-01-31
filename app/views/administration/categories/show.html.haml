@@ -1,0 +1,12 @@
+%h2
+  = @category.name
+%p
+  = @category.description
+%p
+  = link_to edit_administration_category_path(@category.id) ,class: 'btn btn-success' do
+    %i.fa.fa-pencil
+    Edit
+  = link_to 'Return', administration_categories_path, class: 'btn btn-default'
+%h3
+  Posts
+= render partial: 'administration/posts/list_posts', locals: { posts: @category.posts }

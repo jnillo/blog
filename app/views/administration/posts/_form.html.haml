@@ -1,17 +1,20 @@
-= javascript_include_tag 'clean_form'
+= javascript_include_tag "sortable.min.js"
+= javascript_include_tag 'jquery.ui.widget.min.js'
+= javascript_include_tag 'jquery.iframe_transport.js'
+= javascript_include_tag 'jquery.fileupload.min.js'
+= javascript_include_tag "medium.js"
+= javascript_include_tag "medium-editor-insert-plugin.min.js"
+= stylesheet_link_tag "medium.min.css", :media => "all"
+
 = simple_form_for [:administration, post], html: { id: 'clear-form' } do |f|
   .first-step
     .form-group
       #wmd-button-bar-post_content
-      = f.input :content, input_html: { class: 'big-textarea' }, 'autofocus': true, as: :text, label: false
+      = f.input :content, input_html: { class: 'big-textarea', id: 'post_content', placeholder: 'Write something amazing!'}, 'autofocus': true, as: :text, label: false
     .form-group
-      =link_to '#',  class: 'btn btn-lg btn-default next-btn', onclick: 'clean_form.second_step();', id: 'wmd-input-big-textarea' do
+      =link_to '#',  class: 'btn btn-lg btn-primary next-btn', onclick: 'clean_form.second_step();', id: 'wmd-input-big-textarea' do
         Next
   .second-step
-    .form-group
-      %h3
-        Preview
-      #wmd-preview-post_content.wmd-preview
     .form-group
       = f.input :title, input_html: { class: 'form-control' }, as: :string
     .form-group
@@ -28,5 +31,6 @@
         Back
       = f.submit 'Finalizar', class: 'btn btn-lg btn-primary submit-btn'
       = link_to 'Cancel', root_path(), class: 'btn btn-lg btn-danger cancel-btn'
+
 %script
-  clean_form.init_textarea();
+  post.initialize('#post_content')

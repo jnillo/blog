@@ -58,12 +58,7 @@ module Administration
       post = params.require(:post).permit(:content, :title, :published, :resume, :author, :category)
       post['published'] = build_published_date(params)
       post['category'] = Category.find params['post']['category'] if params['post']['category']
-      post.delete('published(1i)')
-      post.delete('published(2i)')
-      post.delete('published(3i)')
-      post.delete('published(4i)')
-      post.delete('published(5i)')
-      post
+      remove_published_data(post)
     end
 
     def build_published_date(params)
@@ -72,6 +67,15 @@ module Administration
                           #{params['post']['published(1i)']}
                           #{params['post']['published(4i)']}:
                           #{params['post']['published(5i)']}").in_time_zone
+    end
+
+    def remove_published_data(post)
+      post.delete('published(1i)')
+      post.delete('published(2i)')
+      post.delete('published(3i)')
+      post.delete('published(4i)')
+      post.delete('published(5i)')
+      post
     end
   end
 end
