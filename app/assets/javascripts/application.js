@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require admin/posts
+//= require admin/clean_form
 //= require handlebars.runtime
