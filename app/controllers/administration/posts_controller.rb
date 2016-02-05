@@ -62,11 +62,12 @@ module Administration
     end
 
     def build_published_date(params)
-      Time.parse("#{params['post']['published(3i)']}-
-                          #{params['post']['published(2i)']}-
-                          #{params['post']['published(1i)']}
-                          #{params['post']['published(4i)']}:
-                          #{params['post']['published(5i)']}").in_time_zone
+      Time.parse("#{params['post']['published(1i)']}-"\
+                 "#{params['post']['published(2i)']}-"\
+                 "#{params['post']['published(3i)']}"\
+                 " #{params['post']['published(4i)']}:"\
+                 "#{params['post']['published(5i)']}")
+      .in_time_zone
     end
 
     def remove_published_data(post)
