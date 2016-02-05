@@ -5,6 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  config.secret_key_base = 'd3a6cf1372e8cd53dc92f6d42f488bd0808437f9a4e14ea3ff977b948857db0f0b326d3bb86d5ff3900629b9b0ab531da669a8a2b514ed98d2133555f41bf470'
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -46,7 +47,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.assets.precompile += %w( clear_form.scss clean_form.js.coffee markdown_converter.js.coffee )
+  config.assets.precompile += %w( clear_form.scss clean_form.js.coffee markdown_converter.js.coffee medium.js medium.min.css medium-editor-insert-plugin.min.js sortable.min.js sortable.min.js jquery.ui.widget.min.js jquery.iframe_transport.js  jquery.fileupload.min.js)
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

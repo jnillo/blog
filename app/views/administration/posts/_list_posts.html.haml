@@ -1,0 +1,39 @@
+- if posts.present?
+  %table{ class: 'table'}
+    %thead
+      %tr
+        %th{ class: 'col-md-1' }
+          Status
+        %th{ class: 'col-md-5' }
+          Title
+        %th{ class: 'col-md-2' }
+          Publish date
+        %th{ class: 'col-md-2' }
+          Author
+        %th{ class: 'col-md-2' }
+          Actions
+    %tbody
+      - posts.each do |post|
+        %tr
+          %td
+            &nbsp;
+          %td
+            = post.title
+          %td
+            = post.published
+          %td
+            = post.author
+          %td
+            %ul{ class: 'list-inline' }
+              %li
+                =link_to edit_administration_post_path(id: post.id) do
+                  %i{ class: 'fa fa-pencil fa-2x' }
+              %li
+                =link_to administration_post_path(id: post.id) do
+                  %i{ class: 'fa fa-eye fa-2x' }
+              %li
+                =link_to administration_post_path(id: post.id), method: 'DELETE', data: { confirm: 'Are you sure?' } do
+                  %i{ class: 'fa fa-trash fa-2x' }
+- else
+  %p
+    No posts

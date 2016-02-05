@@ -1,0 +1,22 @@
+require: rubocop-rspec
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'spec/factories/**/*'
+    - Gemfile*
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+# This generates too much noise
+Style/StringLiterals:
+  Enabled: false
+
+# 80 chars is just a bit of a pain
+Metrics/LineLength:
+  Max: 120

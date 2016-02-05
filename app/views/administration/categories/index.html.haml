@@ -1,0 +1,35 @@
+= link_to new_administration_category_path(), class: 'btn btn-primary right' do
+  %i{ class: 'fa fa-tag' }
+  = t('new_category')
+
+%table{ class: 'table'}
+  %thead
+    %tr
+      %th{ class: 'col-md-2' }
+        Name
+      %th{ class: 'col-md-2' }
+        Nº Posts
+      %th{ class: 'col-md-6' }
+        Description
+      %th{ class: 'col-md-2'}
+        Actions
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td
+          = category.name
+        %td
+          = category.posts.count
+        %td
+          = category.description
+        %td
+          %ul{ class: 'list-inline' }
+            %li
+              =link_to edit_administration_category_path(id: category.id) do
+                %i{ class: 'fa fa-pencil fa-2x' }
+            %li
+              =link_to administration_category_path(id: category.id) do
+                %i{ class: 'fa fa-eye fa-2x' }
+            %li
+              =link_to administration_category_path(id: category.id), method: 'DELETE', data: { confirm: 'Are you sure?' } do
+                %i{ class: 'fa fa-trash fa-2x' }
