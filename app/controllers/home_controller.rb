@@ -10,6 +10,6 @@ class HomeController < ApplicationController
   private
 
   def load_posts
-    Post.where('published <= ?', Time.zone.now+3.days).order(published: :desc)
+    Post.where('published <= ?', Time.zone.now).order(published: :desc)
   end
 end
