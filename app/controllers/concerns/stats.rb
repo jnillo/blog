@@ -6,11 +6,16 @@ module Stats
   	add_cookies
   end
 
-  def save_post_visit
+  def save_visit_blog(post_id)
+    StatData.save_visit_blog(user_ip, post_id)
+  end
+
+  def save_visit_data
+    StatData.save_visit(Time.zone.now.to_date, user_ip)
   end
 
   def add_cookies
-  	cookies[:blog] = { value: Time.zone.now, expires: 30.days.from_now }
+  	cookies[:blog] = { value: Time.zone.now.to_date, expires: 30.days.from_now }
   end
 
   # Get visit data:
@@ -19,7 +24,7 @@ module Stats
     request.referrer.nil? || !request.referrer.include?("sociack.com")
   end
 
-  def get_ip
+  def user_ip
     request.remote_ip
   end
 end

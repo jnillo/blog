@@ -17,5 +17,17 @@ class StatData
 	  end
 	  visits
 	end
+
+	def save_visit_blog(ip, post_id)
+	  store_hash(post_id, { Time.zone.now.to_i => ip }.to_json, 'PostVisit')
+	end
+
+	def visit_blog(post_id = nil)
+      if post_id
+      	hash_value(post_id, 'PostVisit').map{ |data| eval data }
+      else
+        all('PostVisit')
+      end
+	end
   end
 end
