@@ -1,13 +1,11 @@
 .navbar.navbar-default.navbar-static-top
   .container
-    %button{ type: "button", class: "navbar-toggle", 'data-toggle': "collapse", 'data-target': ".navbar-responsive-collapse" }
-      %span{ class: "icon-bar" }
-      %span{ class: "icon-bar" }
-      %span{ class: "icon-bar" }
     = link_to 'Blog', root_path , class: "navbar-brand"
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul{ class: "nav navbar-nav"}
-        %li
-          = link_to "Posts", administration_posts_path()
-        %li
-          = link_to "Categories", administration_categories_path()
+        %li{ class: active_section(@section, 'posts') }
+          = link_to "Publicaciones", administration_posts_path()
+        %li{ class: active_section(@section, 'categories') }
+          = link_to "Categorías", administration_categories_path()
+        %li{ class: active_section(@section, 'stats') }
+          = link_to "Estadísticas", nil

@@ -1,6 +1,7 @@
 # Administration class controller
 class AdministrationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :current_section
 
   private
 
@@ -26,5 +27,9 @@ class AdministrationController < ActionController::Base
 
   def exist_user
     params['user'] == ENV['CREDENTIALS']
+  end
+
+  def current_section
+    @section = params[:controller].split('/').last
   end
 end
