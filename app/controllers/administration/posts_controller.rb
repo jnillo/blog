@@ -2,7 +2,7 @@ module Administration
   # Controller for admin  posts
   class PostsController < AdministrationController
     before_action :check_user
-    layout 'clean_form', only: [:new, :edit]
+    layout 'administration', only: [:new, :edit]
 
     def index
       @posts = Post.all.order(created_at: :desc)
