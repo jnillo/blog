@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("blog_#{Rails.env}", :redis => Redis.new)
