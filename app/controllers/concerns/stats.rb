@@ -21,7 +21,7 @@ module Stats
   # Get visit data:
 
   def new_visit?
-    request.referrer.nil? || !request.referrer.include?("sociack.com")
+    request.referrer.nil? || !request.referrer.include?(default_url_options[:host])
   end
 
   def user_ip
