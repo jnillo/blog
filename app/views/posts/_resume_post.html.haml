@@ -1,16 +1,20 @@
 %div{ id: "post_#{post.id}", class: 'item-post-list resume' }
   %h2
-    = post.title
-  %p{ class: 'post-info' }
-    %ul
-      %li
-        = post.author
-      %li
-        = post.published
-      %li{ class: 'right' }
-        = post.category.name
-  %p{ class: 'post_resume'}
+    = link_to post.title, show_post_path(post.slug), class: 'post_title'
+  %ul.list-inline.post-info
+    %li
+      %i.icon.fa.fa-user
+      = post.author
+    %li
+      %i.icon.fa.fa-calendar
+      = post.published
+    %li.right
+      %i.icon.fa.fa-tag
+      = post.category.name
+  .post_resume
     = post.resume
-  %p{ class: 'post_actions'}
-    = link_to t('post.show'), show_post_path(post.slug)
+  %ul.list-inline.post_actions
+    %li.right{ title: 'Número de comentarios'}
+      %i.fa.fa-comment-o
+      = "#{post.comments.count}"
 
