@@ -1,20 +1,27 @@
-= javascript_include_tag 'markdown_converter'
-%div{ id: "post_#{@post.id}", class: 'item-post-list single-post' }
-  %h2
+%div{ id: "post_#{@post.id}", class: 'post item-post-list single-post' }
+  %h2.post_title
     = @post.title
-  %p{ class: 'post-info' }
-    %ul
-      %li
-        = @post.author
-      %li
-        = @post.published
-      %li{ class: 'right' }
-        = @post.category.name
-  %p{ class: 'post_content', id: 'post_content'}
-%div{ class: 'actions' }
-  = link_to t('return'), root_path
-%div{ class: 'comments' }
+  %ul.list-inline.post-info
+    %li
+      %i.icon.fa.fa-user
+      = @post.author
+    %li
+      %i.icon.fa.fa-calendar
+      = @post.published
+    %li.right
+      %i.icon.fa.fa-tag
+      = @post.category.name
+  .post_content#post_content
+    = raw @post.content
+  %ul.list-inline.post_actions
+    %li.right{ title: 'Compartir en LinkedIn' }
+      %i.fa.fa-linkedin
+    %li.right{ title: 'Compartir en Facebook' }
+      %i.fa.fa-facebook
+    %li.right{ title: 'Compartir en Twitter' }
+      %i.fa.fa-twitter
+    %li.right{ title: 'Compartir en Twitter' }
+      = "Compártelo: "
+= link_to t('return'), root_path, class: 'btn btn-default'
+.comments
   = render partial: 'posts/comments', locals: { comments: @post.comments}
-
-:javascript
-  markdown.render_text('#post_content', '#{escape_javascript(@post.content)}');

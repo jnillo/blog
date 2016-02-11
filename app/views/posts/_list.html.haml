@@ -1,3 +1,4 @@
-- posts.each do |post|
-  %li
-    = render partial: 'posts/resume_post', locals: { post: post }
+%ul.list
+  - posts.each do |post|
+    %li.post
+      = render partial: 'posts/resume_post', locals: { post: post }
