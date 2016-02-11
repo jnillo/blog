@@ -1,10 +1,9 @@
 %h3.title
   ¿Quieres recibir mis artículos directamente en tu correo?
-%form{class:"form"}
+= form_for 'subscription', url: nil, html: { class: :form } do |f|
   .col-md-2
-    %input{type:"text", placeholder:"Name", class: "form-control"}
+    = f.text_field :name, placeholder: 'Name', class: 'form-control'
   .col-md-8
-    %input{type:"text", placeholder:"E-mail address", class: "form-control"}
+    = f.text_field :email, placeholder: 'Email', class: 'form-control'
   .col-md-2
-    %button{type:"submit", class:"btn btn-primary"}
-      Subscribe
+    = f.submit 'Suscribirme', class:"btn btn-primary"
