@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :categories
   end
   root to: 'home#index'
-  get ':slug', to: 'posts#show', as: 'show_post'
+  get ':category/:id', to: 'posts#show', as: 'show_post'
 end

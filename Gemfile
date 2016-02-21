@@ -39,8 +39,15 @@ gem 'bootstrap-sass'
 # Editor:
 gem 'pagedown-bootstrap-rails'
 
+# SEO
+gem 'friendly_id', '~> 5.1.0'
+
 # Forms
 gem 'simple_form'
+
+# Decorators
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

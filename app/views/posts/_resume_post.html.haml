@@ -1,6 +1,6 @@
 %div{ id: "post_#{post.id}", class: 'item-post-list resume' }
   %h2
-    = link_to post.title, show_post_path(post.slug), class: 'post_title'
+    = link_to post.title, show_post_path(category: post.category_slug, id: post.slug), class: 'post_title'
   %ul.list-inline.post-info
     %li
       %i.icon.fa.fa-user
@@ -10,7 +10,7 @@
       = post.published
     %li.right
       %i.icon.fa.fa-tag
-      = post.category.name
+      = post.category_name
   .post_resume
     = post.resume
   %ul.list-inline.post_actions

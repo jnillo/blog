@@ -1,7 +1,7 @@
 # Controller to show posts for users
 class PostsController < ApplicationController
   def show
-    @post ||= Post.find_by_slug(params[:slug])
+    @post ||= Post.friendly.find(params[:id])
     if @post
       save_visit_blog(@post.id) 
       render layout: 'post'

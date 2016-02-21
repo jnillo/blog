@@ -1,5 +1,8 @@
 # Model to works with posts in database
 class Post < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :category
   has_many :comments
   has_one :seo_data
@@ -11,13 +14,4 @@ class Post < ApplicationRecord
   validates :published, presence: true
   validates :category_id, presence: true
 
-  before_save :create_slug
-
-  private
-
-  def create_slug
-    self.slug = I18n.transliterate(title)
-    .sub(/\s|,|\./, '_')
-    .downcase
-  end
 end
