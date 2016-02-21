@@ -1,0 +1,44 @@
+/* Variables */
+
+$font-color: #3a4551;
+$font-primary: 'Open Sans','Helvetica Neue',sans-serif;
+
+/* Commons */
+body{
+	font-family: $font-primary;
+}
+a{  
+  color: $font-color;
+  &:hover{
+    text-decoration: none;
+    color: $font-color;
+  }
+}
+/* Header section */
+#home_header{
+  color: $font-color;
+  background: white;
+  .content{
+    padding-top: 30px;
+    max-width: 900px;
+    width: 92%;
+    margin: 0 auto 0 auto;
+    .content-menu{
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 30px;
+      border-bottom: 1px $font-color solid;
+      padding-bottom: 20px;
+      li{
+        font-size: 17px;
+        text-align: center;
+        width: 19%;
+        margin:0;
+        padding: 0;
+        a:hover{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

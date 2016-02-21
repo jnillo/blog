@@ -3,13 +3,12 @@ class HomeController < ApplicationController
   layout 'home'
 
   def index
-    @categories = Category.all.order(name: :desc)
-    @posts = load_posts
+    @posts = recent_posts
   end
 
   private
 
-  def load_posts
-    Post.where('published <= ?', Time.zone.now).order(published: :desc)
+  def recent_posts
+  	Post.order(:created).limit(3)
   end
 end

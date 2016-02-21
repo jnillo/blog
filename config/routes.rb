@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :categories
   end
+  get 'blog', to: 'blog#index'
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end

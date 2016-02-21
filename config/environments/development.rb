@@ -39,7 +39,7 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-  config.assets.precompile += %w( clear_form.scss clean_form.js.coffee markdown_converter.js.coffee medium.js medium.min.css medium-editor-insert-plugin.min.js sortable.min.js sortable.min.js jquery.ui.widget.min.js jquery.iframe_transport.js  jquery.fileupload.min.js commons.scss)
+  config.assets.precompile += %w( clear_form.scss clean_form.js.coffee markdown_converter.js.coffee medium.js medium.min.css medium-editor-insert-plugin.min.js sortable.min.js sortable.min.js jquery.ui.widget.min.js jquery.iframe_transport.js  jquery.fileupload.min.js commons.scss patricia_carmona.scss home.css)
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
