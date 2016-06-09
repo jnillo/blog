@@ -7,11 +7,13 @@
     %p
       Social Media Analyst. Listen and analyze social media content to improve the relation brands-users.
     %p
-      %ul{ class: 'list-inline right' }
+      %ul{ class: 'list-inline' }
         %li
-          %h5
-            Sígueme
+          = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+            %i.fa.fa-twitter
         %li
-          %i.fa.fa-twitter
+          = link_to 'https://www.linkedin.com/in/carmonapulidopatricia', rel: 'no-follow', target: '_blank' do
+            %i.fa.fa-linkedin
         %li
-          %i.fa.fa-linkedin
+          = link_to '/about-me', rel: 'no-follow', target: '_blank' do
+            = '-> Read about me'

@@ -2,19 +2,9 @@
   %h2
     = link_to post.title, show_post_path(post.slug), class: 'post_title'
   %ul.list-inline.post-info
-    %li
-      %i.icon.fa.fa-user
-      = post.author
-    %li
+    %li.right
       %i.icon.fa.fa-calendar
       = post.published
-    %li.right
-      %i.icon.fa.fa-tag
-      = post.category.name
   .post_resume
     = post.resume
-  %ul.list-inline.post_actions
-    %li.right{ title: 'Número de comentarios'}
-      %i.fa.fa-comment-o
-      = "#{post.comments.count}"
 
