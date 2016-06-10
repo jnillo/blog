@@ -37,11 +37,6 @@ a{
     margin-bottom: 0;
   }
 }
-.post-content{
-  width:100%;
-  margin: 0 auto;
-  background: #fff;
-}
 .post-footer{
   margin: 0 auto;
   max-width: 927px;
@@ -78,15 +73,23 @@ a{
     font-size: 51px;
     padding: 10px 15px;
     text-align: center;
+    font-family: 'MaisonNeue-Bold';
 	  &:hover{
 	    text-decoration: none;
 	    olor: #333;
 	  }
   }
+  .post_subtitle{
+    font-family: 'MaisonNeue-Demi';
+    font-size: 24px;
+  }
   .post_content, .post_resume{
-    font-size: 21px;
+    font-size: 18px;
     padding: 10px 15px;
-    width: 100%;
+    width:100%;
+    margin: 0 auto;
+    background: #fff;
+    letter-spacing: 0.25px;
   }
 }
 .comments{
