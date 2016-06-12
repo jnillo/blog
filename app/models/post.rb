@@ -17,7 +17,7 @@ class Post < ApplicationRecord
 
   def create_slug
     self.slug = I18n.transliterate(title)
-    .sub(/\s|,|\./, '_')
+    .sub(/\s|,|\./, '-')
     .downcase
   end
 end

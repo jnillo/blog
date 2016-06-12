@@ -1,27 +1,32 @@
-%div{ id: "post_#{@post.id}", class: 'post item-post-list single-post' }
-  %h2.post_title
-    = @post.title
-  %ul.list-inline.post-info
-    %li
-      %i.icon.fa.fa-user
-      = @post.author
-    %li
-      %i.icon.fa.fa-calendar
-      = @post.published
-    %li.right
-      %i.icon.fa.fa-tag
-      = @post.category.name
-  .post_content#post_content
-    = raw @post.content
-  %ul.list-inline.post_actions
-    %li.right{ title: 'Compartir en LinkedIn' }
-      %i.fa.fa-linkedin
-    %li.right{ title: 'Compartir en Facebook' }
-      %i.fa.fa-facebook
-    %li.right{ title: 'Compartir en Twitter' }
-      %i.fa.fa-twitter
-    %li.right{ title: 'Compartir en Twitter' }
-      = "Compártelo: "
-= link_to t('return'), root_path, class: 'btn btn-default'
-.comments
-  = render partial: 'posts/comments', locals: { comments: @post.comments}
+.post-content
+  .row
+    %div{ id: "post_#{@post.id}", class: 'post item-post-list single-post' }
+      %h2.post_title
+        = @post.title
+      %ul.list-inline.post-info
+        %li.right
+          %i.icon.fa.fa-calendar
+          = @post.published
+      .post_content#post_content
+        = raw @post.content
+      %ul.list-inline.post_actions
+        %li.right{ title: 'Compartir en LinkedIn' }
+          %i.fa.fa-linkedin
+        %li.right{ title: 'Compartir en Facebook' }
+          %i.fa.fa-facebook
+        %li.right{ title: 'Compartir en Twitter' }
+          %i.fa.fa-twitter
+        %li.right{ title: 'Share this post' }
+          Share it!
+.post-footer
+  .row
+    = render partial: 'author/post_info', locals: { author: @post.author }
+  .row
+    .more-posts
+  - if @post.comments.present?
+    .row
+      .comments
+        = render partial: 'posts/comments', locals: { comments: @post.comments}
+.subscription
+  .row
+    = render partial: 'subscriptions/form'

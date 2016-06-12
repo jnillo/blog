@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '> 4.2'
+gem 'rails', '> 5.x'
 # Redis NoSql
 gem 'redis'
 gem 'redis-namespace'
@@ -39,13 +38,16 @@ gem 'bootstrap-sass'
 # Editor:
 gem 'pagedown-bootstrap-rails'
 
+# SEO
+gem 'friendly_id'
+
 # Forms
 gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
+#Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
