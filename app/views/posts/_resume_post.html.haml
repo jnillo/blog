@@ -1,10 +1,10 @@
-%div{ id: "post_#{post.id}", class: 'item-post-list resume' }
-  %h2
-    = link_to post.title, show_post_path(post.slug), class: 'post_title'
+%div{ id: "post_#{post.id}", class: 'post-resume' }
+  %h3
+    = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
   %ul.list-inline.post-info
     %li.right
       %i.icon.fa.fa-calendar
       = post.published
-  .post_resume
+  .post-resume
     = post.resume
 
