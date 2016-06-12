@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228182200) do
+ActiveRecord::Schema.define(version: 20160612213848) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20151228182200) do
     t.datetime "updated_at",                           null: false
     t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
     t.index ["user"], name: "index_comments_on_user", using: :btree
+  end
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "subject"
+    t.text     "content",    limit: 65535
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["email"], name: "index_contacts_on_email", using: :btree
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

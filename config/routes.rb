@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
 
   post 'subscribe', to: 'subscriptions#create', as: :subscribe
+  resource :contact do
+    post 'send', to: 'contact#send_message', as: :send
+  end
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end
