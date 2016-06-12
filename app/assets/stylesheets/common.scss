@@ -210,6 +210,21 @@ a{
     margin-bottom: 1em;
     text-align: center;
   }
+  .confirmation{
+    padding: 20px 10px;
+    text-align: center;
+    background: #333;
+    border-radius: 5px;
+    color: white;
+    opacity: .75;
+  }
+  .error{
+    padding: 20px 10px;
+    text-align: center;
+    background: #333;
+    color: white;
+    opacity: .75;
+  }
   form{
     max-width: 927px;
     margin: 0 auto;
@@ -222,13 +237,19 @@ a{
       font-weight: 200;
       border-radius: 0;
       padding: 20px 10px;
-    }
-    button{
-      background-color: #d6131d;
-      border-color: #d6131d;
-      padding: 10px;
-      border-radius: 0;
-      width: 100%;
+      &[type=submit]{
+        background-color: #d6131d;
+        border-color: #d6131d;
+        padding: 10px;
+        border-radius: 0;
+        width: 100%;
+        color: white;
+        font-family: 'MaisonNeue-Bold';
+        &:hover{
+          background-color: #d6131d;
+          border-color: #d6131d;
+        }
+      }
     }
     margin: 0 auto;
   }

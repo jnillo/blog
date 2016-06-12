@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :posts
     resources :categories
   end
+
+  post 'subscribe', to: 'subscriptions#create', as: :subscribe
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end
