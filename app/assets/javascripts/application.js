@@ -18,17 +18,31 @@
 //= require admin/clean_form
 //= require handlebars.runtime
 
+var hideHomeNavbar = function (){
+  if($('.home-navbar')!==null){
+  	$('.home-navbar').hide();
+  }
+}
+
+var showHomeNavbar = function (){
+  if($('.home-navbar')!==null){
+  	$('.home-navbar').show();
+  }
+}
 
 $(document).ready(function(){
     $(function () {
+    	hideHomeNavbar();
 		$(window).scroll(function () {
             // set distance user needs to scroll before we fadeIn navbar
 			if ($(this).scrollTop() > 40) {
 				$('.navbar').removeClass('navbar-static-top');
 			    $('.navbar').addClass('navbar-fixed-top');
+			    showHomeNavbar();
 			} else {
 				$('.navbar').addClass('navbar-static-top');
 				$('.navbar').removeClass('navbar-fixed-top');
+				hideHomeNavbar();
 			}
 		});
 	});

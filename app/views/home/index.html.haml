@@ -1,1 +1,9 @@
-= render partial: 'posts/list', locals: { posts: @posts }
+.row
+  = render partial: 'home/header'
+.row
+  .blog-info
+    = render partial: 'posts/list', locals: { posts: @posts }
+.row
+  #about-me.about
+.row
+  #contact.contact

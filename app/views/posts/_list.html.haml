@@ -1,4 +1,4 @@
-%ul.list
+.list
   - posts.each do |post|
-    %li.post
+    .row-fluid
       = render partial: 'posts/resume_post', locals: { post: post }
