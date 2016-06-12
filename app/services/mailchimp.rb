@@ -6,7 +6,7 @@ module Mailchimp
   end
  
   def lists
-    client.lists
+    client.lists.retrieve['lists']
   end
  
   def list(list_id)

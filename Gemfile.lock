@@ -88,10 +88,15 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    gibbon (2.2.1)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.14.0)
@@ -153,6 +158,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     mysql2 (0.4.4)
     nenv (0.3.0)
     nio4r (1.2.1)
@@ -300,6 +306,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   friendly_id
+  gibbon (~> 2.0)
   guard-livereload
   guard-rubocop
   haml

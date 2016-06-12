@@ -222,13 +222,15 @@ a{
       font-weight: 200;
       border-radius: 0;
       padding: 20px 10px;
-    }
-    button{
-      background-color: #d6131d;
-      border-color: #d6131d;
-      padding: 10px;
-      border-radius: 0;
-      width: 100%;
+      &[type=submit]{
+        background-color: #d6131d;
+        border-color: #d6131d;
+        padding: 10px;
+        border-radius: 0;
+        width: 100%;
+        color: white;
+        font-family: 'MaisonNeue-Bold';
+      }
     }
     margin: 0 auto;
   }

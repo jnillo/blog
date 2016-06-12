@@ -2,7 +2,6 @@ class SubscriptionsController < ApplicationController
   include Mailchimp
 
   def create
-  	byebug
     if subscribe_user(subscription_list, subscriber_params)
       flash[:notice] = 'Suscrito!'
     else
@@ -26,6 +25,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def subscription_list
+    ENV['MAILCHIMP_SUBSCRIPTION_LIST_ID']
   end
 
 end

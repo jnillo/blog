@@ -1,6 +1,6 @@
 %h3.title
   ¿Quieres recibir mis artículos directamente en tu correo?
-= form_for 'subscription', url: nil, html: { class: :form } do |f|
+= form_for 'subscription', url: subscribe_path, html: { class: :form } do |f|
   .col-md-2
     = f.text_field :name, placeholder: 'Name', class: 'form-control'
   .col-md-8
