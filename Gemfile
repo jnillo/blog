@@ -63,6 +63,7 @@ group :development, :test do
   gem 'guard-rubocop'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'mailcatcher'
 end
 
 group :development do

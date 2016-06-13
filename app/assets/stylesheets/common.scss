@@ -191,6 +191,50 @@ a{
   }
 }
 
+/* Contact */
+
+.contact{
+  padding: 20px 0px;
+  .container{
+    max-width: 927px !important;
+    background-color: transparent !important;
+    margin: 0 auto !important;
+  }
+  form{
+    max-width: 927px;
+    margin: 0 auto;
+    div{
+      padding: 0px 1px;
+    }
+    input, textarea{
+      background-color: transparent;
+      color: white;
+      font-weight: 200;
+      border-radius: 0;
+      padding: 20px 10px;
+      &[type=submit]{
+        background-color: #d6131d;
+        border-color: #d6131d;
+        padding: 10px;
+        border-radius: 0;
+        width: 100%;
+        color: white;
+        font-family: 'MaisonNeue-Bold';
+        &:hover{
+          background-color: #d6131d;
+          border-color: #d6131d;
+        }
+      }
+    }
+    margin: 0 auto;
+  }
+  .confirmation, .error{
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+  }
+}
+
 /* Subscription */
 .subscription{
   background-color: #333;

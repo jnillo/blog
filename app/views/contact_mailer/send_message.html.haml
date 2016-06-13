@@ -1,0 +1,16 @@
+%p
+  Tienes un nuevo mensaje a través del formulario del blog:
+%p
+  %ul{ style: 'list-style:none'}
+    %li
+      = "Subject: #{@message.subject}"
+    %li
+      = "Email: #{@message.email}"
+    %li
+      = "Teléfono: #{@message.phone}"
+    %li
+      = "Date: #{@message.created_at}"
+    %li
+      = "Date: #{@message.content}"
+%p
+  Goodluck!
