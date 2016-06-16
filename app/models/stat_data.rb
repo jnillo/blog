@@ -22,12 +22,21 @@ class StatData
 	  store_hash(post_id, { Time.zone.now.to_i => ip }.to_json, 'PostVisit')
 	end
 
-	def visit_blog(post_id = nil)
-      if post_id
-      	hash_value(post_id, 'PostVisit').map{ |data| eval data }
-      else
-        all('PostVisit')
-      end
+	def visit_post(post_id)
+	  visit_post_raw(post_id).count
+	end
+
+	def visit_post_raw(post_id)
+	  data = hash_value(post_id, 'PostVisit')
+      data ? data.map{ |data| eval data } : []
+	end
+
+	def visit_blog
+      visit_blog_raw.count
+	end
+
+	def visit_blog_raw
+      all('PostVisit')
 	end
   end
 end
