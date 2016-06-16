@@ -19,7 +19,7 @@ module RedisStore
   end
 
   def hash_value(key, table)
-    redis.hget(table, key).split
+    redis.hget(table, key).try(:split)
   end
 
   def destroy_hash(key, table)

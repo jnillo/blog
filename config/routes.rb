@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   namespace :administration do
-  	get '/', to: redirect('/administration/posts')
+  	get '/', to: 'posts#index'
     resources :posts
     resources :categories
   end

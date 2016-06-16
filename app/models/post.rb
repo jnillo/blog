@@ -13,6 +13,10 @@ class Post < ApplicationRecord
 
   before_save :create_slug
 
+  def visits
+    StatData.visit_post(id)
+  end
+
   private
 
   def create_slug
