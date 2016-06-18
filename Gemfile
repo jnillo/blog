@@ -80,3 +80,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Mailchimp Integration
 gem 'gibbon', '~> 2.0'
+
+# Pagination
+gem 'kaminari'
