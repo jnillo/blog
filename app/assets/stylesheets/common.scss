@@ -52,7 +52,7 @@ a{
     }
     .blog-info{
       max-width: 927px;
-      margin:2em auto;
+      margin: 2em auto 0 auto;
     }
     .about{
       background: #f5f5f5;
@@ -70,6 +70,27 @@ a{
       display:block;
       min-height: 200px;
       color: white; 
+    }
+  }
+  div.pagination{
+    text-align:center;
+    width: 100%;
+    nav.pagination{
+      width: 100%;
+      text-align:center;
+    }
+    .page, .last, .next, .prev, .first {
+      border: 2px #ccc solid;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin: 0 3px;
+      a{
+          color: #3b444f;
+      }
+    }
+    .page.current{
+      color: #428bca;
+      border-color: #428bca;
     }
   }
 }
