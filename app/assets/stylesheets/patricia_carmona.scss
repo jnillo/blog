@@ -1,0 +1,53 @@
+@import 'patricia_carmona_colors';
+
+/* Commons */
+a{
+  color: $link-color;
+  &:hover{
+    color: #684e79;
+    text-decoration: none;
+  }
+}
+
+/* Post */
+.post {
+  .post-title {
+    color: $title;
+  }
+  .post-subtitle {
+    color: $sub-title;
+  }
+  .post-content {
+    color: $content;
+  }
+}
+/* Post Resume */
+
+.post-resume{
+  .post-resume-title{
+    color: $title;
+  }
+  .post-resume-content{
+    color: $content;
+  }
+  .post-info{
+    color: $content;
+    font-style: italic;
+    font-weight: 200;
+  }
+}
+
+/* Subscription Block */
+.subscription {
+  background-color: $dark-block;
+  form {
+    input[type=submit] {
+      background-color: #cb2027;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background-color: #cb2027;
+    }
+  }
+}
+

@@ -2,18 +2,18 @@
   .col-md-2
     = image_tag 'https://pbs.twimg.com/profile_images/577078413720100864/Zjj72xfp_400x400.jpeg', class: 'author-img'
   .col-md-10
-    %h4
+    %h4.title
       = @post.author
     %p
-      Social Media Analyst. Listen and analyze social media content to improve the relation brands-users.
+      Soy Patricia Carmona y soy analista de Social Media y Planner. Mido, analizo e interpreto objetivos, estrategias y acciones en la Red.
     %p
       %ul{ class: 'list-inline' }
         %li
           = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
-            %i.fa.fa-twitter
+            %i.fa.fa-twitter.twitter
         %li
           = link_to 'https://www.linkedin.com/in/carmonapulidopatricia', rel: 'no-follow', target: '_blank' do
-            %i.fa.fa-linkedin
-        %li
+            %i.fa.fa-linkedin.linkedin
+        %li.right
           = link_to '/about-me', rel: 'no-follow', target: '_blank' do
-            = '-> Read about me'
+            = '> Read about me'

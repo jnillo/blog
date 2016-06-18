@@ -4,6 +4,6 @@
   .blog-info
     = render partial: 'posts/list', locals: { posts: @posts }
 .row
-  #about-me.about
+  = render partial: 'home/about'
 .row
   = render partial: 'contacts/form'
