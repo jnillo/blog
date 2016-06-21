@@ -13,6 +13,24 @@ class Post < ApplicationRecord
 
   before_save :create_slug
 
+  def self.generate_internal_link(title)
+    title.gsub! /\s*@\s*/, " at "
+    title.gsub! /\s*&\s*/, " and "
+    title = I18n.transliterate(title)
+    title = title.strip
+    title.gsub! /\s*[^A-Za-z0-9\.\_]\s*/, '-'
+    title.gsub! /_+/,"-"
+    title.downcase
+  end
+
+  def status
+    published < Time.zone.now ? 'Live' : 'Pending'
+  end
+
+  def first_image
+    ImageHandler.new(content).first_image || nil
+  end
+
   def visits
     StatData.visit_post(id)
   end
@@ -20,8 +38,6 @@ class Post < ApplicationRecord
   private
 
   def create_slug
-    self.slug = I18n.transliterate(title)
-    .sub(/\s|,|\./, '-')
-    .downcase
+    self.slug = Post.generate_internal_link(title)
   end
 end

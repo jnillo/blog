@@ -1,0 +1,16 @@
+%ul.list-inline.post-actions
+  %li.google.right.social-button{ title: 'Compartir en Google+', 'data-info': 'Google+'}
+    = link_to build_share_google_url(@post), target: '_blank', rel: 'no-follow' do
+      &nbsp;
+  %li.linkedin.right.social-button{ title: 'Compartir en LinkedIn', 'data-info': 'Linkedin'}
+    = link_to build_share_linkedin_url(@post), target: '_blank', rel: 'no-follow' do
+      &nbsp;
+  %li.facebook.right.social-button{ title: 'Compartir en Facebook', 'data-info': 'Facebook'}
+    = link_to build_share_facebook_url(@post), target: '_blank', rel: 'no-follow' do
+      &nbsp;
+  %li.twitter.right.social-button{ title: 'Compartir en Twitter', 'data-info': 'Twitter'}
+    = link_to build_share_twitter_url(@post), target: '_blank', rel: 'no-follow' do
+      &nbsp;
+  %li.right{ title: 'Share this post' }
+    Compártelo
+= render partial: 'posts/social_buttons.js'

@@ -7,15 +7,7 @@
         = @post.resume
       .post_content#post-content
         = raw @post.content
-      %ul.list-inline.post-actions
-        %li.right.social-button{ title: 'Compartir en LinkedIn', 'data-info': 'Linkedin' }
-          %i.fa.fa-linkedin
-        %li.right.social-button{ title: 'Compartir en Facebook', 'data-info': 'Facebook' }
-          %i.fa.fa-facebook
-        %li.right.social-button{ title: 'Compartir en Twitter', 'data-info': 'Twitter' }
-          %i.fa.fa-twitter
-        %li.right{ title: 'Share this post' }
-          Share it!
+      = render partial: 'posts/social_buttons', locals: { post: @post }
 .post-footer
   .row
     = render partial: 'author/post_info', locals: { author: @post.author }
@@ -28,5 +20,3 @@
 .subscription
   .row
     = render partial: 'subscriptions/form'
-
-= render partial: 'posts/social_buttons.js'

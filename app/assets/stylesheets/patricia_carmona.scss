@@ -9,6 +9,17 @@ a{
   }
 }
 
+/* Header */
+
+.header {
+  .container {
+    padding: 0;
+    .col-md-12{
+      padding: 0;
+    }
+  }
+}
+
 /* Post */
 .post {
   .post-title {
@@ -19,6 +30,36 @@ a{
   }
   .post-content {
     color: $content;
+    .medium-insert-images-progress{
+      display:none;
+    }
+    img {
+      margin: 1em 0;
+    }
+  }
+  .post-actions {
+    padding: 10px 0;
+    li{ 
+      width: 30px; 
+      height: 30px;
+      background-position: center top;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      padding: 0;
+      margin-left: 10px;
+      &:last-child{
+        width: 100px;
+        padding-top: 3px;
+      }
+      a{
+        display: block;
+        width: 100%;
+      }
+    }
+    .linkedin { background-image: url('icons/linkedin.png') }
+    .facebook { background-image: url('icons/facebook.png') }
+    .twitter { background-image: url('icons/twitter.png') }
+    .google { background-image: url('icons/google.png') }
   }
 }
 /* Post Resume */
@@ -50,4 +91,79 @@ a{
     }
   }
 }
+
+/* About */
+
+.about{
+  height: 350px;
+  ul.services {
+    li {
+      width: 250px;
+      border-bottom: 1px $dark-block solid;
+      padding: 2px 0;
+      margin-bottom: 5px;
+      span{
+        color: $link-color;
+        float:right;
+        cursor: pointer;
+        &:hover{
+          color: #684e79;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  #about-me-hidden {
+    display: none;
+  }
+  .service{
+    .sub-item{
+      font-size: 1.25em;
+      color: $link-color;
+      cursor: pointer;
+      &:hover{
+        color: #684e79;
+        text-decoration: none;
+      }
+    }
+  }
+  .service-hidden{
+    display:none;
+  }
+}
+/* Contact */
+
+.contact {
+  padding-bottom: 0;
+  p{
+    font-weight: 200;
+  }
+  .copyright {
+    border-top: 1px #54514f solid;
+    padding: 10px;
+    .container {
+      padding: 0;
+      width: 927px;
+      margin: 0 auto;
+      font-weight: 200;
+      font-size: .85em;
+      color: $light-color;
+    }
+  }
+}
+
+/* Pagination */
+#blog div.pagination{
+  .page.current{
+    color: $link-color !important;
+    border-color: $link-color !important;
+  }
+}
+
+/* Administration */
+#copyLinkButton{
+  color: $link-color;
+  cursor: pointer;
+}
+
 

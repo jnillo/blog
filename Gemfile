@@ -83,3 +83,6 @@ gem 'gibbon', '~> 2.0'
 
 # Pagination
 gem 'kaminari'
+
+# Share buttons
+gem 'social-share-button'

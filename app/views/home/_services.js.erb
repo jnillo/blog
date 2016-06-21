@@ -1,0 +1,13 @@
+<script>
+  var updateInfoFrom = function(blockInfo){
+    var requiredInfor = $(blockInfo).data('target');
+    $('.about > .container > .active').addClass('service-hidden');
+    $('.about > .container > .active').removeClass('active');
+    $('#'+requiredInfor).removeClass('service-hidden');
+    $('#'+requiredInfor).addClass('active');
+  }
+
+  $('.itemSlideInfo').click(function(){
+    updateInfoFrom(this);
+  });
+</script>

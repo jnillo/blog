@@ -1,7 +1,7 @@
 # Controller to build the initial view of the blog
 class HomeController < ApplicationController
   layout 'home'
-  POST_PAGE = 1
+  POST_PAGE = 5
 
   def index
     @categories = Category.all.order(name: :desc)

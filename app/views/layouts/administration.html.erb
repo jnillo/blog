@@ -13,6 +13,13 @@
     <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "sortable.min.js" %>
+    <%= javascript_include_tag 'jquery.ui.widget.min.js' %>
+    <%= javascript_include_tag 'jquery.iframe_transport.js' %>
+    <%= javascript_include_tag 'jquery.fileupload.min.js' %>
+    <%= javascript_include_tag "medium.js" %>
+    <%= javascript_include_tag "medium-editor-insert-plugin.min.js" %>
+    <%= stylesheet_link_tag "medium.min.css", :media => "all" %>
   </head>
   <body>
     <%= render partial: 'administration/shared/navbar' %>

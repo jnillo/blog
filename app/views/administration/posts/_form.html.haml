@@ -1,11 +1,3 @@
-= javascript_include_tag "sortable.min.js"
-= javascript_include_tag 'jquery.ui.widget.min.js'
-= javascript_include_tag 'jquery.iframe_transport.js'
-= javascript_include_tag 'jquery.fileupload.min.js'
-= javascript_include_tag "medium.js"
-= javascript_include_tag "medium-editor-insert-plugin.min.js"
-= stylesheet_link_tag "medium.min.css", :media => "all"
-
 = simple_form_for [:administration, post], html: { id: 'clear-form' } do |f|
   .first-step
     .form-group
@@ -16,6 +8,13 @@
         Next
   .second-step
     .form-group
+      %p
+        %b
+          Post link:
+        %span#internal-link
+          (no generado aún)
+        %span#copyLinkButton
+          [Copiar]
       = f.input :title, input_html: { class: 'form-control' }, as: :string
     .form-group
       = f.input :resume, input_html: { class: 'form-control' }, as: :text
@@ -23,7 +22,8 @@
       = f.label :category, 'Category'
       = f.select :category, categories_for_select, class: 'form-control'
     .form-group
-      = f.input :author, input_html: { class: 'form-control col-md-4' }, as: :string
+      = f.input :external_link, input_html: { class: 'form-control col-md-4' }, as: :string
+      = f.hidden_field :author, value: 'Patricia Carmona', class: 'form-control col-md-4', as: :string
     .form-group
       = f.input :published, as: :datetime, order: [:day, :month, :year, :hour, :minute]
     .form-group
@@ -33,4 +33,6 @@
       = link_to 'Cancel', root_path(), class: 'btn btn-lg btn-danger cancel-btn'
 
 %script
-  post.initialize('#post_content')
+  post.initialize('#post_content');
+  $('#post_title').on('change', function(){ post.generateInternalLink(); });
+  $('#copyLinkButton').on('click', function(){ post.copyUrlClipboard(); });
