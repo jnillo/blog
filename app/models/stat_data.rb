@@ -3,6 +3,24 @@ class StatData
   class << self
     include RedisStore
 
+    def safe_share_post(post_id, ip, social_network)
+      data = shares_post(post_id)
+      if data.present? && data[social_network]
+      	data[social_network] += [ip]
+      elsif data.present?
+      	data[social_network] = [ip]
+      else
+       	data = { social_network => [ip] }
+      end
+      destroy_hash(post_id, 'PostShare')
+      store_hash(post_id, data.to_json, 'PostShare')
+    end
+
+    def shares_post(post_id)
+      data = hash_value(post_id, 'PostShare')
+      data ? JSON.parse(data.first) : {}
+    end
+
 	def save_visit(date, ip)
 	  store_hash(date, ip, 'Visits')
 	end

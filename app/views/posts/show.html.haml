@@ -8,11 +8,11 @@
       .post_content#post-content
         = raw @post.content
       %ul.list-inline.post-actions
-        %li.right{ title: 'Compartir en LinkedIn' }
+        %li.right.social-button{ title: 'Compartir en LinkedIn', 'data-info': 'Linkedin' }
           %i.fa.fa-linkedin
-        %li.right{ title: 'Compartir en Facebook' }
+        %li.right.social-button{ title: 'Compartir en Facebook', 'data-info': 'Facebook' }
           %i.fa.fa-facebook
-        %li.right{ title: 'Compartir en Twitter' }
+        %li.right.social-button{ title: 'Compartir en Twitter', 'data-info': 'Twitter' }
           %i.fa.fa-twitter
         %li.right{ title: 'Share this post' }
           Share it!
@@ -28,3 +28,5 @@
 .subscription
   .row
     = render partial: 'subscriptions/form'
+
+= render partial: 'posts/social_buttons.js'

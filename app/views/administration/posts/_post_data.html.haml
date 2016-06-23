@@ -1,5 +1,5 @@
 %h3
-  Post data
+  Datos del post
 %ul.nav.nav-list
   %li
     %i{ class: 'fa fa-clock'}
@@ -8,3 +8,21 @@
     = post.category.name
   %li
     = "#{post.visits} visitas"
+%h3
+  Compartido
+%ul.nav.nav-list
+  %li
+    %i{ class: 'fa fa-twitter'}
+    Twitter
+    .right 
+      = show_shares(@shares, 'Twitter')
+  %li
+    %i{ class: 'fa fa-linkedin'}
+    Linkedin
+    .right 
+      = show_shares(@shares, 'Linkedin')
+  %li
+    %i{ class: 'fa fa-facebook'}
+    Facebook
+    .right 
+      = show_shares(@shares, 'Facebook')

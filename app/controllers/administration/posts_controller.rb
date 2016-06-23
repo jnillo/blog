@@ -10,6 +10,7 @@ module Administration
 
     def show
       @post ||= Post.find(params[:id])
+      @shares = StatData.shares_post(@post.id)
       render layout: 'admin_post'
     end
 

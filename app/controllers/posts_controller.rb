@@ -9,4 +9,9 @@ class PostsController < ApplicationController
       render file: "#{Rails.root}/public/404", layout: false, status: :not_found
     end
   end
+
+  def social_stats
+    save_share(params[:ref], params[:source])
+  	render json: true
+  end
 end

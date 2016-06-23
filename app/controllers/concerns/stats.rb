@@ -18,6 +18,10 @@ module Stats
   	cookies[:blog] = { value: Time.zone.now.to_date, expires: 30.days.from_now }
   end
 
+  def save_share(post_id, social_network)
+    StatData.safe_share_post(post_id, session[:user_ip], social_network)
+  end
+
   # Get visit data:
 
   def new_visit?
