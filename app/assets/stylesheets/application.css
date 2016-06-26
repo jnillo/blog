@@ -15,19 +15,25 @@
  *= require bootstrap_and_overrides.css
  *= require twitter-bootstrap-static/bootstrap
  *= require twitter-bootstrap-static/fontawesome
+ *= require fonts
  */
 
 @font-face {
-	font-family: 'MaisonNeue-Bold';
-	src: url(MaisonNeueWEB-Bold.woff) format('woff');
+	font-family: 'Roboto';
+	src: url(Roboto-Regular.ttf) format('truetype');
 }
 @font-face {
-	font-family: 'MaisonNeue-Demi';
-	src: url(MaisonNeueWEB-Demi.woff) format('woff');
+	font-family: 'Roboto Bold';
+	src: url(Roboto-Bold.ttf) format('truetype');
 }
 @font-face {
-	font-family: 'MaisonNeue-Book';
-	src: url(MaisonNeueWEB-Book.woff) format('woff');
+	font-family: 'Roboto Black';
+	src: url(Roboto-Black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url(Roboto-Light.ttf) format('truetype');
 }
 
 /* latin-ext */

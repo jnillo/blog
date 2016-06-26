@@ -1,3 +1,5 @@
+@import "fonts";
+
 body{
 	background: #f5f5f5;
 }
@@ -22,6 +24,7 @@ a{
 
 /* Home */
 #blog {
+  font-family: $font-content;
   .container{
     background-color: white;
     width: 100%;
@@ -44,10 +47,13 @@ a{
         margin: 0 auto;
       }
       .title{
-        font-family: 'MaisonNeue-Bold';
+        font-family: $font-title;
+        span{
+          font-family: $font-titleHighlight;
+        }
       }
       .subtitle{
-        font-family: 'MaisonNeue-Semi';
+        font-family: $font-subtitle;
       }
     }
     .blog-info{
@@ -145,14 +151,14 @@ a{
     font-size: 51px;
     padding: 10px 15px;
     text-align: center;
-    font-family: 'MaisonNeue-Bold';
+    font-family: $font-title;
 	  &:hover{
 	    text-decoration: none;
 	    olor: #333;
 	  }
   }
   .post-subtitle{
-    font-family: 'MaisonNeue-Demi';
+    font-family: $font-subtitle;
     text-align:center;
     font-size: 24px;
   }
@@ -204,7 +210,7 @@ a{
     font-size: 36px;
     padding: 10px 0px;
     text-align: center;
-    font-family: 'MaisonNeue-Bold';
+    font-family: $font-title;
     &:hover{
       text-decoration: none;
       olor: #333;
@@ -268,7 +274,7 @@ a{
       color: #333;
     }
     .title{
-      font-family: 'MaisonNeue-Semi' !important;
+      font-family: $font-title !important;
     }
   }
   .title{
