@@ -37,7 +37,7 @@ a{
       display:block;
       border-bottom: 1px #ccc solid;
       padding: 30px 0;
-      background: url('patri_header.png');
+      background: url('patri_header.png') no-repeat 0 0 ;
       .container{
         .col-md-4, .col-md-8, col-md-12, col-md-2{
           padding: 0;
@@ -54,6 +54,10 @@ a{
       }
       .subtitle{
         font-family: $font-subtitle;
+      }
+      .subscription h3.title{
+        font-family: 'MaisonNeue-Semi';
+        font-size: 18px;
       }
     }
     .blog-info{
@@ -266,7 +270,7 @@ a{
         border-radius: 0;
         width: 100%;
         color: white;
-        font-family: 'MaisonNeue-Bold';
+        font-family: 'MaisonNeue-Book';
         &:hover{
           background-color: #d6131d;
           border-color: #d6131d;
@@ -294,7 +298,11 @@ a{
       color: #333;
     }
     .title{
+<<<<<<< ec730af06aa2b9a8e029cc454ea468abfed2f824
       font-family: $font-title !important;
+=======
+      font-family: 'MaisonNeue-Book' !important;
+>>>>>>> Add new style to share content
     }
   }
   .title{

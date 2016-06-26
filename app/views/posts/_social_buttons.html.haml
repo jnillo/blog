@@ -1,5 +1,5 @@
 %ul.list-inline.post-actions
-  %li.google.right.social-button{ title: 'Compartir en Google+', 'data-info': 'Google+'}
+  %li.google.right.social-button{ title: 'Compartir en Google+', 'data-info': 'GooglePlus'}
     = link_to build_share_google_url(@post), target: '_blank', rel: 'no-follow' do
       &nbsp;
   %li.linkedin.right.social-button{ title: 'Compartir en LinkedIn', 'data-info': 'Linkedin'}
@@ -11,6 +11,6 @@
   %li.twitter.right.social-button{ title: 'Compartir en Twitter', 'data-info': 'Twitter'}
     = link_to build_share_twitter_url(@post), target: '_blank', rel: 'no-follow' do
       &nbsp;
-  %li.right{ title: 'Share this post' }
-    Compártelo
+  %li.share-postLabel.right{ title: 'Share this post' }
+    Si te ha gustado compártelo
 = render partial: 'posts/social_buttons.js'

@@ -10,17 +10,32 @@ a{
 }
 
 /* Header */
-
-.header {
-  .container {
-    padding: 0;
-    .col-md-12{
+#blog {
+  .header {
+    min-height: 350px;
+    .container {
       padding: 0;
+      .col-md-12{
+        padding: 0;
+        h1 {
+          font-family: 'MaisonNeue-Bold';
+          font-size: 42px;
+        }
+        h2 {
+          font-family: 'MaisonNeue-Book' !important;
+          font-size: 28px;
+        }
+        h3.title {
+          font-family: 'MaisonNeue-Book' !important;
+          font-size: 24px;
+        }
+      }
     }
   }
 }
 
 /* Post */
+
 .post {
   .post-title {
     color: $title;
@@ -36,6 +51,11 @@ a{
     img {
       margin: 1em 0;
     }
+  }
+  .share-postLabel{
+    font-family: 'Indie Flower', cursive;
+    color: $link-color;
+    width: 220px !important;
   }
   .post-actions {
     padding: 10px 0;
@@ -61,6 +81,24 @@ a{
     .twitter { background-image: url('icons/twitter.png') }
     .google { background-image: url('icons/google.png') }
   }
+}
+
+.author-info{
+  color: #3b444f;
+  .title{
+    font-family: 'MaisonNeue-Bold';
+    font-size: 22px;
+  }
+}
+.author-infoAvatar{
+  text-align:center;
+  img{
+    border: 1px #ccc solid;
+  }
+}
+.author-links{
+  width:100%;
+  text-align: center;
 }
 /* Post Resume */
 
@@ -135,12 +173,14 @@ a{
 
 .contact {
   padding-bottom: 0;
+  font-family: 'MaisonNeue-Demi';
   p{
-    font-weight: 200;
+    font-family: 'MaisonNeue-Book';
   }
   .copyright {
+    font-family: 'MaisonNeue-Book';
     border-top: 1px #54514f solid;
-    padding: 10px;
+    padding: 20px;
     .container {
       padding: 0;
       width: 927px;
