@@ -326,3 +326,24 @@ a{
   }
 }
 
+/*  Cookies Alert */
+.cookies-alert {
+  position: fixed; 
+  bottom: 0;
+  background-color: #333;
+  width: 100%;
+  .content{
+    color: white;
+    font-family: $font-subtitle;
+    max-width: 927px;
+    margin: 0 auto;
+    padding: 10px;
+    a {
+      cursor: pointer;
+    }
+    button { 
+      border: 1px white solid;
+      background: none;
+    }
+  }
+}

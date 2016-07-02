@@ -17,6 +17,7 @@
 //= require admin/posts
 //= require admin/clean_form
 //= require handlebars.runtime
+//= require cookies
 
 var hideHomeNavbar = function (){
   if($('.home-navbar')!==null){
