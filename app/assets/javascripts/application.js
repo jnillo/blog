@@ -17,11 +17,8 @@
 //= require admin/posts
 //= require admin/clean_form
 //= require handlebars.runtime
-<<<<<<< 6b3f0579769d5058b0c6691e52857e030e981a50
 //= require cookies
-=======
 //= require social-share-button
->>>>>>> update create post and seo
 
 var getBroserTypeMobile = function(type) {
   return document.cookie.indexOf(type) > 0

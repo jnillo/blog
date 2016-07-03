@@ -1,11 +1,33 @@
 @import 'patricia_carmona_colors';
-
+@import "fonts";
 /* Commons */
 a{
   color: $link-color;
   &:hover{
     color: #684e79;
     text-decoration: none;
+  }
+}
+
+/* Navbar */
+.navbar {
+  .navbar-brand {
+    font-family: $font-title;
+    span {
+      font-family: $font-titleHighlight;
+    }
+  }
+  .navbar-nav {
+    font-family: $font-title;
+    height: 50px;
+    li {
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+      &:hover{
+        border-bottom: 3px $link-color solid;
+      }
+    }
   }
 }
 
@@ -18,15 +40,18 @@ a{
       .col-md-12{
         padding: 0;
         h1 {
-          font-family: 'MaisonNeue-Bold';
+          font-family: $font-title;
           font-size: 42px;
+          span {
+            font-family: $font-titleHighlight;
+          }
         }
         h2 {
-          font-family: 'MaisonNeue-Book' !important;
+          font-family: $font-subtitle !important;
           font-size: 28px;
         }
         h3.title {
-          font-family: 'MaisonNeue-Book' !important;
+          font-family: $font-content !important;
           font-size: 24px;
         }
       }
@@ -42,8 +67,10 @@ a{
   }
   .post-subtitle {
     color: $sub-title;
+    margin-bottom: 2em;
   }
   .post-content {
+    font-family: $font-content;
     color: $content;
     .medium-insert-images-progress{
       display:none;
@@ -86,8 +113,19 @@ a{
 .author-info{
   color: #3b444f;
   .title{
-    font-family: 'MaisonNeue-Bold';
+    font-family: $font-title;
     font-size: 22px;
+  }
+  p {
+    font-family: $font-subtitle;
+    font-size: 18px;
+  }
+  .see_more {
+    float: right;
+    a {
+      font-family: $font-subtitle;
+      font-size: 18px;
+    }
   }
 }
 .author-infoAvatar{
@@ -119,13 +157,22 @@ a{
 /* Subscription Block */
 .subscription {
   background-color: $dark-block;
+  .title{
+    font-family: $font-title;
+  }
   form {
+    input[type=text] {
+      font-family: $font-subtitle;
+    }
     input[type=submit] {
+      font-family: $font-subtitle;
       background-color: #cb2027;
       cursor: pointer;
+      transition: background-color 0.5s ease;
     }
     input[type=submit]:hover {
-      background-color: #cb2027;
+      background: $link-color;
+      border-color: $link-color;
     }
   }
 }
@@ -134,20 +181,26 @@ a{
 
 .about{
   height: 350px;
+  h2 {
+    font-family: $font-title;
+  }
   ul.services {
+    text-align: center;
+    margin-top: 2em !important;
+    overflow: hidden;
     li {
-      width: 250px;
-      border-bottom: 1px $dark-block solid;
-      padding: 2px 0;
+      width: 180px;
+      margin-left: 10px;
+      text-align:center;
+      border: 2px $dark-block solid;
+      padding: 10px 0;
       margin-bottom: 5px;
-      span{
-        color: $link-color;
-        float:right;
-        cursor: pointer;
-        &:hover{
-          color: #684e79;
-          text-decoration: none;
-        }
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      &:hover{
+        background: $link-color;
+        border-color: $link-color;
+        color: white;
       }
     }
   }
@@ -160,7 +213,7 @@ a{
       color: $link-color;
       cursor: pointer;
       &:hover{
-        color: #684e79;
+        color: white;
         text-decoration: none;
       }
     }
@@ -173,12 +226,22 @@ a{
 
 .contact {
   padding-bottom: 0;
-  font-family: 'MaisonNeue-Demi';
+  font-family: $font-subtitle;
   p{
-    font-family: 'MaisonNeue-Book';
+    font-family: $font-content;
+  }
+  form {
+    input[type=submit] {
+      font-family: $font-subtitle;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background: $link-color;
+        border-color: $link-color;
+      }
+    }
   }
   .copyright {
-    font-family: 'MaisonNeue-Book';
+    font-family: $font-content;
     border-top: 1px #54514f solid;
     padding: 20px;
     .container {
@@ -188,6 +251,13 @@ a{
       font-weight: 200;
       font-size: .85em;
       color: $light-color;
+      a{
+        color: $light-color;
+        cursor: pointer;
+        &:hover {
+          color: $link-color;
+        }
+      }
     }
   }
 }
