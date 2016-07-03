@@ -1,13 +1,15 @@
 %div{ id: "post_#{post.id}", class: 'post-resume' }
-  %h3
+  .date
+    .big
+      = post.published.strftime('%d %b')
+    .small
+      = post.published.strftime('%Y')
+  %h3.post-resume-title
     = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
-  %ul.list-inline.post-info
-    %li
-      = "Escrito el #{post.published.strftime('%d/%m/%Y')}"
-  .post-resume
+  .post-resume-content
     = post.resume
     .row-fluid
-      .p.right
+      .show-more
         = link_to show_post_path(post.slug) do
           Continuar leyendo >
 
