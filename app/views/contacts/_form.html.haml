@@ -1,11 +1,11 @@
 #contact.contact
   .container
-    .col-md-5
+    .col-md-5.col-sm-5
       %h3.title
         Contacto
       %p
         Ponte en contacto conmigo y veras que divertido.
-    .col-md-7
+    .col-md-7.col-sm-7
       = form_for 'Contact', url: send_contact_path, remote: true, html: { class: :form } do |f|
         .form-group
           = f.text_field :subject, placeholder: 'Nombre (requerido)', class: 'form-control', required: true
@@ -15,7 +15,7 @@
           = f.text_field :phone, placeholder: 'Phone (opcional)', class: 'form-control'
         .form-group
           = f.text_area :content, placeholder: 'Escribe aquí tu duda', class: 'form-control', required: true
-        .form-group.col-md-4.right
+        .form-group.col-md-4.col-sm-4.right
           = f.submit 'Enviar', class:"btn btn-primary"
 
   .copyright
@@ -28,5 +28,5 @@
         %li
           Política de privacidad |
         %li
-          %a{ 'data-toggle':"modal", 'data-target': "#modal-cookies" }
+          %a{ 'data-toggle':"modal", 'data-target': "#modal-cookies", rel: 'no-follow' }
             Política de cookies
