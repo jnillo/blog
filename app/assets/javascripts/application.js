@@ -19,6 +19,10 @@
 //= require handlebars.runtime
 //= require cookies
 
+var getBroserTypeMobile = function(type) {
+  return document.cookie.indexOf(type) > 0
+}
+
 var hideHomeNavbar = function (){
   if($('.home-navbar')!==null){
   	$('.home-navbar').hide();
@@ -29,6 +33,32 @@ var showHomeNavbar = function (){
   if($('.home-navbar')!==null){
   	$('.home-navbar').show();
   }
+}
+var detectMobile = function() {
+   if(window.innerWidth <= 600) {
+     return true;
+   } else {
+     return false;
+   }
+}
+
+var checkWindowSize = function(){
+  if (detectMobile()){
+  	if(!getBroserTypeMobile('mobile')) {
+  	  createCookieWindowSize('mobile');
+      top.location.href = "http://m.blog.dev";
+    }
+  } else {
+    if(!getBroserTypeMobile('web')) {
+  	  createCookieWindowSize('web');
+      top.location.href = "http://blog.dev";
+    }
+  }
+}
+
+var createCookieWindowSize = function(browser_type){
+  var date = new Date(new Date().setYear(new Date().getFullYear() + 1));
+  document.cookie = 'browser=' + browser_type + '; expires='+date;
 }
 
 $(document).ready(function(){
@@ -47,4 +77,9 @@ $(document).ready(function(){
 			}
 		});
 	});
+    
+    checkWindowSize();
+    $(window).resize(function(){
+      checkWindowSize();
+    })
 });

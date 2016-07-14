@@ -5,7 +5,7 @@ var CookiesHandler = function(){
 CookiesHandler.prototype.startObserverMessage = function(){
   var handler = this;
   $('#cookies-alert').show();
-  
+
   $('#cookies-alertButton').click(function(){
     handler.createCookie();
     $('#cookies-alert').fadeOut();
