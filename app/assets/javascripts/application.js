@@ -62,6 +62,12 @@ var createCookieWindowSize = function(browser_type){
   document.cookie = 'browser=' + browser_type + '; expires='+date;
 }
 
+var observerModals = function(){
+  $('.close-modal').click(function(){
+    $('.modal').modal('toggle');
+  });
+}
+
 $(document).ready(function(){
     $(function () {
     	hideHomeNavbar();
@@ -78,7 +84,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-    
+    observerModals();
     checkWindowSize();
     $(window).resize(function(){
       checkWindowSize();

@@ -1,6 +1,9 @@
 #modal-cookies.modal.fade.modal-cookies{ tabindex: 1, role: 'dialog', 'arial-labelledby': 'modal-cookies', 'aria-hidden': true }
   .modal-dialog.modal-md
     .modal-content
+      .right
+        %button.close-modal
+          X
       %h3
         What Are Cookies
       %p
@@ -48,3 +51,6 @@
         Email: 
         %a{ href: 'mailto:patricia@patriciacarmona.com', target: '_blank' } 
           patricia@patriciacarmona.com
+      %p.center
+        %button.close-modal.dark.big
+          Ok

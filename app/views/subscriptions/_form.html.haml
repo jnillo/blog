@@ -1,9 +1,9 @@
 %h3.title
   ¿Quieres recibir mis artículos directamente en tu correo?
 = form_for 'subscription', url: subscribe_path, remote: true, html: { class: :form } do |f|
-  .col-md-2.col-sm-3
+  .col-md-2.col-xs-3
     = f.text_field :name, placeholder: 'Name', class: 'form-control'
-  .col-md-8.col-sm-6
+  .col-md-8.col-xs-6
     = f.text_field :email, placeholder: 'Email', class: 'form-control'
-  .col-md-2.col-sm-3
+  .col-md-2.col-xs-3
     = f.submit 'Suscribirme', class:"btn btn-primary"
