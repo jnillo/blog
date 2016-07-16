@@ -8,6 +8,14 @@ class HomeController < ApplicationController
     @posts = load_posts(params[:page])
   end
 
+  def load_info
+    respond_to do |format|
+      format.js {
+        render json: { content: (render_to_string partial: params[:content], layout: false ) }
+      }
+    end
+  end
+
   private
 
   def load_posts(page = 0)

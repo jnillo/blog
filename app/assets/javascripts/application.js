@@ -19,6 +19,7 @@
 //= require handlebars.runtime
 //= require cookies
 //= require social-share-button
+//= require modal_links_observer
 
 var getBroserTypeMobile = function(type) {
   return document.cookie.indexOf(type) > 0
@@ -62,12 +63,6 @@ var createCookieWindowSize = function(browser_type){
   document.cookie = 'browser=' + browser_type + '; expires='+date;
 }
 
-var observerModals = function(){
-  $('.close-modal').click(function(){
-    $('.modal').modal('toggle');
-  });
-}
-
 $(document).ready(function(){
     $(function () {
     	hideHomeNavbar();
@@ -84,7 +79,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-    observerModals();
+    contentLinkObserver.load_content_modal('cookies-policy-link', 'layouts/shared/cookies_policy');
     checkWindowSize();
     $(window).resize(function(){
       checkWindowSize();
