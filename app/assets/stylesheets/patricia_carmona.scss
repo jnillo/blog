@@ -379,6 +379,23 @@ a{
   }
 }
 
+/*  Cookies Alert */
+
+.cookies-alert {
+  padding: 1em 0;
+  .content{
+    button { 
+      border: 1px white solid;
+      background: none;
+      &:hover{
+        background: $link-color;
+        border-color: $link-color;
+        color: white;
+      }
+    }
+  }
+}
+
 /* Administration */
 
 #copyLinkButton{

@@ -1,0 +1,12 @@
+#cookies-alert.cookies-alert
+  .content
+    .col-md-10
+      Esta web utiliza cookies para mejorar su experiencia. Si continúa navegando consideramos que acepta el
+      %a{ 'data-toggle':"modal", 'data-target': "#main-modal", rel: 'no-follow' }
+        uso de cookies.
+    .col-md-2
+      %button{ id: 'accept-cookies-btn'}
+        Acepto
+
+%script
+  new CookiesHandler();

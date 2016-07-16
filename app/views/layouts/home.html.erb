@@ -18,7 +18,7 @@
       <%= yield %>
     </div> <!-- /container -->
     <% unless cookies[:cookies_allow] %>
-      <%#= render partial: 'layouts/shared/cookies_alert' %>
+      <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
     <%= render partial: 'layouts/shared/main_modal' %>
     <%= render partial: 'layouts/shared/analytics'%>

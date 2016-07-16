@@ -11,7 +11,7 @@ CookiesHandler.prototype.startObserverMessage = function(){
     $('#cookies-alert').fadeOut();
   });
 
-  $('a').click(function(){
+  $('#accept-cookies-btn').click(function(){
     handler.createCookie();
     $('#cookies-alert').hide();
   });
