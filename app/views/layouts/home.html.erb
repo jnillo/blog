@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
+    <link rel="shortcut icon" href="<%= image_path('favicon.png')%>" >
     <%= render partial: 'layouts/shared/metas_blog' %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
