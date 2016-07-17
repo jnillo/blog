@@ -7,8 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
     <%= render partial: 'layouts/shared/metas_blog' %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= favicon_link_tag image_path('favicon.png'), :rel => 'shortcut icon' %>
+    <%= stylesheet_link_tag "mobile", :media => "all" %>
     <%= javascript_include_tag "application" %>
   </head>
   <body id='blog'>
@@ -16,7 +15,7 @@
     <div class="container">
       <%= bootstrap_flash %>
       <%= yield %>
-    </div>
+    </div> <!-- /container -->
     <% unless cookies[:cookies_allow] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>

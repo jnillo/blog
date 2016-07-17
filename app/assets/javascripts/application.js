@@ -48,12 +48,12 @@ var checkWindowSize = function(){
   if (detectMobile()){
   	if(!getBroserTypeMobile('mobile')) {
   	  createCookieWindowSize('mobile');
-      top.location.href = "http://m.blog.dev";
+      top.location.href = "http://m.blog.dev" + document.location.pathname;
     }
   } else {
     if(!getBroserTypeMobile('web')) {
   	  createCookieWindowSize('web');
-      top.location.href = "http://blog.dev";
+      top.location.href = "http://blog.dev" + document.location.pathname;
     }
   }
 }

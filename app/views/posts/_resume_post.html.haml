@@ -6,6 +6,8 @@
       = post.published.strftime('%Y')
   %h3.post-resume-title
     = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
+  .date-secondary
+    = "Publicado en #{post.published.strftime('%d %b %Y')}"
   .post-resume-content
     = post.resume
     .row-fluid

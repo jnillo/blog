@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  constraints subdomain: 'm' do
+    root to: 'home#mobile_index'
+    get ':slug', to: 'posts#mobile_show'
+  end
+
   post 'subscribe', to: 'subscriptions#create', as: :subscribe
   resource :contact do
     post 'send', to: 'contact#send_message', as: :send

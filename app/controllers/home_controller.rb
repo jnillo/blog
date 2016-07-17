@@ -8,6 +8,12 @@ class HomeController < ApplicationController
     @posts = load_posts(params[:page])
   end
 
+  def mobile_index
+    @categories = Category.all.order(name: :desc)
+    @posts = load_posts(params[:page])
+    render template: 'home/index', layout: 'small_devise'
+  end
+
   def load_info
     respond_to do |format|
       format.js {
