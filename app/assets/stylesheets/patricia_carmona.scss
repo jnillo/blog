@@ -142,9 +142,24 @@ a{
   @media only screen and (max-width: $break-large) {
     padding: 0 1em;
   }
+  .tags{
+    padding: 10px 0;
+    li { 
+      font-family: $font-title;
+      color: $link-color;
+      border: 1px $link-color solid;
+      border-radius: 15px;
+      padding: 0 10px;
+    }
+  }
+}
+
+.post-footer{
+  background: #f5f5f5;
 }
 
 .author-info{
+  max-width: 927px;
   color: #3b444f;
   .title{
     font-family: $font-title;
@@ -209,6 +224,17 @@ a{
     color: $title;
     padding: 0;
     overflow: hidden;
+  }
+  .tags{
+    clear: both;
+    margin-left: 87px;
+    li { 
+      font-family: $font-title;
+      color: $link-color;
+      border: 1px $link-color solid;
+      border-radius: 15px;
+      padding: 0 10px;
+    }
   }
   .post-resume-content{
     color: $content;

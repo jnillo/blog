@@ -7,6 +7,11 @@
         = @post.resume
       .post_content#post-content
         = raw @post.content
+      .tags.left
+        %ul.list-inline
+          - @post.tags.split(',').each do |tag|
+            %li
+              = tag
       = render partial: 'posts/social_buttons', locals: { post: @post }
 .post-footer
   .row

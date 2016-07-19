@@ -1,17 +1,25 @@
 %div{ id: "post_#{post.id}", class: 'post-resume' }
-  .date
-    .big
-      = post.published.strftime('%d %b')
-    .small
-      = post.published.strftime('%Y')
-  %h3.post-resume-title
-    = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
-  .date-secondary
-    = "Publicado en #{post.published.strftime('%d %b %Y')}"
-  .post-resume-content
-    = post.resume
-    .row-fluid
-      .show-more
-        = link_to show_post_path(post.slug) do
-          Continuar leyendo >
+  .row
+    .date
+      .big
+        = post.published.strftime('%d %b')
+      .small
+        = post.published.strftime('%Y')
+    %h3.post-resume-title
+      = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
+    .tags
+      %ul.list-inline
+        - post.tags.split(',').each do |tag|
+          %li
+            = tag
+  .row
+    .date-secondary
+      = "Publicado en #{post.published.strftime('%d %b %Y')}"
+  .row
+    .post-resume-content
+      = post.resume
+      .row-fluid
+        .show-more
+          = link_to show_post_path(post.slug) do
+            Continuar leyendo >
 
