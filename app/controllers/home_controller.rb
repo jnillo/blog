@@ -22,6 +22,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def about
+    render template: 'about/index'
+  end
+
   private
 
   def load_posts(page = 0)

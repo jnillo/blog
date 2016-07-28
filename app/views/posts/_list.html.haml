@@ -4,3 +4,6 @@
       = render partial: 'posts/resume_post', locals: { post: post }
 .pagination
   = paginate posts
+
+%script
+  $('.post-link').click(function(element){ $(location).attr('href',$(this).attr('data-ref'));});

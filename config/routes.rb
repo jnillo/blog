@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
   post '/home/load_info', to: 'home#load_info'
   post '/post/social-stats', to: 'posts#social_stats'
+  get '/about-me', to: 'home#about'
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end

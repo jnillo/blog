@@ -1,32 +1,10 @@
-#contact.contact
-  .container
-    .col-md-5.col-xs-5.lead-text
-      %h3.title
-        Contacto
-      %p
-        Ponte en contacto conmigo y veras que divertido.
-    .col-md-7.col-xs-7.contact-form
-      = form_for 'Contact', url: send_contact_path, remote: true, html: { class: :form } do |f|
-        .form-group
-          = f.text_field :subject, placeholder: 'Nombre (requerido)', class: 'form-control', required: true
-        .form-group
-          = f.text_field :email, placeholder: 'Email (requerido)', class: 'form-control', required: true
-        .form-group
-          = f.text_field :phone, placeholder: 'Phone (opcional)', class: 'form-control'
-        .form-group
-          = f.text_area :content, placeholder: 'Escribe aquí tu duda', class: 'form-control', required: true
-        .form-group.col-md-4.col-xs-4.right
-          = f.submit 'Enviar', class:"btn btn-primary"
-
-  .copyright
-    .container
-      %ul{ class: 'list-inline' }
-        %li 
-          Copyright ©2011-2016 Patricia Carmona |
-        %li
-          Aviso Legal |
-        %li
-          Política de privacidad |
-        %li
-          %a{ 'data-toggle':"modal", 'data-target': "#main-modal", rel: 'no-follow' }
-            Política de cookies
+.contact-form
+  = form_for 'Contact', url: send_contact_path, remote: true, html: { class: :form } do |f|
+    .form-group
+      = f.text_field :subject, placeholder: 'Nombre (requerido)', class: 'form-control', required: true
+    .form-group
+      = f.text_field :email, placeholder: 'Email (requerido)', class: 'form-control', required: true
+    .form-group
+      = f.text_area :content, placeholder: 'Escribe aquí tu duda', class: 'form-control', required: true
+    .form-group.col-md-4.col-xs-4.right
+      = f.submit 'Enviar', class:"btn btn-primary"

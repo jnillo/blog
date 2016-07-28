@@ -194,7 +194,10 @@ a{
 
 .post-resume{
   .date-secondary {
-    display:none;
+    padding: 0;
+    color: $content;
+    font-family: $font-subtitle;
+    text-align: right;
   }
   .date {
     background-color: #000;
@@ -228,28 +231,58 @@ a{
   .tags{
     clear: both;
     margin-left: 87px;
+    padding:0;
     li { 
-      font-family: $font-title;
-      color: $link-color;
-      border: 1px $link-color solid;
       border-radius: 15px;
+      border: 1px $link-color solid;
+      color: $link-color;
+      cursor: pointer;
+      font-family: $font-title;
       padding: 0 10px;
+      transition: background-color .35s ease-in-out;
+      &:hover{
+        background: $link-color;
+        border-color: $link-color;
+        color: white;
+      }
     }
   }
   .post-resume-content{
-    color: $content;
-    width: 100%;
     clear: both;
+    color: $content;
+    cursor: pointer;
+    margin: .5em 0 1em 0;
     padding-top: 1em;
-    .show-more {
-      float:right;
-      font-size: .85em;
-    }
+    width: 100%;
   }
   .post-info{
     color: $content;
     font-style: italic;
     font-weight: 200;
+  }
+  .post-resumeSeparator {
+    border: 0; 
+      background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      height: 1px; 
+      text-align: center;
+    &:after {
+      background: white;
+      border-radius: 100px;
+      color: #8c8b8b;
+      content: '+';
+      display: inline-block;
+      font-family: $font-thin;
+      font-size: 2em;
+      font-weight: 200;
+      margin-top: -5px;
+      padding: 0 20px;
+      position: relative;
+      cursor: pointer;
+      top: -15px;
+    }
   }
 }
 
@@ -265,8 +298,8 @@ a{
     }
     input[type=submit] {
       font-family: $font-subtitle;
-      background-color: #cb2027;
-      border: 1px #cb2027 solid;
+      background-color: $primary-button;
+      border: 1px $primary-button solid;
       cursor: pointer;
       transition: background-color 0.5s ease;
     }
@@ -342,12 +375,27 @@ a{
 /* Contact */
 
 .contact {
-  padding-bottom: 0;
+  background-color: transparent !important;
+  background: url('patri_about.jpg') no-repeat left bottom;
+  border-top: 3px rgba(204,204,204,0.6) solid;
   font-family: $font-subtitle;
+  height: 350px;
+  padding: 12px 0px !important;
+  .container {
+    padding: 0 !important;
+  }
+  h3.title {
+    font-family: $font-title;
+    color: $content;
+  }
   p{
-    font-family: $font-content;
+    font-family: $font-title;
+    color: $content;
   }
   form {
+    input, textarea{
+      color: $form-color;
+    }
     input[type=submit] {
       font-family: $font-subtitle;
       transition: background-color 0.5s ease;
@@ -357,23 +405,27 @@ a{
       }
     }
   }
-  .copyright {
-    font-family: $font-content;
-    border-top: 1px #54514f solid;
-    padding: 20px;
-    .container {
-      padding: 0;
-      width: 927px;
-      margin: 0 auto;
-      font-weight: 200;
-      font-size: .85em;
+}
+
+.footer {
+  background-color: $dark-block;
+  border-top: 1px #54514f solid;
+  font-family: $font-subtitle;
+  font-size: 1em;
+  padding: 30px;
+  .container {
+    background-color: transparent !important;
+    color: $light-color;
+    font-size: .85em;
+    font-weight: 200;
+    margin: 0 auto !important;
+    padding: 0;
+    width: 927px !important;
+    a{
       color: $light-color;
-      a{
-        color: $light-color;
-        cursor: pointer;
-        &:hover {
-          color: $link-color;
-        }
+      cursor: pointer;
+      &:hover {
+        color: $link-color;
       }
     }
   }
@@ -393,10 +445,10 @@ a{
     padding: 10px;
     border: 7px #ccc solid;
     .close-modal {
-      font-family: $font-subtitle;
+      background: none;
       border-radius: 500px;
       border: 1px $dark-block solid;
-      background: none;
+      font-family: $font-subtitle;
       padding: 0.5em 1em;
       &.dark {
         background: $dark-block;
@@ -415,8 +467,8 @@ a{
   padding: 1em 0;
   .content{
     button { 
-      border: 1px white solid;
       background: none;
+      border: 1px white solid;
       &:hover{
         background: $link-color;
         border-color: $link-color;
