@@ -1,0 +1,5 @@
+.related-posts
+  %h2.title
+    Articulos relacionados
+  = render partial: 'posts/related_post', locals: { post: posts.first, first: true }
+  = render partial: 'posts/related_post', locals: { post: posts.last, first: false }

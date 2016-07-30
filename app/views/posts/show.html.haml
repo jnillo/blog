@@ -13,6 +13,8 @@
             %li
               = tag
       = render partial: 'posts/social_buttons', locals: { post: @post }
+      .row-fluid
+        = render partial: 'posts/related_posts', locals: { posts: @related_posts }
 .post-footer
   .row
     = render partial: 'author/post_info', locals: { author: @post.author }
