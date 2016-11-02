@@ -44,6 +44,9 @@ gem 'friendly_id'
 # Forms
 gem 'simple_form'
 
+#Security
+gem 'brakeman'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

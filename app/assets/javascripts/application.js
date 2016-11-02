@@ -25,17 +25,6 @@ var getBroserTypeMobile = function(type) {
   return document.cookie.indexOf(type) > 0
 }
 
-var hideHomeNavbar = function (){
-  if($('.home-navbar')!==null){
-  	$('.home-navbar').hide();
-  }
-}
-
-var showHomeNavbar = function (){
-  if($('.home-navbar')!==null){
-  	$('.home-navbar').show();
-  }
-}
 var detectMobile = function() {
    if(window.innerWidth <= 600) {
      return true;
@@ -64,21 +53,6 @@ var createCookieWindowSize = function(browser_type){
 }
 
 $(document).ready(function(){
-    $(function () {
-    	hideHomeNavbar();
-		$(window).scroll(function () {
-            // set distance user needs to scroll before we fadeIn navbar
-			if ($(this).scrollTop() > 40) {
-				$('.navbar').removeClass('navbar-static-top');
-			    $('.navbar').addClass('navbar-fixed-top');
-			    showHomeNavbar();
-			} else {
-				$('.navbar').addClass('navbar-static-top');
-				$('.navbar').removeClass('navbar-fixed-top');
-				hideHomeNavbar();
-			}
-		});
-	});
     contentLinkObserver.load_content_modal('cookies-policy-link', 'layouts/shared/cookies_policy');
     checkWindowSize();
     $(window).resize(function(){

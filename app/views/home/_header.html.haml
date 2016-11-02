@@ -1,6 +1,19 @@
 .header
   .container
     .row-fluid
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav.right.navbar_header
+          %li
+            = link_to "Blog", "/path1" 
+          %li.separator
+            ='/'
+          %li
+            = link_to "Sobre mí", "/about-me"
+          %li.separator
+            ='/'
+          %li.last
+            = link_to "Contacto", "/about-me#contact" 
+    .row-fluid
       .col-md-12.col-xs-12
         .col-md-8.col-xs-6.lead
           .row-fluid

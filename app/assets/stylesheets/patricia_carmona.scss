@@ -43,10 +43,34 @@ a{
 /* Header */
 #blog {
   .container .header {
-    background: #ebebeb url("patri_header.png") no-repeat top center;
-    min-height: 350px;
+    background: #ebebeb url("patri_header.png") no-repeat bottom center;
+    min-height: 400px;
     .container {
       padding: 0;
+      .navbar-collapse {
+        padding: 0;
+      }
+      .navbar_header {
+        li {
+          font-weight: bold;
+          &.last a{
+            padding-right: 0;
+          }
+        }
+        li.separator {
+          font-weight: bold;
+        }
+        a {
+          color: $content;
+          font-family: $font-title;
+          padding: 0 30px;
+          cursor: pointer;
+          &:hover {
+            background-color: transparent;
+            color: $link-color;
+          }
+        }
+      }
       .col-md-12{
         padding: 0;
         h1 {

@@ -1,7 +1,7 @@
 # Controller to show posts for users
 class PostsController < ApplicationController
   def show
-    @post ||= Post.find_by_slug(params[:slug])
+    @post ||= Post.find_by_slug(params['slug'])
     if @post
       save_visit_blog(@post.id)
       @related_posts = Post.all.limit(2)
@@ -11,8 +11,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def filter_by_tag
+    @posts = Post.where('tags LIKE ?', "%#{params['tag']}%")
+  end
+
   def mobile_show
-    @post ||= Post.find_by_slug(params[:slug])
+    @post ||= Post.find_by_slug(params['slug'])
     if @post
       save_visit_blog(@post.id)
       render template: 'posts/show', layout: 'small_devise'

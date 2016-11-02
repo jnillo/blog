@@ -1,9 +1,19 @@
 #contact.contact
   .container
-    .col-md-8.col-xs-8.right.lead-text
+    .col-md-8.col-xs-8.right
+      %h3
+        Un poco sobre mí...
+      %p
+        Soy Patricia Carmona, cordobesa residente en Irlanda y desde donde trabajo con clientes a uno y otro lado del Atlántico. Soy licenciada en Publicidad y Relaciones Públicas por la Universidad de Sevilla, Máster en Dirección Comercial y Marketing por la Cámara de Comercio y Postgrado en Planificación estratégica y Gestión de Cuentas por la Universidad de Sevilla.
+      %p
+        Desde el año 2012 trabajo en marketing digital y social media para diferentes sectores. En este tiempo mi experiencia laboral me ha llevado a trabajar en el departamento de prensa del Gobierno de Gibraltar o como consultora para la Consejería de Turismo y Deporte de la Junta de Andalucía. También he elaborado metodología de análisis, planificación y optimización a marcas más pequeñas y startups de diferentes sectores, aunque principalmente relacionadas con nuevas tecnologías (IT), a las que asesoro en temas de marketing digital y social media.
+      %p
+        La  importancia del análisis en comunicación y en el desarrollo de negocio es vital, es la base fundamental de una buena estrategia, por eso mi objetivo es que conozcas el potencial del contenido que se crea y se comparte en la Red para optimizar las relaciones entre marcas y usuarios.
+
+    = render partial: 'about/services'
+    .col-md-8.col-xs-8.left.lead-text
       %h3.title
         ¿Trabajamos juntos?
       %p
         Ponte en contacto conmigo y veras que divertido.
-    .col-md-8.col-xs-8.right
       = render partial: 'contacts/form'
