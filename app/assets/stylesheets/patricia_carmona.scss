@@ -17,11 +17,15 @@ a{
 
 /* Navbar */
 .navbar {
+  background-color: white !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  .navbar-collapse {
+    background-color: white;
+  }
   .navbar-brand {
-    font-family: $font-title;
-    span {
-      font-family: $font-titleHighlight;
-    }
+    font-family: $font-blogName;
+    font-size: 42px;
+
     @media only screen and (max-width: $break-large) {
       margin-left: 0 !important;
     }
@@ -30,11 +34,13 @@ a{
     font-family: $font-title;
     height: 50px;
     li {
-      cursor: pointer;
       width: 100px;
       text-align: center;
       &:hover{
         border-bottom: 3px $link-color solid;
+      }
+      a {
+        cursor: pointer;
       }
     }
   }
@@ -43,23 +49,17 @@ a{
 /* Header */
 #blog {
   .container .header {
-    background: #ebebeb url("patri_header.png") no-repeat bottom center;
-    min-height: 400px;
+    background: #ebebeb url("patri_header.jpg") no-repeat top center;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    min-height: 450px;
+    position: relative;
     .container {
       padding: 0;
       .navbar-collapse {
         padding: 0;
       }
       .navbar_header {
-        li {
-          font-weight: bold;
-          &.last a{
-            padding-right: 0;
-          }
-        }
-        li.separator {
-          font-weight: bold;
-        }
         a {
           color: $content;
           font-family: $font-title;
@@ -70,24 +70,37 @@ a{
             color: $link-color;
           }
         }
+        li {
+          font-weight: bold;
+
+          &:first-child > a {
+            padding-left: 0 !important;
+          }
+        }
       }
       .col-md-12{
         padding: 0;
+        position: relative;
         h1 {
-          font-family: $font-title;
-          font-size: 42px;
-          span {
-            font-family: $font-titleHighlight;
-          }
+          font-family: $font-blogName;
+          font-size: 100px;
+          margin-bottom: 0;
+          margin-top: 10%;
         }
         h2 {
-          font-family: $font-subtitle !important;
-          font-size: 28px;
+          font-family: $font-title !important;
+          font-size: 24px;
+          margin-top: 0;
         }
         h3.title {
           font-family: $font-content !important;
           font-size: 24px;
         }
+      }
+      .subscription-header {
+        width: 44%;
+        position: absolute;
+        bottom: 50px;
       }
     }
     @media only screen and (max-width: $break-large) {
@@ -172,11 +185,12 @@ a{
   .tags{
     padding: 10px 0;
     li { 
-      font-family: $font-title;
-      color: $link-color;
-      border: 1px $link-color solid;
       border-radius: 15px;
+      border: 1px $link-color solid;
+      color: $link-color;
       cursor: pointer;
+      font-family: $font-title;
+      font-size: 12px;
       padding: 0 10px;
       transition: background-color .35s ease-in-out;
       &:hover{
@@ -217,8 +231,8 @@ a{
   max-width: 927px;
   color: #3b444f;
   .title{
-    font-family: $font-title;
-    font-size: 22px;
+    font-family: $font-blogName;
+    font-size: 42px;
   }
   p {
     font-family: $font-subtitle;
@@ -267,17 +281,12 @@ a{
     background-color: #000;
     border-radius: 1000px;
     color: white;
-    cursor: pointer;
     float: left;
     font-family: $font-subtitle;
     margin-top: 6px;
     padding: 18px 12px;
     text-align: center;
     transition: background-color 0.5s ease;
-    &:hover {
-      color: #000;
-      background-color: $link-color;
-    }
     .big {
       font-family: $font-title;
       font-size: 1.2em;
@@ -292,10 +301,12 @@ a{
     padding: 0;
     overflow: hidden;
     margin-top: 5px;
+    text-align: left;
   }
   .post-readmore {
     color: $content-secondary;
     cursor: pointer;
+    margin: .5em 15px 1em 15px;
     &:hover {
       color: $content;
     }
@@ -309,6 +320,7 @@ a{
       color: $link-color;
       cursor: pointer;
       font-family: $font-title;
+      font-size: 12px;
       padding: 0 10px;
       transition: background-color .35s ease-in-out;
       &:hover{
@@ -318,13 +330,19 @@ a{
       }
     }
   }
+  .post-image {
+    height: 150px;
+    margin-top: 1em;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .post-resume-content{
     clear: both;
     color: $content;
     cursor: pointer;
-    margin: .5em 0 1em 0;
+    font-size: 14px;
+    margin: .5em 15px 1em 15px;
     padding-top: 1em;
-    width: 100%;
   }
   .post-info{
     color: $content;
@@ -337,7 +355,7 @@ a{
 .subscription {
   background-color: $dark-block;
   .title{
-    font-family: $font-title;
+    font-family: $font-subtitle;
   }
   form {
     input[type=text] {
@@ -364,11 +382,9 @@ a{
 /* About */
 
 .about{
-  background: url('patri_about.jpg') no-repeat left bottom;
-  height: 350px;
-  border-top: 3px rgba(204,204,204,0.6) solid;
   h2 {
     font-family: $font-title;
+    color: $content;
   }
   ul.services {
     text-align: center;
@@ -422,23 +438,44 @@ a{
 /* Contact */
 
 .contact {
-  background-color: transparent !important;
-  background: url('patri_about.jpg') no-repeat left bottom;
-  border-top: 3px rgba(204,204,204,0.6) solid;
-  font-family: $font-subtitle;
-  height: 350px;
-  padding: 12px 0px !important;
-  .container {
+  margin: 0;
+  padding: 0;
+  .header {
+    background: #ebebeb;
+    background-image: none!important;
+    min-height: 200px !important;
+    font-family: $font-subtitle;
+    border-top: 3px rgba(204,204,204,0.6) solid;
+  }
+  & > .container {
+    margin-top: 30px !important;
     padding: 0 !important;
   }
-  h3.title {
+  h2.title {
     font-family: $font-title;
     color: $content;
+    font-size: 24px;
+    margin-bottom: 30px;
   }
   p{
     font-family: $font-title;
     color: $content;
+    line-height: 28px;
+    font-size: 18px;
   }
+  .service-illustration {
+    img {
+      max-height: 250px;
+      margin: 25% 10%;
+    }
+  }
+  .service {
+    margin-top: 50px;
+  }
+  .about-me {
+    margin: 50px 0;
+  }
+
   form {
     input, textarea{
       color: $form-color;
@@ -450,6 +487,15 @@ a{
         background: $link-color;
         border-color: $link-color;
       }
+    }
+  }
+  .contact-section {
+    background: #ebebeb url("patri_header.jpg") no-repeat top center;
+    background-size: cover;
+    min-height: 450px;
+    overflow:hidden;
+    .title {
+      margin-top: 10%;
     }
   }
 }

@@ -1,7 +1,11 @@
-.list
-  - posts.each do |post|
-    .row-fluid
-      = render partial: 'posts/resume_post', locals: { post: post }
+-if @last_post
+  .row-fluid
+    = render partial: 'posts/resume_post_last', locals: { post: @last_post }
+.row
+  .list
+    - posts[1..-1].each do |post|
+      .col-md-4
+        = render partial: 'posts/resume_post', locals: { post: post }
 .pagination
   = paginate posts
 

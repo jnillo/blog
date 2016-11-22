@@ -6,6 +6,10 @@ class HomeController < ApplicationController
   def index
     @categories = Category.all.order(name: :desc)
     @posts = load_posts(params[:page])
+    if params[:page].nil?
+      @last_post = @posts.first
+      #@posts = @posts[1..-1]
+    end
   end
 
   def mobile_index
@@ -29,6 +33,11 @@ class HomeController < ApplicationController
   private
 
   def load_posts(page = 0)
-    Post.where('published <= ?', Time.zone.now).order(published: :desc).page(page).per(POST_PAGE)
+    Post.joins(:category)
+      .where('published <= ?', Time.zone.now)
+      .select('posts.*, categories.name as category_name')
+      .order(published: :desc)
+      .page(page)
+      .per(POST_PAGE)
   end
 end

@@ -70,13 +70,6 @@ a{
         max-width: 927px;
       }
     }
-    .contact{
-      background-color: #333;
-      width: 100%;
-      display:block;
-      min-height: 200px;
-      color: white; 
-    }
   }
   div.pagination{
     text-align:center;
@@ -113,7 +106,6 @@ a{
   }
   .navbar-collapse{
     width: 100%;
-    background-color: #f5f5f5 !important;
   }
 }
 
@@ -206,7 +198,6 @@ a{
   }
   .post-resume-title{
     color: #333;
-    font-size: 36px;
     padding: 10px 0px;
     text-align: center;
     font-family: $font-title;

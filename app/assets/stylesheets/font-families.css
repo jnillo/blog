@@ -1,4 +1,8 @@
 @font-face {
+  font-family: 'Learning Curve Pro';
+  src: url(learning-curve-pro.ttf) format("truetype");
+}
+@font-face {
 	font-family: 'Roboto';
 	src: url(Roboto-Regular.ttf) format('truetype');
 }

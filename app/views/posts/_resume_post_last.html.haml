@@ -3,12 +3,12 @@
     .col-md-12
       %h3.post-resume-title
         = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
-      .tags.col-md-7
+      .tags.col-md-6
         %ul.list-inline
           %li
             = post.category_name
-      .date-secondary.col-md-5.right
-        = "#{post.published.strftime('%d %b %Y')}"
+      .date-secondary.col-md-3.right
+        = "Publicado en #{post.published.strftime('%d %b %Y')}"
       %div.post-image.col-md-12{style: 'background: url("https://pbs.twimg.com/media/CwVdz8VXEAExH-Y.jpg")'}
         &nbsp;
   .row-fluid

@@ -2,9 +2,9 @@
   .container
     .row-fluid
       .navbar-collapse.collapse.navbar-responsive-collapse
-        %ul.nav.navbar-nav.right.navbar_header
+        %ul.nav.navbar-nav.navbar_header
           %li
-            = link_to "Blog", "/path1" 
+            = link_to "Blog", "/path1"
           %li.separator
             ='/'
           %li
@@ -12,19 +12,17 @@
           %li.separator
             ='/'
           %li.last
-            = link_to "Contacto", "/about-me#contact" 
+            = link_to "Contacto", "/about-me#contact"
     .row-fluid
       .col-md-12.col-xs-12
         .col-md-8.col-xs-6.lead
           .row-fluid
             %h1.title
-              %span
-                Patrica 
-              Carmona
-            %h2.subtitle
-              Soy la analista del .com, la analista mas dicharachera a este lado del río Guadalquivir.
+              Patrica Carmona
+            %h2.title
+              ANALÍSTA DE SOCIAL MEDIA
         .col-md-4
     .row-fluid
-      .col-md-8.col-xs-5.left.subscription-header
+      .left.subscription-header
         .subscription
           = render partial: 'subscriptions/form'
