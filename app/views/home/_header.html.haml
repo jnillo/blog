@@ -4,15 +4,18 @@
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar_header
           %li
-            = link_to "Blog", "/path1"
+            = link_to "Sobre mí", "/services#about-me"
           %li.separator
             ='/'
           %li
-            = link_to "Sobre mí", "/about-me"
+            = link_to "Servicios", "/services"
           %li.separator
             ='/'
           %li.last
-            = link_to "Contacto", "/about-me#contact"
+            = link_to "Contacto", "/services#contact"
+        .right
+          = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+            %i.fa.fa-twitter.twitter.fa-2x
     .row-fluid
       .col-md-12.col-xs-12
         .col-md-8.col-xs-6.lead
@@ -20,7 +23,7 @@
             %h1.title
               Patrica Carmona
             %h2.title
-              ANALÍSTA DE SOCIAL MEDIA
+              ANALISTA DE SOCIAL MEDIA
         .col-md-4
     .row-fluid
       .left.subscription-header

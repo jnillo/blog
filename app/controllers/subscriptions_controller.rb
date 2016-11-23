@@ -2,10 +2,12 @@ class SubscriptionsController < ApplicationController
   include Mailchimp
 
   def create
-    if subscribe_user(subscription_list, subscriber_params)
+    begin
+      subscribe_user(subscription_list, subscriber_params)
       create_subscription_cookie
       template = 'subscriptions/confirmation'
-    else 
+    rescue Exception => e
+      p "Error!"
       template = 'subscriptions/error'
     end
 

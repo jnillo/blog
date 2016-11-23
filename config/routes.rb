@@ -15,13 +15,13 @@ Rails.application.routes.draw do
     get ':slug', to: 'posts#mobile_show'
   end
 
-  post 'subscribe', to: 'subscriptions#create', as: :subscribe
+  post '/subscribe', to: 'subscriptions#create', as: :subscribe
   resource :contact do
     post 'send', to: 'contact#send_message', as: :send
   end
   post '/home/load_info', to: 'home#load_info'
   post '/post/social-stats', to: 'posts#social_stats'
-  get '/about-me', to: 'home#about'
+  get '/services', to: 'home#services'
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end

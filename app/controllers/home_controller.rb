@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def about
+  def services
     render template: 'about/index'
   end
 
