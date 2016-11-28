@@ -94,3 +94,7 @@ gem 'kaminari'
 
 # Share buttons
 gem 'social-share-button'
+
+# Upload files
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "mini_magick"
