@@ -1,6 +1,16 @@
--if @last_post
-  .row-fluid
-    = render partial: 'posts/resume_post_last', locals: { post: @last_post }
+- if defined?(category)
+  .row_fluid
+    .filter_by
+      Filtro por
+      %span
+        = category
+        = link_to root_path, remote: true do
+          %button
+            X
+.row_fluid
+  -if defined?(last_post)
+    .row-fluid
+      = render partial: 'posts/resume_post_last', locals: { post: last_post }
 .row
   .list
     - posts[1..-1].each do |post|

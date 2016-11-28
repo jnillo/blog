@@ -6,10 +6,11 @@
       .tags.col-md-7
         %ul.list-inline
           %li
-            = post.category_name
+            = link_to filter_by_category_path(post.category_name), remote: true, title: 'Filtrar por ésta categoría' do
+              = post.category_name
       .date-secondary.col-md-5.right
         = "#{post.published.strftime('%d %b %Y')}"
-      %div.post-image.col-md-12{style: 'background: url("https://pbs.twimg.com/media/CwVdz8VXEAExH-Y.jpg")'}
+      %div.post-image.col-md-12{style: "background: url('#{post.image.url}')"}
         &nbsp;
   .row-fluid
     .post-resume-content.post-link{ 'data-ref': show_post_path(post.slug) }

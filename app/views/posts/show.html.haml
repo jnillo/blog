@@ -5,7 +5,7 @@
         = @post.title
       %h3.post-subtitle
         = @post.resume
-      %div.post-image.col-md-12{style: 'background: url("https://pbs.twimg.com/media/CwVdz8VXEAExH-Y.jpg")'}
+      %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
         &nbsp;
       .post_content#post-content
         = raw @post.content
@@ -13,7 +13,7 @@
         %ul.list-inline
           - @post.tags.split(',').each do |tag|
             %li
-              = tag
+              = "##{tag}"
       = render partial: 'posts/social_buttons', locals: { post: @post }
       .row-fluid
         = render partial: 'posts/related_posts', locals: { posts: @related_posts }

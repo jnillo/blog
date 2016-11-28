@@ -21,14 +21,14 @@
                   sticky: false
                   updateOnEmptySelection: false
                 ,
-                placeholder: 
+                placeholder:
                   text: 'Write something amazing!'
               }
     return options
-  
+
   buttons: ->
     return ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'quote', 'orderedlist' , 'unorderedlist', 'image', 'link']
-  
+
   generateInternalLink: ->
     title = $('#post_title').val()
     if title.length > 0

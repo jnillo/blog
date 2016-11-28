@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resource :contact do
     post 'send', to: 'contact#send_message', as: :send
   end
+  get '/filter_by_category/:category', to: 'home#filter_by_category', as: :filter_by_category
   post '/home/load_info', to: 'home#load_info'
   post '/post/social-stats', to: 'posts#social_stats'
   get '/services', to: 'home#services'

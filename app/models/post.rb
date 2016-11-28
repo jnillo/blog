@@ -1,5 +1,8 @@
+require 'carrierwave/orm/activerecord'
 # Model to works with posts in database
 class Post < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   belongs_to :category
   has_many :comments
   has_one :seo_data

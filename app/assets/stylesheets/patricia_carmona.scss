@@ -153,6 +153,30 @@ a{
       }
     }
   }
+  .filter_by {
+    font-family: $font-titleHighlight;
+    margin: 20px 0;
+    span {
+      border-radius: 15px;
+      border: 1px $link-color solid;
+      color: $link-color;
+      font-family: $font-subtitle;
+      font-size: 12px;
+      margin: -1px 0 0 10px;
+      padding: 5px 10px;
+      transition: background-color .35s ease-in-out;
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        button {
+          border-radius: 50%;
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+        }
+      }
+    }
+  }
   .blog-info{
     @media only screen and (max-width: $break-large) {
       padding: 0 1em;
@@ -174,10 +198,11 @@ a{
   }
 
   .post-image {
-    height: 350px;
-    margin-bottom: 50px;
-    background-size: cover !important;
     background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 350px;
+    margin: 0 0 50px 0;
+    padding: 0;
   }
 
   .post-content {
@@ -237,19 +262,19 @@ a{
   }
   .tags{
     padding: 10px 0;
-    li { 
+    li {
       border-radius: 15px;
-      border: 1px $link-color solid;
+      border: 0;
       color: $link-color;
-      cursor: pointer;
-      font-family: $font-title;
-      font-size: 12px;
-      padding: 0 10px;
+      font-family: $font-titleHighlight;
+      font-size: 16px;
+      padding: 0 10px 0 0;
       transition: background-color .35s ease-in-out;
-      &:hover{
+      a:hover, a:active, a:visited {
         background: $link-color;
         border-color: $link-color;
-        color: white;
+        color: white !important;
+        text-decoration: none;
       }
     }
   }
@@ -376,18 +401,26 @@ a{
       font-size: 12px;
       padding: 0 10px;
       transition: background-color .35s ease-in-out;
-      &:hover{
+      &:hover {
         background: $link-color;
+        a {
+          border-color: $link-color;
+          color: white !important;
+          text-decoration: none;
+        }
+      }
+      a:active, a:visited {
         border-color: $link-color;
-        color: white;
+        color: white !important;
+        text-decoration: none;
       }
     }
   }
   .post-image {
     height: 150px;
     margin-top: 1em;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
   .post-resume-content{
     clear: both;

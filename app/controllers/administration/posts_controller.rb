@@ -20,6 +20,7 @@ module Administration
 
     def create
       @post = Post.new(post_params)
+      save
       if @post.valid?
         @post.save
         redirect_to administration_post_path(id: @post.id)
@@ -60,7 +61,7 @@ module Administration
     private
 
     def post_params
-      post = params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link)
+      post = params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image)
       post['published'] = build_published_date(params)
       post['category'] = Category.find params['post']['category'] if params['post']['category']
       post['content'] = save_images(post['content'], post['title'])
