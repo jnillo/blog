@@ -4,7 +4,8 @@
     = @post.title
   %p
     = @post.resume
-  =image_tag(image_path(@post.image.url))
+  - if @post.image
+    =image_tag(image_path(@post.image.url))
   %p
     %b
       = "Slug: "

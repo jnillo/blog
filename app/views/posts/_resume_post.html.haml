@@ -10,8 +10,9 @@
               = post.category_name
       .date-secondary.col-md-5.right
         = "#{post.published.strftime('%d %b %Y')}"
-      %div.post-image.col-md-12{style: "background: url('#{post.image.url}')"}
-        &nbsp;
+      - if @post.image
+        %div.post-image.col-md-12{style: "background: url('#{post.image.url}')"}
+          &nbsp;
   .row-fluid
     .post-resume-content.post-link{ 'data-ref': show_post_path(post.slug) }
       = post.resume

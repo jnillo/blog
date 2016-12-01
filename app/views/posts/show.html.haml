@@ -5,8 +5,9 @@
         = @post.title
       %h3.post-subtitle
         = @post.resume
-      %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
-        &nbsp;
+      - if @post.image
+        %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
+          &nbsp;
       .post_content#post-content
         = raw @post.content
       .tags.left
