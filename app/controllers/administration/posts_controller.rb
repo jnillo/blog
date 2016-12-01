@@ -20,7 +20,6 @@ module Administration
 
     def create
       @post = Post.new(post_params)
-      save
       if @post.valid?
         @post.save
         redirect_to administration_post_path(id: @post.id)
