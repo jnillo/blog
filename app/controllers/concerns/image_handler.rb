@@ -31,7 +31,7 @@ class ImageHandler
   def image_new?(image_content)
     image_content.length > 200
   end
-  
+
   def create_file_assets(image_path, image_content)
     File.open(File.join(Rails.root.join('app','assets','images'), image_path), 'wb') do |f|
         f.write(Base64.decode64(image_content.second[image_content.second.split(',').first.length+1..-1]))
@@ -39,13 +39,13 @@ class ImageHandler
   end
 
   def file_path(filename)
-    ActionController::Base.helpers.asset_path(filename)
+    Rails.root.joins('public', 'posts', filename).to_s
   end
 
   def update_content(image_content, filename)
     @content.gsub!(image_content, '/assets/' + filename)
   end
-  
+
   def image_extension(image_info)
     image_info.split(';').first.split('/').last
   end
