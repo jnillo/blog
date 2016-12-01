@@ -33,13 +33,13 @@ class ImageHandler
   end
 
   def create_file_assets(image_path, image_content)
-    File.open(File.join(Rails.root.join('app','assets','images'), image_path), 'wb') do |f|
+    File.open(image_path, 'wb') do |f|
         f.write(Base64.decode64(image_content.second[image_content.second.split(',').first.length+1..-1]))
     end
   end
 
   def file_path(filename)
-    Rails.root.joins('public', 'posts', filename).to_s
+    Rails.root.join('public', 'posts', 'images', filename).to_s
   end
 
   def update_content(image_content, filename)
