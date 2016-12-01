@@ -10,7 +10,7 @@
               = post.category_name
       .date-secondary.col-md-5.right
         = "#{post.published.strftime('%d %b %Y')}"
-      - if @post.image
+      - if post.image
         %div.post-image.col-md-12{style: "background: url('#{post.image.url}')"}
           &nbsp;
   .row-fluid
