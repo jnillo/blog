@@ -16,7 +16,7 @@
       <%= bootstrap_flash %>
       <%= yield %>
     </div> <!-- /container -->
-    <% unless cookies[:cookies_allow] %>
+    <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
     <%= render partial: 'layouts/shared/main_modal' %>

@@ -23,9 +23,14 @@ class HomeController < ApplicationController
   end
 
   def mobile_index
-    @categories = Category.all.order(name: :desc)
     @posts = load_posts(params[:page])
-    render template: 'home/index', layout: 'small_devise'
+    if params[:page].nil?
+      @last_post = @posts.first
+    end
+    respond_to do |format|
+      format.html { render template: 'home/index', layout: 'small_devise' }
+      format.js { render layout: nil, locals: { last_post: @last_post, posts: @posts } }
+    end
   end
 
   def load_info

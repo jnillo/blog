@@ -1,15 +1,18 @@
 .footer
   .container
     %ul{ class: 'list-inline' }
-      %li 
-        Copyright ©2011-2016 Patricia Carmona |
       %li
-        Aviso Legal |
+        %a{ rel: "license", href: "http://creativecommons.org/licenses/by-sa/4.0/" }
+          %img{alt:"Licencia Creative Commons", style: "border-width:0", src: "https://i.creativecommons.org/l/by-sa/4.0/88x31.png"}
       %li
-        Política de privacidad |
+        = "-"
       %li
         %a{ 'data-toggle':"modal", 'data-target': "#main-modal", rel: 'no-follow' }
           Política de cookies
+      %li
+        = "-"
+      %li
+        = link_to "Contacto", '/services#contact-me'
       %li.right
         = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
           %i.fa.fa-twitter.twitter.fa-2x

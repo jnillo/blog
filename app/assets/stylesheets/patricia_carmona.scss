@@ -109,9 +109,10 @@ a{
         }
       }
       .subscription-header {
-        width: 44%;
-        position: absolute;
         bottom: 50px;
+        max-width: 560px;
+        position: absolute;
+        width: 44%;
         .subscription {
           bottom: 0px;
           padding: 0;
