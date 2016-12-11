@@ -1,0 +1,35 @@
+- if resources.present?
+  %table{ class: 'table'}
+    %thead
+      %tr
+        %th{ class: 'col-md-5' }
+          Title
+        %th{ class: 'col-md-3' }
+          Publish date
+        %th{ class: 'col-md-2' }
+          Downloads
+        %th{ class: 'col-md-2' }
+          Actions
+    %tbody
+      - resources.each do |resource|
+        %tr
+          %td
+            = resource.title
+          %td
+            = resource.created_at
+          %td
+            = resource.downloads.to_i
+          %td
+            %ul{ class: 'list-inline' }
+              %li
+                =link_to edit_administration_resource_path(id: resource.id) do
+                  %i{ class: 'fa fa-pencil fa-2x' }
+              %li
+                =link_to administration_resource_path(id: resource.id) do
+                  %i{ class: 'fa fa-eye fa-2x' }
+              %li
+                =link_to administration_resource_path(id: resource.id), method: 'DELETE', data: { confirm: 'Are you sure?' } do
+                  %i{ class: 'fa fa-trash fa-2x' }
+- else
+  %p
+    No resources

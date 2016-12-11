@@ -2,6 +2,6 @@
   = render partial: 'home/header'
 .row.blog-section
   .blog-info
-    = render partial: 'posts/list', locals: { posts: @posts, last_post: @last_post  }
+    = render partial: 'posts/list', locals: { posts: @posts, last_post: @last_post, paginate: false  }
 .row
   = render partial: 'layouts/shared/footer'

@@ -1,17 +1,10 @@
 # Controller to build the initial view of the blog
 class HomeController < ApplicationController
   layout 'home'
-  POST_PAGE = 5
 
   def index
-    @posts = load_posts(params[:page])
-    if params[:page].nil?
-      @last_post = @posts.first
-    end
-    respond_to do |format|
-      format.html
-      format.js { render layout: nil, locals: { last_post: @last_post, posts: @posts } }
-    end
+    @posts = load_posts
+    @last_post = @posts.first
   end
 
   def filter_by_category
@@ -52,8 +45,7 @@ class HomeController < ApplicationController
       .where('published <= ?', Time.zone.now)
       .select('posts.*, categories.name as category_name')
       .order(published: :desc)
-      .page(page)
-      .per(POST_PAGE)
+      .limit(4)
   end
 
   def load_posts_with_category(category)

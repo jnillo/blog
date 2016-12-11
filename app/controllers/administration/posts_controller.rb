@@ -60,7 +60,7 @@ module Administration
     private
 
     def post_params
-      post = params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image)
+      post = params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image, :resource_id)
       post['published'] = build_published_date(params)
       post['category'] = Category.find params['post']['category'] if params['post']['category']
       post['content'] = save_images(post['content'], post['title'])

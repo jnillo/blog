@@ -1,12 +1,3 @@
-- if defined?(category)
-  .row_fluid
-    .filter_by
-      Filtro por
-      %span
-        = category
-        = link_to root_path, remote: true do
-          %button
-            X
 .row_fluid
   -if defined?(last_post)
     .row-fluid
@@ -16,8 +7,9 @@
     - posts[1..-1].each do |post|
       .col-md-4
         = render partial: 'posts/resume_post', locals: { post: post }
-.pagination
-  = paginate posts
+- if paginate
+  .pagination
+    = paginate posts
 
 %script
   $('.post-link').click(function(element){ $(location).attr('href',$(this).attr('data-ref'));});

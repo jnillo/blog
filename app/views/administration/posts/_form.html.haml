@@ -29,6 +29,10 @@
       = f.input :external_link, input_html: { class: 'form-control col-md-4' }, as: :string
       = f.hidden_field :author, value: 'Patricia Carmona', class: 'form-control col-md-4', as: :string
     .form-group
+      = f.label :resource, 'Recurso'
+      %br
+      = select("post", "resource_id", Resource.all.collect {|r| [ r.title, r.id ] }, { prompt: 'Selecciona un recurso'})
+    .form-group
       = f.input :published, as: :datetime, order: [:day, :month, :year, :hour, :minute]
     .form-group
       =link_to '#',  class: 'btn btn-lg btn-default', onclick: 'clean_form.first_step();' do

@@ -10,6 +10,14 @@
           &nbsp;
       .post_content#post-content
         = raw @post.content
+        %p{ class: 'post_content', id: 'post_content'}
+      - if @post.resource.try(:status)
+        .post-resource
+          %span
+            Recurso:
+          = link_to @post.resource.link, target: '_blank', onclick: 'resourceDownload(event)', "data-ref": @post.resource.id  do
+            %i.fa.fa-download
+            = @post.resource.title
       .tags.left
         %ul.list-inline
           - @post.tags.split(',').each do |tag|
@@ -20,7 +28,9 @@
         = render partial: 'posts/related_posts', locals: { posts: @related_posts }
 .post-footer
   .row
-    = render partial: 'author/post_info', locals: { author: @post.author }
+    .post-footer
+      .container
+        = render partial: 'author/post_info', locals: { author: @post.author }
   .row
     .more-posts
   - if @post.comments.present?

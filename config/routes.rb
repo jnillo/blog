@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :posts
     post 'posts/generate_internal_link', to: 'posts#generate_internal_link'
     resources :categories
+    resources :resources
   end
 
   constraints subdomain: 'm' do
@@ -22,7 +23,11 @@ Rails.application.routes.draw do
   get '/filter_by_category/:category', to: 'home#filter_by_category', as: :filter_by_category
   post '/home/load_info', to: 'home#load_info'
   post '/post/social-stats', to: 'posts#social_stats'
+  get '/blog', to: 'posts#index', as: :blog
   get '/services', to: 'home#services'
+  get '/resources', to: 'resources#index'
+  get '/resources/filter_by/:category', to: 'resources#filter_by', as: :filter_resources
+  get '/resources/download/:id', to: 'resources#increment_stats'
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end

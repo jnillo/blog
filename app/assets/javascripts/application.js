@@ -20,6 +20,7 @@
 //= require cookies
 //= require social-share-button
 //= require modal_links_observer
+//= require resources
 
 var getBroserTypeMobile = function(type) {
   return document.cookie.indexOf(type) > 0

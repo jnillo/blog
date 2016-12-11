@@ -1,0 +1,17 @@
+.resource
+  .col-md-4
+    .resource-image
+      -if resource.image.url
+        = image_tag(image_path(resource.image.thumb.url))
+  .col-md-8
+    %h2.resource-title
+      = resource.title
+    .resource-category
+      %span
+        =resource.category.camelcase
+    .resource-description
+      = resource.description
+    .resource-link
+      = link_to resource.link, onclick: 'resourceDownload(event)', "data-ref": resource.id, target: '_blank' do
+        %i.fa.fa-download
+        Descargar

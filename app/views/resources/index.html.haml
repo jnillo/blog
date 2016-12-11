@@ -1,0 +1,13 @@
+.row
+  = render partial: 'layouts/shared/main_navbar'
+.row
+  #resources
+    .container
+      .row
+        = render partial: 'header'
+      .row#resources_nav
+        = render partial: 'navigation', locals: { categories: @categories, active: nil }
+      .row#resources_list
+        = render partial: 'list', locals: { resources: @resources , category: nil}
+.row
+  = render partial: 'layouts/shared/footer'
