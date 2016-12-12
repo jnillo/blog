@@ -6,7 +6,7 @@
       .tags.col-md-6
         %ul.list-inline
           %li
-            = link_to filter_by_category_path(post.category_name), remote: true, title: 'Filtrar por ésta categoría' do
+            = link_to (home_page? ? nil : filter_by_category_path(post.category_name)), remote: true, title: 'Filtrar por ésta categoría' do
               = post.category_name
       .date-secondary.col-md-3.right
         = "Publicado en #{post.published.strftime('%d %b %Y')}"

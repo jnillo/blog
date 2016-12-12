@@ -72,7 +72,7 @@ a{
       ul.navbar_header {
         a {
           color: $content;
-          font-family: $font-title;
+          font-family: $font-subtitle;
           padding: 0 30px;
           cursor: pointer;
           width: 115px;
@@ -106,7 +106,7 @@ a{
           margin-top: 10%;
         }
         h2 {
-          font-family: $font-title !important;
+          font-family: $font-subtitle !important;
           font-size: 24px;
           margin-top: 0;
         }
@@ -188,6 +188,24 @@ a{
   .blog-info{
     @media only screen and (max-width: $break-large) {
       padding: 0 1em;
+    }
+    .see-more {
+      text-align: center;
+      button {
+        background: white;
+        border-radius: 100px;
+        border: 1px #bf538d solid;
+        font-family: $font-subtitle;
+        font-size: 18px;
+        margin: 30px auto;
+        padding: 10px 20px;
+        text-align: center;
+        transition: background-color .35s ease-in-out;
+        &:hover {
+          background-color: $link-color;
+          color: white;
+        }
+      }
     }
   }
 }
@@ -437,9 +455,9 @@ a{
           text-decoration: none;
         }
       }
-      a:active, a:visited {
+      a:active, a:visited,a:focus {
         border-color: $link-color;
-        color: white !important;
+        color: $link-color;
         text-decoration: none;
       }
     }

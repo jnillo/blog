@@ -2,6 +2,11 @@
   = render partial: 'home/header'
 .row.blog-section
   .blog-info
-    = render partial: 'posts/list', locals: { posts: @posts, last_post: @last_post, paginate: false  }
+    = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
+    .see-more.col-md-12
+      = link_to blog_path() do
+        %button{class: 'btn'}
+          Ver más
+      
 .row
   = render partial: 'layouts/shared/footer'

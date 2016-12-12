@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   layout 'home'
 
   def index
-    @posts = load_posts
-    @last_post = @posts.first
+    all_posts = load_posts
+    @posts = all_posts[1..-1]
+    @last_post = all_posts.first
   end
 
   def filter_by_category
@@ -48,13 +49,4 @@ class HomeController < ApplicationController
       .limit(4)
   end
 
-  def load_posts_with_category(category)
-    Post.joins(:category)
-      .where('published <= ?', Time.zone.now)
-      .where(categories: { name: category })
-      .select('posts.*, categories.name as category_name')
-      .order(published: :desc)
-      .page(0)
-      .per(10000)
-  end
 end
