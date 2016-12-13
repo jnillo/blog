@@ -9,7 +9,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
     xml.language "es"
     xml.tag!("sy:updatePeriod","hourly")
     xml.tag!("sy:updateFrequency","1")
-    xml.tag!('atom:link', nil, href: 'http://patriciacarmona.com/feed.xml')
+    xml.tag!('atom:link', nil, { href: 'http://patriciacarmona.com/feed.xml', rel:"self" } )
     xml.tag!("webfeeds:analytics", nil, {id: ENV['ANALYTICS_CODE'], engine: "GoogleAnalytics"})
 
     for post in @posts
@@ -20,7 +20,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
         xml.link "http://www.patriciacarmona.com/" + post.slug
         xml.guid(post.slug, isPermaLink: false)
 
-        text = post.content
+        text = post.content.gsub('/assets/','http://patriciacarmona.com/assets/')
 		# if you like, do something with your content text here e.g. insert image tags.
 		# Optional. I'm doing this on my website.
         unless post.image.url.nil?
