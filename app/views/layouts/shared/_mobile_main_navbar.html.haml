@@ -1,0 +1,27 @@
+%i.fa.fa-bars.fa-3x.menu-buttonOpen{ onclick: 'openSideMenu();'}
+
+#side-navbar{ class: "side-navbar"}
+  .container
+    .side-navbarHeader
+      = image_tag(image_path('author.jpg'))
+      %h2.side-navbarHeaderTitle
+        Patricia Carmona
+    %ul.nav
+      %li
+        = link_to "Blog", blog_path()
+      %li
+        = link_to "Recursos", resources_path
+      %li
+        = link_to "Sobre mí", "/services#about-me"
+      %li
+        = link_to "Servicios", "/services"
+      %li.button
+        = link_to "Contacto", "/services#contact-me"
+      %li.follow-me
+        %ul.list-inline
+          %li
+            %i.fa.fa-twitter
+            Twitter
+          %li
+            %i.feedly
+            Feedly

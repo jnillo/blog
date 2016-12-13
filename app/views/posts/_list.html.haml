@@ -1,8 +1,10 @@
 .row_fluid
-  -if defined?(last_post)
+  - if defined?(last_post) && last_post
     .row-fluid
       = render partial: 'posts/resume_post_last', locals: { post: last_post }
 .row
+  .blog-infoTitle
+    Mi últimos artículos
   .list
     - old_posts.each do |post|
       .col-md-4

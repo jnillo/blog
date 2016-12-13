@@ -15,24 +15,79 @@ a{
 }
 
 /* Navbar */
-.navbar {
-  .navbar-brand {
-    font-family: $font-title;
-    span {
-      font-family: $font-titleHighlight;
-    }
-  }
-  .navbar-nav {
-    font-family: $font-title;
-    height: 50px;
-    li {
-      cursor: pointer;
-      width: 100px;
+.menu-buttonOpen {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+/* Mobile side-nav */
+.side-navbar{
+  display: none;
+  transition: display 1s ease-in-out;
+  .container{
+    background: transparent !important;
+    padding: 0 15px;
+    .side-navbarHeader{
       text-align: center;
-      &:hover{
-        border-bottom: 3px $link-color solid;
+      img{
+        border-radius:50%;
+        width:60%;
+        margin: 30px 0 20px 0;
+      }
+      h2{
+        font-family: $font-blogName;
+        font-size: 64px;
       }
     }
+    .nav{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        font-family: $font-subtitle;
+        font-size: 24px;
+        width: 100%;
+        margin-bottom: 10px;
+        a {
+          color: $content;
+        }
+        &.button{
+          text-align: center;
+          a{
+            background: $content;
+            color: white;
+            border-radius: 15px;
+            padding: 5px 15px;
+            width:auto;
+          }
+        }
+        &.follow-me{
+          padding-top: 10px;
+          li {
+            width: 49%;
+            i.feedly{
+              background: url(feedly.png) 0px 3px no-repeat;
+              padding-left: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.open-sidenav{
+  height: 100%;
+  overflow: hidden;
+  .side-navbar{
+    background-color: #f5f5f5;
+    display: block;
+    position:absolute;
+    transition: display 1s ease-in;
+    width:90%;
+    height: 100%;
+    z-index: 100000;
   }
 }
 
@@ -41,38 +96,62 @@ a{
   padding: 0;
 }
 #blog {
-  .container .header {
-    padding: 10px;
-    background: #f5f5f5;
-    min-height: 350px;
-    .container {
-      padding: 0;
-      width: $width-container;
-      padding: 0 10px;
-      overflow: hidden;
-      .subscription-header{
-        width: 100%;
-      }
-      .col-md-12{
-        .lead{
-          width: 100% !important;
-          margin-bottom: 0;
+  .container {
+    background-color: white;
+    .header {
+      background: #f5f5f5;
+      margin-top: 0px;
+      min-height: 350px;
+      padding: 45px 15px;
+      .container {
+        width: $width-container;
+        padding: 0 10px;
+        overflow: hidden;
+        .subscription-header{
+          width: 100%;
         }
-        padding: 0;
-        h1 {
-          font-family: $font-title;
-          font-size: 42px;
-          span {
-            font-family: $font-titleHighlight;
+        .col-md-12{
+          .lead{
+            width: 100% !important;
+            margin-bottom: 0;
+          }
+          padding: 0;
+          h1 {
+            font-family: $font-blogName;
+            font-size: 75px;
+            margin: 30px 0 0 0;
+          }
+          h2 {
+            font-family: $font-subtitle !important;
+            font-size: 24px;
+            margin-top: 0;
           }
         }
-        h2 {
-          font-family: $font-subtitle !important;
-          font-size: 28px;
-        }
-        h3.title {
-          font-family: $font-content !important;
-          font-size: 24px;
+      }
+    }
+    .blog-info {
+      margin: 0;
+      .blog-infoTitle {
+        font-family: $font-titleHighlight;
+        font-size: 36px;
+        margin: 0;
+        padding: 20px 45px 0 45px;
+      }
+      .see-more {
+        text-align: center;
+        margin: 20px 0;
+        .btn {
+          color: $content;
+          background: transparent;
+          border: 1px $content solid;
+          border-radius: 100px;
+          padding: 5px 15px;
+          font-size: 18px;
+          transition: color .35s ease-in-out;
+          .btn:hover {
+            background-color: $content;
+            color: white;
+          }
         }
       }
     }
@@ -164,22 +243,26 @@ a{
 /* Post Resume */
 
 .post-resume{
-  padding: 20px 10px;
+  padding: 0px 15px 20px 15px;
   .date {
-    display:none; 
+    display:none;
+  }
+  .tags {
+    overflow:hidden;
+    padding: 0;
   }
   .date-secondary {
-    padding: 10px;
+    padding: 0px;
     display:block;
     color: $content-secondary;
     float:right;
-    font-size: 1.25em;
-    font-family: $font-title;
+    font-size: 14px;
+    font-family: $font-subtitle;
+    text-align: right;
   }
   .post-resume-title{
-    padding: 10px;
     float: left;
-    color: $title;
+    color: $font-titleHighlight;
     overflow: hidden;
     text-align: left;
     margin-top: 10px;
@@ -188,23 +271,33 @@ a{
       padding: 0;
     }
   }
+  .post-image {
+    height: 200px;
+    margin: 10px 0 20px 0;
+  }
   .post-resume-content{
     color: $content;
     width: 100%;
     clear: both;
     font-size: 1.5em;
     padding: 10px;
-    .show-more {
-      float:right;
-      font-size: .85em;
-      margin-top: 1em;
-    }
+  }
+  .post-readmore {
+    float:right;
+    font-family: $font-subtitle;
+    font-size: 18px;
+    margin-top: 20px;
   }
   .post-info{
     color: $content;
     font-style: italic;
     font-weight: 200;
   }
+} 
+
+/* Footer */
+.footer {
+  display:none;
 }
 
 /* Subscription Block */

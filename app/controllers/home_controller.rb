@@ -17,14 +17,10 @@ class HomeController < ApplicationController
   end
 
   def mobile_index
-    @posts = load_posts(params[:page])
-    if params[:page].nil?
-      @last_post = @posts.first
-    end
-    respond_to do |format|
-      format.html { render template: 'home/index', layout: 'small_devise' }
-      format.js { render layout: nil, locals: { last_post: @last_post, posts: @posts } }
-    end
+    all_posts = load_posts
+    @posts = all_posts
+    @last_post = nil
+    render template: 'home/index', layout: 'small_devise'
   end
 
   def load_info

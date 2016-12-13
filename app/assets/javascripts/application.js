@@ -34,6 +34,12 @@ var detectMobile = function() {
    }
 }
 
+var openSideMenu = function() {
+  if(window.innerWidth <= 600) {
+    $('body').addClass('open-sidenav');
+  }
+}
+
 var checkWindowSize = function(){
   if (detectMobile()){
   	if(!getBroserTypeMobile('mobile')) {
