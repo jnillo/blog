@@ -4,6 +4,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "xmlns:sy" => "http://purl.org/rss/1.0/modules/syndication/", "xmlns:dc" => "http://purl.org/dc/elements/1.1/", "xmlns:g" => "http://base.google.com/ns/1.0" , "xmlns:atom" => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "Blog de Patricia Carmona"
+    xml.image "http://patriciacarmona.com" + image_path('author.jpg')
     xml.description "Analísta de Social Media"
     xml.link "http://www.patriciacarmona.com"
     xml.language "es"
@@ -18,7 +19,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
         xml.tag!('dc:creator', "Patricia Carmona" )
         xml.pubDate post.created_at.to_s(:rfc822)
         xml.link "http://www.patriciacarmona.com/" + post.slug
-        xml.guid(post.slug, isPermaLink: false)
+        xml.guid("http://www.patriciacarmona.com/" + post.slug, isPermaLink: false)
 
         text = post.content.gsub('/assets/','http://patriciacarmona.com/assets/')
 		# if you like, do something with your content text here e.g. insert image tags.
