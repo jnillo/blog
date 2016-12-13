@@ -59,6 +59,16 @@ class PostsController < ApplicationController
   	render json: true
   end
 
+  def feed
+    @posts = Post
+               .where('published <= ?', Time.zone.now)
+               .order(published: :desc)
+    respond_to do |format|
+      format.rss { render :layout => false }
+      format.xml { render :layout => false }
+    end
+  end
+
   private
 
   def load_posts(page = 0)
