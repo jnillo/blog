@@ -37,6 +37,9 @@ var detectMobile = function() {
 var openSideMenu = function() {
   if(window.innerWidth <= 600) {
     $('body').addClass('open-sidenav');
+    $('#side-navbar').click(function(){
+      $('body').removeClass('open-sidenav');
+    });
   }
 }
 

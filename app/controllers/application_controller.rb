@@ -10,4 +10,5 @@ class ApplicationController < ActionController::Base
   def start_user
   	session[:user_ip] ||= request.remote_ip
   end
+
 end
