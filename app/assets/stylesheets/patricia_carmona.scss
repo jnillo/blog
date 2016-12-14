@@ -216,127 +216,140 @@ a{
 /* Post */
 
 .post {
-  .post-title {
-    color: $title;
-    font-size: 36px;
-  }
-  .post-subtitle {
-    color: $sub-title;
-    margin-bottom: 2em;
-    font-size: 22px;
-  }
-
-  .post-image {
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    height: 350px;
-    margin: 0 0 50px 0;
-    padding: 0;
-  }
-
-  .post-content {
-    font-family: $font-content;
-    color: $content;
-    padding-bottom: 30px;
-    .medium-insert-images-progress{
-      display:none;
-    }
-    img {
-      margin: 1em 0;
-    }
-  }
-  .post-resource {
-    margin: 10px 0 30px 0;
-    span {
-      color: $content;
-      font-family: $font-titleHighlight;
-      margin-right: 10px;
-    }
-    a {
-      color: $link-color;
-      font-family: $font-titleHighlight;
-    }
-  }
-  p {
-    font-family: $font-content;
-    font-weight: 200;
-    line-height: 27px;
-    margin-bottom: 30px;
-    &:last-child {
-      margin-bottom: 50px;
-    }
-  }
-
-  .share-postLabel{
-    font-family: $font-subtitle;
-    font-size: .9em;
-    color: $link-color;
-    width: 220px !important;
-  }
-  .post-actions {
-    padding: 10px 0;
-    li{
-      width: 20px;
-      height: 20px;
-      background-position: center top;
-      background-size: 100% auto;
-      background-repeat: no-repeat;
+  .container{
+    max-width: 927px;
+    .post-title {
+      color: $title;
+      font-size: 36px;
+      margin: 50px 0;
       padding: 0;
-      margin-left: 10px;
-      &:last-child{
-        border: 0;
-        padding-top: 0px;
-        width: 100px;
-      }
-      a{
-        display: block;
-        width: 100%;
-      }
+      text-align: left;
     }
-    .linkedin { background-image: url('icons/linkedin.png') }
-    .facebook { background-image: url('icons/facebook.png') }
-    .twitter { background-image: url('icons/twitter.png') }
-    .google { background-image: url('icons/google.png') }
-  }
-  @media only screen and (max-width: $break-large) {
-    padding: 0 1em;
-  }
-  .tags{
-    padding: 10px 0;
-    li {
-      border-radius: 15px;
-      border: 0;
-      color: $link-color;
-      font-family: $font-titleHighlight;
-      font-size: 16px;
-      padding: 0 10px 0 0;
-      transition: background-color .35s ease-in-out;
-      a:hover, a:active, a:visited {
-        background: $link-color;
-        border-color: $link-color;
-        color: white !important;
-        text-decoration: none;
+    .post-subtitle {
+      color: $sub-title;
+      font-size: 22px;
+      line-height: 35px;
+      margin-bottom: 2em;
+      text-align: left;
+    }
+
+    .post-image {
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      height: 350px;
+      margin: 0 0 50px 0;
+      padding: 0;
+    }
+
+    .post-content {
+      font-family: $font-content;
+      color: $content;
+      padding: 0 0 30px 0;
+      .medium-insert-images-progress{
+        display:none;
+      }
+      img {
+        margin: 1em 0;
       }
     }
-  }
-  .related-posts {
-    margin-top: 3em;
-  }
-  .related-postsItem {
-    margin: 0 0 3em 0;
-    &.first {
-      border-right: 1px $border-light solid;
-    }
-    .related-postsTitle {
+    .post-resource {
+      margin: 10px 0 30px 0;
+      span {
+        color: $content;
+        font-family: $font-titleHighlight;
+        margin-right: 10px;
+      }
       a {
-        color: $dark-block;
-        font-family: $font-title;
+        color: $link-color;
+        font-family: $font-titleHighlight;
       }
     }
-    .post-readmore {
-      cursor: pointer;
+    p {
+      font-family: $font-content;
+      font-weight: 200;
+      line-height: 27px;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    .share-postLabel{
+      font-family: $font-subtitle;
       font-size: .9em;
-      margin-top: 1em;
+      color: $link-color;
+      width: 220px !important;
+    }
+    .post-actions {
+      padding: 10px 0;
+      li{
+        width: 20px;
+        height: 20px;
+        background-position: center top;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin-left: 10px;
+        &:last-child{
+          border: 0;
+          font-size: 16px;
+          padding-top: 0px;
+          width: 100px;
+        }
+        a{
+          display: block;
+          width: 100%;
+        }
+      }
+      .linkedin { background-image: url('icons/linkedin.png') }
+      .facebook { background-image: url('icons/facebook.png') }
+      .twitter { background-image: url('icons/twitter.png') }
+      .google { background-image: url('icons/google.png') }
+    }
+    @media only screen and (max-width: $break-large) {
+      padding: 0 1em;
+    }
+    .tags{
+      padding: 10px 0;
+      li {
+        border-radius: 15px;
+        border: 0;
+        color: $link-color;
+        font-family: $font-titleHighlight;
+        font-size: 16px;
+        padding: 0 10px 0 0;
+        transition: background-color .35s ease-in-out;
+        a:hover, a:active, a:visited {
+          background: $link-color;
+          border-color: $link-color;
+          color: white !important;
+          text-decoration: none;
+        }
+      }
+    }
+    .related-posts {
+      margin-top: 3em;
+      .title{
+        margin-bottom: 30px;
+      }
+    }
+    .related-postsItem {
+      margin: 0 0 3em 0;
+      &.first {
+        border-right: 1px $border-light solid;
+      }
+      .related-postsTitle {
+        a {
+          color: $dark-block;
+          font-family: $font-title;
+        }
+      }
+      .post-readmore {
+        cursor: pointer;
+        float: right;
+        font-size: 14px;
+        margin-top: 30px;
+      }
     }
   }
 }
