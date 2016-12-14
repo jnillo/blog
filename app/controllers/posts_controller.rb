@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post ||= Post.find_by_slug(params['slug'])
     if @post
       save_visit_blog(@post.id)
-      @related_posts = Post.all.limit(2)
+      @related_posts = @post.related_posts(2)
       render layout: 'post'
     else
       render file: "#{Rails.root}/public/404", layout: false, status: :not_found
@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     @post ||= Post.find_by_slug(params['slug'])
     if @post
       save_visit_blog(@post.id)
+      @related_posts = @post.related_posts(2)
       render template: 'posts/show', layout: 'small_devise'
     else
       render file: "#{Rails.root}/public/404", layout: false, status: :not_found

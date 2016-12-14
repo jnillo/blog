@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resource :contact do
     post 'send', to: 'contact#send_message', as: :send
   end
+
   get '/filter_by_category/:category', to: 'posts#filter_by_category', as: :filter_by_category
   post '/home/load_info', to: 'home#load_info'
   post '/post/social-stats', to: 'posts#social_stats'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   get '/resources', to: 'resources#index'
   get '/resources/filter_by/:category', to: 'resources#filter_by', as: :filter_resources
   get '/resources/download/:id', to: 'resources#increment_stats'
+
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end

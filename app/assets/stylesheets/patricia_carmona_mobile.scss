@@ -168,42 +168,70 @@ body.open-sidenav{
 /* Post */
 
 .post {
-  padding: 10px;
+  .container{
+    overflow-y: hidden;
+  }
   .post-title {
+    text-align: left;
     color: $title;
+    margin-top: 60px;
   }
   .post-subtitle {
     color: $sub-title;
+    line-height: 35px;
     margin-bottom: 2em;
+    padding: 0 10px;
+    text-align: left;
+  }
+  .post-image{
+    background-size: cover !important;
+    height: 200px;
+    margin-bottom: 50px;
+    padding: 0;
   }
   .post-content {
     font-family: $font-content;
+    font-size: 24px;
     color: $content;
     .medium-insert-images-progress{
       display:none;
     }
+    p {
+      line-height: 33px;
+      margin-bottom: 25px;
+    }
     img {
-      margin: 1em 0;
+      margin: 30px 0;
+      width: 100%;
     }
   }
-  .share-postLabel{
-    font-family: 'Indie Flower', cursive;
-    color: $link-color;
-    width: 220px !important;
+  .tags {
+    display: none;
+  }
+  .post-resource{
+    font-family: $content;
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+    a{
+      font-weight: 200px;
+    }
   }
   .post-actions {
     padding: 10px 0;
-    li{ 
-      width: 30px; 
+    text-align: center;
+    width: 100%;
+    margin: 30px 0 !important;
+    li{
+      width: 30px;
       height: 30px;
       background-position: center top;
       background-size: 100% auto;
       background-repeat: no-repeat;
       padding: 0;
-      margin-left: 10px;
+      margin: 0 10px;
       &:last-child{
-        width: 100px;
-        padding-top: 3px;
+        display: none;
       }
       a{
         display: block;
@@ -215,25 +243,55 @@ body.open-sidenav{
     .twitter { background-image: url('icons/twitter.png') }
     .google { background-image: url('icons/google.png') }
   }
+  .related-posts{
+    margin-top: 50px;
+    padding: 0 10px;
+    .title{
+      font-family: $font-titleHighlight;
+    }
+    .related-postsItem{
+      padding: 0;
+      margin-bottom: 20px;
+      overflow: hidden;
+      .post-resume-content{
+        display: none;
+      }
+      .post-readmore{
+        font-size: 14px;
+        float: right;
+        margin-top: 15px;
+        a{
+          color: $content;
+        }
+      }
+    }
+  }
 }
-
-.author-info{
-  color: #3b444f;
-  padding: 10px;
-  overflow: hidden;
-  .title{
-    font-family: $font-title;
-    font-size: 22px;
-  }
-  p {
-    font-family: $font-subtitle;
-    font-size: 18px;
-  }
-  .see_more {
-    float: right;
-    a {
-      font-family: $font-subtitle;
-      font-size: 18px;
+.post-footer{
+  margin-top: 30px;
+  .container{
+    background-color: #f5f5f5 !important;
+    .author-info{
+      color: #3b444f;
+      padding: 10px;
+      overflow: hidden;
+      .title{
+        font-family: $font-blogName;
+        font-size: 46px;
+        text-align: center;
+      }
+      p {
+        font-family: $font-subtitle;
+        font-size: 24px;
+        text-align: center;
+      }
+      .see_more {
+        float: right;
+        a {
+          font-family: $font-subtitle;
+          font-size: 18px;
+        }
+      }
     }
   }
 }

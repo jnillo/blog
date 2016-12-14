@@ -17,6 +17,10 @@ class Post < ApplicationRecord
 
   before_save :create_slug
 
+  scope :with_category, -> (category_id){
+    joins(:category).where(categories: { id: category_id})
+  }
+
   def self.generate_internal_link(title)
     title.gsub! /\s*@\s*/, " at "
     title.gsub! /\s*&\s*/, " and "
@@ -37,6 +41,13 @@ class Post < ApplicationRecord
 
   def visits
     StatData.visit_post(id)
+  end
+
+  def related_posts(count = 2)
+    Post.with_category(category_id)
+      .where('posts.id != ?', id)
+      .order(created_at: :desc)
+      .limit(count)
   end
 
   private
