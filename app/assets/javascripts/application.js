@@ -43,16 +43,21 @@ var openSideMenu = function() {
   }
 }
 
+var isSubdomain = function(subdomain){
+  return(location.hostname.split('.')[0] == subdomain);
+}
+
 var checkWindowSize = function(){
   if (detectMobile()){
-  	if(!getBroserTypeMobile('mobile')) {
+  	if(!isSubdomain('m')) {
   	  createCookieWindowSize('mobile');
       top.location.href = "http://m." + window.location.hostname + document.location.pathname;
     }
   } else {
-    if(!getBroserTypeMobile('web')) {
+    if(isSubdomain('m')) {
   	  createCookieWindowSize('web');
-      top.location.href = "http://www."+ window.location.hostname + document.location.pathname;
+      var hostname = window.location.hostname.replace('m.', '')
+      top.location.href = "http://"+ hostname + document.location.pathname;
     }
   }
 }
