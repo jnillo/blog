@@ -32,7 +32,7 @@ a{
       img{
         border-radius:50%;
         width:40%;
-        margin: 30px 0 0 0;
+        margin: 15px 0 0 0;
       }
       h2{
         font-family: $font-blogName;
@@ -45,13 +45,15 @@ a{
       padding: 0;
       li {
         font-family: $font-subtitle;
-        font-size: 20px;
+        font-size: 18px;
+        height: 40px;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         a {
           color: $content;
         }
         &.button{
+          margin-top: 20px;
           text-align: center;
           a{
             background: $content;
