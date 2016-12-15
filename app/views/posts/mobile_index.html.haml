@@ -1,6 +1,7 @@
+= javascript_include_tag "infinite_scroll"
 .blog
   .row
-    = render partial: 'layouts/shared/main_navbar'
+    = render partial: 'layouts/shared/mobile_main_navbar'
   .container
     - if defined?(category)
       .row_fluid
@@ -13,10 +14,3 @@
                 X
     .blog-info
       = render partial: 'posts/list', locals: { all_posts: @all_posts, old_posts: @old_posts, last_post: @last_post, paginate: true  }
-      .col-md-3
-.row
-  .blog-footer
-    .container
-      = render partial: 'author/post_info', locals: { author: @all_posts.first.author }
-.row
-  = render partial: 'layouts/shared/footer'

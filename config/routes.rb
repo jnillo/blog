@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   constraints subdomain: 'm' do
+    get '/blog', to: 'posts#mobile_index', as: :blog_mobile
     root to: 'home#mobile_index'
     get ':slug', to: 'posts#mobile_show'
   end

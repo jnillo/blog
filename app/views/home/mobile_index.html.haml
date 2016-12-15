@@ -1,8 +1,9 @@
 .row
   = render partial: 'home/header'
 .row.blog-section
-  .blog-info
-    = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
+  .blog-info.col-xs-12
+    .container
+      = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
     .see-more.col-md-12
       = link_to blog_path() do
         %button{class: 'btn'}

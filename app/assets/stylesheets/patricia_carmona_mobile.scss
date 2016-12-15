@@ -117,7 +117,7 @@ body.open-sidenav{
       padding: 45px 15px;
       .container {
         width: $width-container;
-        padding: 0 10px;
+        padding: 0 15px;
         overflow: hidden;
         .subscription-header{
           width: 100%;
@@ -143,11 +143,14 @@ body.open-sidenav{
     }
     .blog-info {
       margin: 0;
+      .container{
+        padding: 0 15px;
+      }
       .blog-infoTitle {
         font-family: $font-titleHighlight;
         font-size: 36px;
-        margin: 0;
-        padding: 20px 45px 0 45px;
+        margin: 45px 0 0 0;
+        padding: 15px;
       }
       .see-more {
         text-align: center;
@@ -167,6 +170,10 @@ body.open-sidenav{
         }
       }
     }
+  }
+  #infscr-loading{
+    text-align: center;
+    width: 100%;
   }
 }
 
@@ -313,7 +320,8 @@ body.open-sidenav{
 /* Post Resume */
 
 .post-resume{
-  padding: 0px 15px 20px 15px;
+  padding: 0px;
+  margin-bottom: 30px;
   .date {
     display:none;
   }
@@ -331,39 +339,49 @@ body.open-sidenav{
     text-align: right;
   }
   .post-resume-title{
-    float: left;
-    color: $font-titleHighlight;
-    overflow: hidden;
+    color: $font-title;
+    font-size: 30px;
+    margin-top: 0;
     text-align: left;
-    margin-top: 10px;
     width: 100%;
     a {
       padding: 0;
     }
   }
   .post-image {
+    background-size: cover !important;
     height: 200px;
-    margin: 10px 0 20px 0;
+    margin: 20px 0;
   }
   .post-resume-content{
     color: $content;
     width: 100%;
     clear: both;
     font-size: 1.5em;
-    padding: 10px;
   }
   .post-readmore {
-    float:right;
+    text-align:right;
     font-family: $font-subtitle;
     font-size: 18px;
     margin-top: 20px;
+    width: 100%;
   }
   .post-info{
     color: $content;
     font-style: italic;
     font-weight: 200;
   }
-} 
+  .tags{
+    li {
+      border-radius: 15px;
+      border: 1px $link-color solid;
+      color: $link-color;
+      font-family: $font-subtitle;
+      font-size: 14px;
+      padding: 0 5px;
+    }
+  }
+}
 
 /* Footer */
 .footer {
@@ -501,10 +519,7 @@ body.open-sidenav{
 
 /* Pagination */
 #blog div.pagination{
-  .page.current{
-    color: $link-color !important;
-    border-color: $link-color !important;
-  }
+  display:none;
 }
 
 /* Modals */

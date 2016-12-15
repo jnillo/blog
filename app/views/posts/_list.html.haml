@@ -4,11 +4,10 @@
       = render partial: 'posts/resume_post_last', locals: { post: last_post }
 .row
   .blog-infoTitle
-    Mi últimos artículos
+    = @title_list || "Mi últimos artículos"
   .list
     - old_posts.each do |post|
-      .col-md-4
-        = render partial: 'posts/resume_post', locals: { post: post }
+      = render partial: 'posts/resume_post', locals: { post: post }
 - if paginate
   .pagination
     = paginate all_posts

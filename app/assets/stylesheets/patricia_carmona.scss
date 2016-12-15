@@ -412,7 +412,7 @@ a{
   overflow: hidden;
   padding: 10px;
   .date-secondary {
-    padding: 0;
+    padding: 0 10px 0 0;
     color: $content;
     font-family: $font-subtitle;
     text-align: right;
@@ -438,7 +438,7 @@ a{
   .post-resume-title{
     float: left;
     color: $title;
-    padding: 0;
+    padding: 0 5px;
     overflow: hidden;
     margin-top: 5px;
     text-align: left;
@@ -446,14 +446,14 @@ a{
   .post-readmore {
     color: $content-secondary;
     cursor: pointer;
-    margin: .5em 15px 1em 15px;
+    margin: 10px 0px 20px 15px;
     &:hover {
       color: $content;
     }
   }
   .tags{
     clear: both;
-    padding:0;
+    padding: 0 0 0 10px;
     li {
       border-radius: 15px;
       border: 1px $link-color solid;
@@ -479,18 +479,17 @@ a{
     }
   }
   .post-image {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     height: 150px;
     margin-top: 1em;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
   }
   .post-resume-content{
     clear: both;
     color: $content;
     cursor: pointer;
     font-size: 14px;
-    margin: .5em 15px 1em 15px;
-    padding-top: 1em;
+    padding: 20px 10px 0 10px;
   }
   .post-info{
     color: $content;

@@ -21,6 +21,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def mobile_index
+    @title_list = "Blog"
+    @all_posts = load_posts(params[:page])
+    @old_posts = @all_posts
+    respond_to do |format|
+      format.html { render layout: params[:page] ? false : 'small_devise' }
+      format.js { render layout: false }
+    end
+  end
+
   def show
     @post ||= Post.find_by_slug(params['slug'])
     if @post

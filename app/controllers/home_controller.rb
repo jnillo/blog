@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     all_posts = load_posts
     @posts = all_posts
     @last_post = nil
-    render template: 'home/index', layout: 'small_devise'
+    render layout: 'small_devise'
   end
 
   def load_info
