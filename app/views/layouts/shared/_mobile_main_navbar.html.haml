@@ -1,4 +1,7 @@
 %i.fa.fa-bars.fa-3x.menu-buttonOpen{ onclick: 'openSideMenu();'}
+.header-socialNetworks
+  = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+    %i.fa.fa-twitter.twitter.fa-3x
 
 #side-navbar{ class: "side-navbar"}
   .container
@@ -19,11 +22,3 @@
         = link_to "Servicios", "/services"
       %li.button
         = link_to "Contacto", "/services#contact-me"
-      %li.follow-me
-        %ul.list-inline
-          %li
-            %i.fa.fa-twitter
-            Twitter
-          %li
-            %i.feedly
-            Feedly

@@ -21,6 +21,14 @@ a{
   left: 15px;
   z-index: 1000;
 }
+.header-socialNetworks{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  a{
+    color: $content;
+  }
+}
 /* Mobile side-nav */
 .side-navbar{
   display: none;
@@ -53,6 +61,7 @@ a{
           color: $content;
         }
         &.button{
+          margin-left: 10px;
           margin-top: 20px;
           text-align: center;
           a{
@@ -61,18 +70,6 @@ a{
             border-radius: 15px;
             padding: 5px 15px;
             width:auto;
-          }
-        }
-        &.follow-me{
-          bottom: 0;
-          padding-top: 10px;
-          position: absolute;
-          li {
-            width: 49%;
-            i.feedly{
-              background: url(feedly.png) 0px 3px no-repeat;
-              padding-left: 27px;
-            }
           }
         }
       }
