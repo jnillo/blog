@@ -9,6 +9,7 @@ class ResourcesController < ApplicationController
                    .per(RESOURCE_PER_PAGE)
     @categories = categories_list
     @category = nil
+    render layout: 'small_devise', template: "resources/mobile_index" if params[:subdomain]
   end
 
   def filter_by

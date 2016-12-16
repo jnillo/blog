@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   constraints subdomain: 'm' do
     get '/blog', to: 'posts#mobile_index', as: :blog_mobile
     get '/services', to: 'home#services', as: :services_mobile
+    get '/resources', to: 'resources#index', as: :mobile_resources
+    get '/resources/filter_by/:category', to: 'resources#filter_by', as: :mobile_filter_resources
     root to: 'home#mobile_index'
     get ':slug', to: 'posts#mobile_show'
   end

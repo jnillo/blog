@@ -1,0 +1,9 @@
+.row
+  #resources
+    .container
+      .row
+        = render partial: 'header'
+      .row-fluid#resources_nav
+        = render partial: 'navigation', locals: { categories: @categories, active: nil }
+      .row-fluid#resources_list
+        = render partial: 'list', locals: { resources: @resources , category: nil}
