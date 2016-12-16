@@ -473,7 +473,22 @@ body.open-sidenav{
 /* Contact */
 
 .contact {
-  padding: 0 10px;
+  .container {
+    padding: 0 30px;
+    .service-illustration{
+      display:none;
+    }
+    .service{
+      margin-top: 30px;
+      .title{
+        margin-bottom: 20px;
+      }
+    }
+    .contact-form {
+      padding: 0;
+      margin-top: 30px;
+    }
+  }
   .lead-text, .contact-form{
     width: 100%;
   }

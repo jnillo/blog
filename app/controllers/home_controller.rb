@@ -32,7 +32,11 @@ class HomeController < ApplicationController
   end
 
   def services
-    render template: 'about/index'
+    if params[:subdomain]
+      render template: 'about/mobile_index', layout: 'small_devise'
+    else
+      render template: 'about/index'
+    end
   end
 
   private
