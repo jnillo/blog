@@ -16,13 +16,13 @@ a{
 
 /* Navbar */
 .menu-buttonOpen {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 15px;
   z-index: 1000;
 }
 .header-socialNetworks{
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   a{
