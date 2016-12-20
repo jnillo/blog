@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     all_posts = load_posts
     @posts = all_posts[1..-1]
     @last_post = all_posts.first
+    expires_in 24.hours, :public => true
   end
 
   def filter_by_category
