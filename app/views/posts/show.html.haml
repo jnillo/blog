@@ -20,7 +20,7 @@
             = @post.resource.title
       .tags.left
         %ul.list-inline
-          - @post.tags.split(',').each do |tag|
+          - @post.tags.split(',')[0..2].each do |tag|
             %li
               = "##{tag}"
       = render partial: 'posts/social_buttons', locals: { post: @post }
