@@ -25,7 +25,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-  config.assets.precompile += %w( clear_form.scss clean_form.js.coffee markdown_converter.js.coffee medium.js medium.min.css medium-editor-insert-plugin.min.js sortable.min.js sortable.min.js jquery.ui.widget.min.js jquery.iframe_transport.js  jquery.fileupload.min.js commons.scss fonts.scss)
+  config.assets.precompile += %w( application.js application.css clear_form.scss clean_form.js.coffee markdown_converter.js.coffee medium.js medium.min.css medium-editor-insert-plugin.min.js sortable.min.js sortable.min.js jquery.ui.widget.min.js jquery.iframe_transport.js  jquery.fileupload.min.js commons.scss fonts.scss)
   config.assets.precompile += %w( patricia_carmona_colors.scss patricia_carmona.scss modal_link_observer.js.coffee font-families.css mobile.scss patricia_carmona_mobile.scss jquery.inifinitescroll.js infinite_scroll.js)
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 
@@ -34,6 +34,7 @@ Rails.application.configure do
   config.assets.digest = true
 
   config.assets.paths << Rails.root.join("public", "post", "images")
+  config.assets.paths << Rails.root.join("public", "resource", "tmp")
   config.assets.paths << Rails.root.join("public", "uploads", "tmp")
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
