@@ -22,6 +22,7 @@ class HomeController < ApplicationController
     @posts = all_posts
     @last_post = nil
     render layout: 'small_devise'
+    expires_in 24.hours, :public => true
   end
 
   def load_info
