@@ -11,7 +11,7 @@
       .date-secondary.col-md-5.col-xs-8.right
         = "#{post.published.strftime('%d %b %Y')}"
       - if post.image.url
-        %div.post-image.col-md-12.col-xs-12{ style: "background: url('#{post.image.url}')" }
+        %div.post-image.col-md-12.col-xs-12{ style: "background: url('#{post.image.thumb.url}')" }
           &nbsp;
     .row-fluid
       .post-resume-content.post-link{ 'data-ref': show_post_path(post.slug) }
