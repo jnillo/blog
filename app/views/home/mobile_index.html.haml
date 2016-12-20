@@ -1,5 +1,5 @@
 .row
-  - - cache(action_suffix: "home_header_mobile", :expires_in => 1.hour) do
+  - cache(action_suffix: "home_header_mobile", :expires_in => 1.hour) do
     = render partial: 'home/header'
 .row.blog-section
   - cache(action_suffix: "home_blog_info_mobile", :expires_in => 1.hour) do
