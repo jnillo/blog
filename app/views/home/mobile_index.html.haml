@@ -1,12 +1,12 @@
 .row
-  = render partial: 'home/header'
+  - - cache(action_suffix: "home_header_mobile", :expires_in => 1.hour) do
+    = render partial: 'home/header'
 .row.blog-section
-  .blog-info.col-xs-12
-    .container
-      = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
-    .see-more.col-md-12
-      = link_to blog_path() do
-        %button{class: 'btn'}
-          Ver más
-.row
-  = render partial: 'layouts/shared/footer'
+  - cache(action_suffix: "home_blog_info_mobile", :expires_in => 1.hour) do
+    .blog-info.col-xs-12
+      .container
+        = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
+      .see-more.col-md-12
+        = link_to blog_path() do
+          %button{class: 'btn'}
+            Ver más
