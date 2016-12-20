@@ -18,8 +18,8 @@
     <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
-    <%= javascript_include_tag "application" %>
     <%= render partial: 'layouts/shared/main_modal' %>
+    <%= javascript_include_tag "application" %>
     <%= render partial: 'layouts/shared/analytics'%>
   </body>
 </html>
