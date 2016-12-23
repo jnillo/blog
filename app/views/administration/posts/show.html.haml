@@ -4,7 +4,7 @@
     = @post.title
   %p
     = @post.resume
-  - if @post.image
+  - if @post.image.try(:url)
     =image_tag(image_path(@post.image.url))
   %p
     %b
