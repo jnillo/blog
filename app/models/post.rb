@@ -22,12 +22,13 @@ class Post < ApplicationRecord
   }
 
   def self.generate_internal_link(title)
-    title.gsub! /\s*@\s*/, " at "
-    title.gsub! /\s*&\s*/, " and "
+    title.gsub! /\s*@\s*/, ' at '
+    title.gsub! /\s*&\s*/, ' and '
     title = I18n.transliterate(title)
     title = title.strip
     title.gsub! /\s*[^A-Za-z0-9\.\_]\s*/, '-'
-    title.gsub! /_+/,"-"
+    title.gsub! /_+/, '-'
+    title.gsub! '.', ''
     title = title[1..-1] if title.first == '-'
     title = title[0..-2] if title.last == '-'
     title.downcase
