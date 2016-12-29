@@ -7,7 +7,7 @@
     = @title_list || "Mi últimos artículos"
   .list
     - old_posts.in_groups_of(3, false) do |posts|
-      .row-fluid
+      .blog-newRow
         - posts.each do |post|
           = render partial: 'posts/resume_post', locals: { post: post }
 - if paginate

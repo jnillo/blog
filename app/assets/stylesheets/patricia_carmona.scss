@@ -192,6 +192,9 @@ a{
     .blog-infoTitle {
       display: none;
     }
+    .blog-newRow{
+      overflow: hidden;
+    }
     .see-more {
       text-align: center;
       button {
@@ -248,8 +251,9 @@ a{
       .medium-insert-images-progress{
         display:none;
       }
-      img {
+      figure {
         margin: 1em 0;
+        text-align: center;
       }
     }
     .post-resource {
