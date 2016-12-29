@@ -28,6 +28,8 @@ class Post < ApplicationRecord
     title = title.strip
     title.gsub! /\s*[^A-Za-z0-9\.\_]\s*/, '-'
     title.gsub! /_+/,"-"
+    title = title[1..-1] if title.first == '-'
+    title = title[0..-2] if title.last == '-'
     title.downcase
   end
 
