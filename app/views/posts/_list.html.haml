@@ -6,8 +6,10 @@
   .blog-infoTitle
     = @title_list || "Mi últimos artículos"
   .list
-    - old_posts.each do |post|
-      = render partial: 'posts/resume_post', locals: { post: post }
+    - old_posts.in_groups_of(3, false) do |posts|
+      .row-fluid
+        - posts.each do |post|
+          = render partial: 'posts/resume_post', locals: { post: post }
 - if paginate
   .pagination
     = paginate all_posts
