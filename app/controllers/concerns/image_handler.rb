@@ -43,7 +43,7 @@ class ImageHandler
   end
 
   def update_content(image_content, filename)
-    @content.gsub!(image_content, '/assets/' + filename)
+    @content.gsub!(image_content, '/posts/images/' + filename)
   end
 
   def image_extension(image_info)
