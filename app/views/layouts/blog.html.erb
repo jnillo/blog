@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
+    <%= render partial: 'layouts/shared/metas_blog' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= favicon_link_tag image_path('favicon.png'), :rel => 'shortcut icon' %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body id="blog">
+    <div class="container">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+    <% unless cookies[:viewed_cookie_policy] %>
+      <%= render partial: 'layouts/shared/cookies_alert' %>
+    <% end %>
+    <%= render partial: 'layouts/shared/main_modal' %>
+    <%= render partial: 'layouts/shared/analytics'%>
+  </body>
+</html>

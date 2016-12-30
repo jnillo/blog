@@ -1,0 +1,11 @@
+.related-postsItem.col-md-6{ class: first ? 'first' : nil }
+  .row-fluid
+    %h3.related-postsTitle
+      = link_to post.title, show_post_path(post.slug)
+  .row-fluid
+    .post-resume-content.post-link{ 'data-ref': show_post_path(post.slug) }
+      = post.resume
+  .row-fluid
+    .post-readmore.post-link{ 'data-ref': show_post_path(post.slug) }
+      = link_to show_post_path(post.slug) do
+        Read more...

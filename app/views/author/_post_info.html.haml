@@ -1,19 +1,19 @@
 .author-info
-  .col-md-2
-    = image_tag 'https://pbs.twimg.com/profile_images/577078413720100864/Zjj72xfp_400x400.jpeg', class: 'author-img'
-  .col-md-10
-    %h4
-      = @post.author
+  .col-md-2.col-sm-2.author-infoAvatar
+    = image_tag 'https://pbs.twimg.com/profile_images/800818988729192448/dbFBRq4H_400x400.jpg', class: 'author-img'
     %p
-      Social Media Analyst. Listen and analyze social media content to improve the relation brands-users.
-    %p
-      %ul{ class: 'list-inline' }
+      %ul.author-links{ class: 'list-inline' }
         %li
           = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
-            %i.fa.fa-twitter
+            %i.fa.fa-twitter.twitter.fa-2x
         %li
           = link_to 'https://www.linkedin.com/in/carmonapulidopatricia', rel: 'no-follow', target: '_blank' do
-            %i.fa.fa-linkedin
-        %li
-          = link_to '/about-me', rel: 'no-follow', target: '_blank' do
-            = '-> Read about me'
+            %i.fa.fa-linkedin.linkedin.fa-2x
+  .col-md-10.col-sm-10
+    %h4.title
+      = author
+    %p
+      Analista de Social Media. Escucho y analizo contenido de Social Media para mejorar la relación entre la marca y la comunidad.
+    .see_more
+      = link_to '/services#about-me', rel: 'no-follow', target: '_blank' do
+        = 'Saber más sobre mí >'

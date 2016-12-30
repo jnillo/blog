@@ -12,28 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.infinitescroll
 //= require twitter/bootstrap
 //= require turbolinks
 //= require admin/posts
 //= require admin/clean_form
 //= require handlebars.runtime
 //= require cookies
+//= require social-share-button
+//= require modal_links_observer
+//= require resources
 
 var getBroserTypeMobile = function(type) {
   return document.cookie.indexOf(type) > 0
 }
 
-var hideHomeNavbar = function (){
-  if($('.home-navbar')!==null){
-  	$('.home-navbar').hide();
-  }
-}
-
-var showHomeNavbar = function (){
-  if($('.home-navbar')!==null){
-  	$('.home-navbar').show();
-  }
-}
 var detectMobile = function() {
    if(window.innerWidth <= 600) {
      return true;
@@ -42,16 +35,30 @@ var detectMobile = function() {
    }
 }
 
+var openSideMenu = function() {
+  if(window.innerWidth <= 600) {
+    $('body').addClass('open-sidenav');
+    $('#side-navbar').click(function(){
+      $('body').removeClass('open-sidenav');
+    });
+  }
+}
+
+var isSubdomain = function(subdomain){
+  return(location.hostname.split('.')[0] == subdomain);
+}
+
 var checkWindowSize = function(){
   if (detectMobile()){
-  	if(!getBroserTypeMobile('mobile')) {
+  	if(!isSubdomain('m')) {
   	  createCookieWindowSize('mobile');
-      top.location.href = "http://m.blog.dev";
+      top.location.href = "http://m." + window.location.hostname + document.location.pathname;
     }
   } else {
-    if(!getBroserTypeMobile('web')) {
+    if(isSubdomain('m')) {
   	  createCookieWindowSize('web');
-      top.location.href = "http://blog.dev";
+      var hostname = window.location.hostname.replace('m.', '')
+      top.location.href = "http://"+ hostname + document.location.pathname;
     }
   }
 }
@@ -62,22 +69,7 @@ var createCookieWindowSize = function(browser_type){
 }
 
 $(document).ready(function(){
-    $(function () {
-    	hideHomeNavbar();
-		$(window).scroll(function () {
-            // set distance user needs to scroll before we fadeIn navbar
-			if ($(this).scrollTop() > 40) {
-				$('.navbar').removeClass('navbar-static-top');
-			    $('.navbar').addClass('navbar-fixed-top');
-			    showHomeNavbar();
-			} else {
-				$('.navbar').addClass('navbar-static-top');
-				$('.navbar').removeClass('navbar-fixed-top');
-				hideHomeNavbar();
-			}
-		});
-	});
-    
+    contentLinkObserver.load_content_modal('cookies-policy-link', 'layouts/shared/cookies_policy');
     checkWindowSize();
     $(window).resize(function(){
       checkWindowSize();

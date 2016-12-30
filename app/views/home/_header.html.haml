@@ -1,15 +1,39 @@
 .header
   .container
     .row-fluid
-      .col-md-12
-        .col-md-8
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav.navbar_header
+          %li
+            = link_to "Blog", blog_path
+          %li.separator
+            ='/'
+          %li
+            = link_to "Recursos", resources_path
+          %li.separator
+            ='/'
+          %li.big
+            = link_to "Sobre mí", "/services#about-me"
+          %li.separator
+            ='/'
+          %li
+            = link_to "Servicios", "/services"
+          %li.separator
+            ='/'
+          %li.last
+            = link_to "Contacto", "/services#contact-me"
+        .right
+          = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+            %i.fa.fa-twitter.twitter.fa-2x
+    .row-fluid
+      .col-md-12.col-xs-12
+        .col-md-8.col-xs-6.lead
           .row-fluid
             %h1.title
               Patrica Carmona
-            %h2.subtitle
-              Soy la analista del .com, la analista mas dicharachera a este lado del río Guadalquivir.
+            %h2.title
+              ANALISTA DE SOCIAL MEDIA
         .col-md-4
     .row-fluid
-      .col-md-12
+      .left.subscription-header
         .subscription
           = render partial: 'subscriptions/form'

@@ -1,0 +1,2 @@
+- @all_posts.each do |post|
+  $(".list").append(<%= escape_javascript(render partial: 'posts/resume_post', locals: { post: post }) %></div>);

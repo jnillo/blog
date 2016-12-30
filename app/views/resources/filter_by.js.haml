@@ -1,0 +1,3 @@
+$('#resources_list').html("#{ j render partial: 'resources/list', locals: { resources: resources, category: category } }")
+
+$('#resources_nav').html("#{ j render partial: 'resources/navigation', locals: { categories: categories, active: category } }")

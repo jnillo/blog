@@ -1,6 +1,18 @@
-.list
-  - posts.each do |post|
+.row_fluid
+  - if defined?(last_post) && last_post
     .row-fluid
-      = render partial: 'posts/resume_post', locals: { post: post }
-.pagination
-  = paginate posts
+      = render partial: 'posts/resume_post_last', locals: { post: last_post }
+.row
+  .blog-infoTitle
+    = @title_list || "Mi últimos artículos"
+  .list
+    - old_posts.in_groups_of(3, false) do |posts|
+      .blog-newRow
+        - posts.each do |post|
+          = render partial: 'posts/resume_post', locals: { post: post }
+- if paginate
+  .pagination
+    = paginate all_posts
+
+%script
+  $('.post-link').click(function(element){ $(location).attr('href',$(this).attr('data-ref'));});

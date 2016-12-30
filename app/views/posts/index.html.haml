@@ -1,0 +1,22 @@
+.blog
+  .row
+    = render partial: 'layouts/shared/main_navbar'
+  .container
+    - if defined?(category)
+      .row_fluid
+        .filter_by
+          Filtro por
+          %span
+            = category
+            = link_to root_path, remote: true do
+              %button
+                X
+    .blog-info
+      = render partial: 'posts/list', locals: { all_posts: @all_posts, old_posts: @old_posts, last_post: @last_post, paginate: true  }
+      .col-md-3
+.row
+  .blog-footer
+    .container
+      = render partial: 'author/post_info', locals: { author: @all_posts.first.author }
+.row
+  = render partial: 'layouts/shared/footer'

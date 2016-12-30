@@ -1,9 +1,14 @@
 .row
-  = render partial: 'home/header'
+  - cache(action_suffix: "home_header", :expires_in => 1.hour) do
+    = render partial: 'home/header'
+.row.blog-section
+  - cache(action_suffix: "home_blog_info", :expires_in => 1.hour) do
+    .blog-info
+      = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }
+      .see-more.col-md-12
+        = link_to blog_path() do
+          %button{class: 'btn'}
+            Ver más
 .row
-  .blog-info
-    = render partial: 'posts/list', locals: { posts: @posts }
-.row
-  #about-me.about
-.row
-  = render partial: 'contacts/form'
+  - cache(action_suffix: "footer", :expires_in => 1.hour) do
+    = render partial: 'layouts/shared/footer'

@@ -11,7 +11,7 @@ CookiesHandler.prototype.startObserverMessage = function(){
     $('#cookies-alert').fadeOut();
   });
 
-  $('a').click(function(){
+  $('#accept-cookies-btn').click(function(){
     handler.createCookie();
     $('#cookies-alert').hide();
   });
@@ -19,5 +19,5 @@ CookiesHandler.prototype.startObserverMessage = function(){
 
 CookiesHandler.prototype.createCookie = function(){
   var date = new Date(new Date().setYear(new Date().getFullYear() + 1));
-  document.cookie = 'cookies_allow=true; expires='+date;
+  document.cookie = 'viewed_cookie_policy=true; expires='+date;
 }

@@ -11,6 +11,9 @@ ul{
 a{
 	pointer: cursor;
 }
+*{
+  outline: none !important;
+}
 .center{
   text-align: center;
 }
@@ -26,18 +29,16 @@ a{
 #blog {
   font-family: $font-content;
   .container{
-    background-color: white;
+    background-color: #f5f5f5;
     width: 100%;
     margin: 0;
     .header{
-      background: #f5f5f5;
       margin:0 auto;
       width: 100%;
       overflow:hidden;
       display:block;
       border-bottom: 1px #ccc solid;
       padding: 30px 0;
-      background: url('https://pbs.twimg.com/profile_banners/98491924/1426420626/1500x500');
       .container{
         .col-md-4, .col-md-8, col-md-12, col-md-2{
           padding: 0;
@@ -55,27 +56,22 @@ a{
       .subtitle{
         font-family: $font-subtitle;
       }
+      .subscription h3.title{
+        font-family: 'MaisonNeue-Semi';
+        font-size: 18px;
+      }
     }
     .blog-info{
       max-width: 927px;
       margin: 2em auto 0 auto;
     }
     .about{
-      background: #f5f5f5;
       margin:0 auto;
       display:block;
       min-height: 200px;
-      color: white;
       .content{
         max-width: 927px;
       }
-    }
-    .contact{
-      background-color: #333;
-      width: 100%;
-      display:block;
-      min-height: 200px;
-      color: white; 
     }
   }
   div.pagination{
@@ -113,7 +109,6 @@ a{
   }
   .navbar-collapse{
     width: 100%;
-    background-color: #f5f5f5 !important;
   }
 }
 
@@ -137,7 +132,7 @@ a{
   width:100%;
   .post-info{
     color: #21b384;
-    padding: 10px;
+    padding: 10px 0;
     i{
       color: #ccc
     }
@@ -171,24 +166,23 @@ a{
     letter-spacing: 0.25px;
   }
 }
-.post-footer{
-  margin: 0 auto;
-  padding: 2em 0;
-  max-width: 927px;
-  .author-info{
-    .author-img{
-      border-radius: 500px;
-      height: 100px;
+.post-footer, .blog-footer{
+  .container{
+    margin: 0 auto !important;
+    padding: 3em 0;
+    max-width: 927px;
+    .author-info{
+      .author-img{
+        border-radius: 500px;
+        height: 100px;
+      }
     }
-    .author-title{}
-    .author-description{
-    }
-    .subscription{}
   }
 }
+
 /* Post Resume */
 .post-resume{
-  margin: 0 auto;
+  margin: 10px auto 30px auto;
   background-color: white;
   .post-resume-content{
     max-width: 927px;
@@ -199,15 +193,13 @@ a{
     letter-spacing: 0.25px;
   }
   .post-info{
-    color: #21b384;
-    padding: 10px;
-    i{
-      color: #ccc
+    padding: 10px 0;
+    li{
+      padding: 0;
     }
   }
   .post-resume-title{
     color: #333;
-    font-size: 36px;
     padding: 10px 0px;
     text-align: center;
     font-family: $font-title;
@@ -218,14 +210,35 @@ a{
   }
 }
 
+/* About me */
+
+.about {
+  color: #333;
+  .container {
+    overflow:hidden;
+    max-width: 927px !important;
+    background: transparent !important;
+    margin: 0 auto !important;
+    padding: 0 0 20px 0;
+    h2{
+      margin: 20 0;
+    }
+
+  }
+}
+
 /* Contact */
 
 .contact{
   padding: 20px 0px;
   .container{
+    padding: 20px 0;
     max-width: 927px !important;
     background-color: transparent !important;
     margin: 0 auto !important;
+    h3{
+      margin-top: 0px;
+    }
   }
   form{
     max-width: 927px;
@@ -246,7 +259,7 @@ a{
         border-radius: 0;
         width: 100%;
         color: white;
-        font-family: 'MaisonNeue-Bold';
+        font-family: 'MaisonNeue-Book';
         &:hover{
           background-color: #d6131d;
           border-color: #d6131d;

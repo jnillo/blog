@@ -1,16 +1,17 @@
 #navbar{ class: "navbar navbar-default navbar-static-top #{ @post.nil? ? 'home-navbar' : nil }"}
   .container
     %button{ type:"button", class: "navbar-toggle", 'data-toggle':"collapse", 'data-target':".navbar-responsive-collapse" }
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
     %a.navbar-brand{ href:"/" }
       Patricia Carmona
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav.right
         %li
-          = link_to "Blog", "/path1" 
+          = link_to "Blog", blog_path
         %li
-          = link_to "About me", "/#about-me" 
+          = link_to "Recursos", resources_path
         %li
-          = link_to "Contact", "/#contact" 
+          = link_to "Sobre mí", "/services#about-me"
+        %li
+          = link_to "Servicios", "/services"
+        %li
+          = link_to "Contacto", "/services#contact-me"

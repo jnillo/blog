@@ -1,32 +1,42 @@
 .post
   .row
-    %div{ id: "post_#{@post.id}", class: 'post-content item-post-list single-post' }
+    %div{ id: "post_#{@post.id}", class: 'container' }
       %h2.post-title
         = @post.title
       %h3.post-subtitle
         = @post.resume
-      .post_content#post-content
+      - if @post.image.url
+        %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
+          &nbsp;
+      .post-content#post-content
         = raw @post.content
-      %ul.list-inline.post-actions
-        %li.right.social-button{ title: 'Compartir en LinkedIn', 'data-info': 'Linkedin' }
-          %i.fa.fa-linkedin
-        %li.right.social-button{ title: 'Compartir en Facebook', 'data-info': 'Facebook' }
-          %i.fa.fa-facebook
-        %li.right.social-button{ title: 'Compartir en Twitter', 'data-info': 'Twitter' }
-          %i.fa.fa-twitter
-        %li.right{ title: 'Share this post' }
-          Share it!
+        %p{ class: 'post_content', id: 'post_content'}
+      - if @post.resource.try(:status)
+        .post-resource
+          %span
+            Recurso:
+          = link_to @post.resource.link, target: '_blank', onclick: 'resourceDownload(event)', "data-ref": @post.resource.id  do
+            %i.fa.fa-download
+            = @post.resource.title
+      .tags.left
+        %ul.list-inline
+          - @post.tags.split(',')[0..2].each do |tag|
+            %li
+              = "##{tag}"
+      = render partial: 'posts/social_buttons', locals: { post: @post }
+      .row-fluid
+        = render partial: 'posts/related_posts', locals: { posts: @related_posts }
 .post-footer
   .row
-    = render partial: 'author/post_info', locals: { author: @post.author }
+    .post-footer
+      .container
+        = render partial: 'author/post_info', locals: { author: @post.author }
   .row
     .more-posts
   - if @post.comments.present?
     .row
       .comments
         = render partial: 'posts/comments', locals: { comments: @post.comments}
-.subscription
+.subscription.subcription-post
   .row
     = render partial: 'subscriptions/form'
-
-= render partial: 'posts/social_buttons.js'

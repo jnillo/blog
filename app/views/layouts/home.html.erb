@@ -8,18 +8,18 @@
     <%= render partial: 'layouts/shared/metas_blog' %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-    <%= javascript_include_tag "application" %>
+    <%= favicon_link_tag image_path('favicon.png'), :rel => 'shortcut icon' %>
   </head>
   <body id='blog'>
-    <%= render partial: 'layouts/shared/main_navbar' %>
     <div class="container">
       <%= bootstrap_flash %>
       <%= yield %>
-    </div> <!-- /container -->
-    <% unless cookies[:cookies_allow] %>
+    </div>
+    <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
+    <%= javascript_include_tag "application" %>
+    <%= render partial: 'layouts/shared/main_modal' %>
     <%= render partial: 'layouts/shared/analytics'%>
   </body>
 </html>

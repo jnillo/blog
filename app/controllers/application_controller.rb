@@ -5,9 +5,10 @@ class ApplicationController < ActionController::Base
   include Stats
 
   protect_from_forgery with: :exception
-  before_filter :save_visit, :start_user
+  before_action :save_visit, :start_user
 
   def start_user
   	session[:user_ip] ||= request.remote_ip
   end
+
 end

@@ -1,0 +1,7 @@
+.resources-nav
+  %ul.nav.nav-tabs
+    %li{role:"presentation", class: (!active ? 'active': nil) }
+      = link_to "Todos", filter_resources_path('all'), remote: true
+    - categories.each do |category|
+      %li{role: 'presentation', class: (active == category ? 'active' : '') }
+        = link_to category.camelcase, filter_resources_path(category), remote: true

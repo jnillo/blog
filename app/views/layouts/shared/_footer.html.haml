@@ -1,0 +1,18 @@
+.footer
+  .container
+    %ul{ class: 'list-inline' }
+      %li
+        %a{ rel: "license", href: "http://creativecommons.org/licenses/by-sa/4.0/", rel: 'no-follow' }
+          = image_tag(image_path('cc_bysa.png'), style:"border-width:0", alt:' Licencia Creative Commons', height: 31, width: 88)
+      %li
+        = "-"
+      %li
+        %a{ 'data-toggle':"modal", 'data-target': "#main-modal", rel: 'no-follow' }
+          Política de cookies
+      %li
+        = "-"
+      %li
+        = link_to "Contacto", '/services#contact-me'
+      %li.right
+        = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+          %i.fa.fa-twitter.twitter.fa-2x

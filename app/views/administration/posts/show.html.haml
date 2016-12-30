@@ -3,11 +3,20 @@
   %h2
     = @post.title
   %p
+    = @post.resume
+  - if @post.image.try(:url)
+    =image_tag(image_path(@post.image.url))
+  %p
     %b
       = "Slug: "
     = @post.slug
   %p{ class: 'post_content', id: 'post_content'}
     = @post.content
+  - if @post.resource.try(:status)
+    %p{ class: 'post_content', id: 'post_content'}
+      = link_to @post.resource.link, taget: '_blank' do
+        %i.fa.fa-download
+        = @post.resource.title
 %div{ class: 'actions' }
   = link_to administration_posts_path, class: 'btn btn-default btn-lg left' do
     %i{ class: 'fa fa-chevron-left'}

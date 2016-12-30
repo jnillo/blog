@@ -44,6 +44,9 @@ gem 'friendly_id'
 # Forms
 gem 'simple_form'
 
+#Security
+gem 'brakeman'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -75,6 +78,11 @@ group :development do
   gem "guard-livereload"
 end
 
+# Production
+group :production do
+  gem 'unicorn'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -83,3 +91,10 @@ gem 'gibbon', '~> 2.0'
 
 # Pagination
 gem 'kaminari'
+
+# Share buttons
+gem 'social-share-button'
+
+# Upload files
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "mini_magick"

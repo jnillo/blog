@@ -1,15 +1,10 @@
-#contact.contact
-  .container
-    %h3.title
-      Contacto
-    = form_for 'Contact', url: send_contact_path, remote: true, html: { class: :form } do |f|
-      .form-group
-        = f.text_field :subject, placeholder: 'Name', class: 'form-control', required: true
-      .form-group
-        = f.text_field :email, placeholder: 'Email', class: 'form-control', required: true
-      .form-group
-        = f.text_field :phone, placeholder: 'Phone (opcional)', class: 'form-control'
-      .form-group
-        = f.text_area :content, placeholder: 'Escribe aquí tu duda', class: 'form-control', required: true
-      .form-group
-        = f.submit 'Enviar', class:"btn btn-primary"
+.contact-form
+  = form_for 'Contact', url: send_contact_path, remote: true, html: { class: :form } do |f|
+    .form-group
+      = f.text_field :subject, placeholder: 'Nombre (requerido)', class: 'form-control', required: true
+    .form-group
+      = f.text_field :email, placeholder: 'Email (requerido)', class: 'form-control', required: true
+    .form-group
+      = f.text_area :content, placeholder: 'Escribe aquí tu duda', class: 'form-control', required: true
+    .form-group.col-md-4.col-xs-12.right
+      = f.submit 'Enviar', class:"btn btn-primary"

@@ -1,0 +1,20 @@
+%div{ id: "resource_#{@resource.id}", class: 'resource' }
+  .row
+    .col-md-4.resource-image
+      - if @resource.image.url
+        = image_tag(image_path(@resource.image.url))
+    .col-md-8
+      %h2.resource-title
+        = @resource.title
+      %p
+        = @resource.description
+      = link_to @resource.link, target: '_blank' do
+        %i.fa.fa-download
+        Descargar
+%div{ class: 'actions' }
+  = link_to administration_resources_path, class: 'btn btn-default btn-lg left' do
+    %i{ class: 'fa fa-chevron-left'}
+    = t('return')
+  = link_to edit_administration_resource_path(id: @resource.id), class: 'btn btn-success btn-lg right' do
+    %i{ class: 'fa fa-pencil'}
+    = t('edit')

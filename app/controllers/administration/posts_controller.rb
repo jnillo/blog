@@ -53,12 +53,21 @@ module Administration
       redirect_to administration_posts_path
     end
 
+    def generate_internal_link
+      render json: Post.generate_internal_link(params[:title])
+    end
+
     private
 
     def post_params
-      post = params.require(:post).permit(:content, :title, :published, :resume, :author, :category)
+      post = if params["post"]["image"].is_a?(ActionDispatch::Http::UploadedFile)
+               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image, :resource_id)
+             else
+               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :resource_id)
+             end
       post['published'] = build_published_date(params)
       post['category'] = Category.find params['post']['category'] if params['post']['category']
+      post['content'] = save_images(post['content'], post['title'])
       remove_published_data(post)
     end
 
@@ -78,6 +87,12 @@ module Administration
       post.delete('published(4i)')
       post.delete('published(5i)')
       post
+    end
+
+    def save_images(post_content, title)
+      image_handler = ImageHandler.new(post_content, title)
+      image_handler.parse
+      image_handler.content
     end
   end
 end

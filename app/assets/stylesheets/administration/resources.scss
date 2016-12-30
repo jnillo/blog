@@ -1,0 +1,16 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.resource {
+  margin: 3em 0;
+  .resource-image {
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .resource-title {
+  	margin-top: 0;
+  }
+}

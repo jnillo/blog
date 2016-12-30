@@ -3,7 +3,7 @@ module Stats
 
   def save_visit
   	save_visit_data if new_visit?
-  	add_cookies
+  	#add_cookies
   end
 
   def save_visit_blog(post_id)
@@ -15,7 +15,7 @@ module Stats
   end
 
   def add_cookies
-  	cookies[:blog] = { value: Time.zone.now.to_date, expires: 30.days.from_now }
+  	cookies[:home] = { value: Time.zone.now.to_date, expires: 30.days.from_now }
   end
 
   def save_share(post_id, social_network)

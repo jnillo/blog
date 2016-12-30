@@ -1,0 +1,6 @@
+= link_to new_administration_resource_path(), class: 'btn btn-primary right' do
+  %i{ class: 'fa fa-plus' }
+  = t('new_resource')
+%h3
+  Resources
+= render partial: 'administration/resources/list_resources', locals: { resources: @resources }

@@ -1,10 +1,21 @@
-%div{ id: "post_#{post.id}", class: 'post-resume' }
-  %h3
-    = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
-  %ul.list-inline.post-info
-    %li.right
-      %i.icon.fa.fa-calendar
-      = post.published
-  .post-resume
-    = post.resume
-
+.col-md-4.col-xs-12
+  %div{ id: "post_#{post.id}", class: 'post-resume' }
+    .row-fluid
+      %h3.post-resume-title
+        = link_to post.title, show_post_path(post.slug), class: 'post-resume-title'
+      .tags.col-md-7.col-xs-4
+        %ul.list-inline
+          %li
+            = link_to (home_page? ? nil : filter_by_category_path(post.category_name)), remote: true, title: 'Filtrar por ésta categoría' do
+              = post.category_name
+      .date-secondary.col-md-5.col-xs-8.right
+        = "#{post.published.strftime('%d %b %Y')}"
+      - if post.image.url
+        %div.post-image.col-md-12.col-xs-12{ style: "background: url('#{post.image.thumb.url}')" }
+          &nbsp;
+    .row-fluid
+      .post-resume-content.post-link{ 'data-ref': show_post_path(post.slug) }
+        = post.resume
+    .row-fluid
+      .post-readmore.post-link{ 'data-ref': show_post_path(post.slug) }
+        Leer más...

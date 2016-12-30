@@ -7,5 +7,7 @@
           = link_to "Publicaciones", administration_posts_path()
         %li{ class: active_section(@section, 'categories') }
           = link_to "Categorías", administration_categories_path()
+        %li{ class: active_section(@section, 'resources') }
+          = link_to "Recursos", administration_resources_path()
         %li{ class: active_section(@section, 'stats') }
           = link_to "Estadísticas", nil
