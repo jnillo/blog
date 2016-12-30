@@ -221,10 +221,18 @@ a{
 .post {
   .container{
     max-width: 927px;
+    .post-date{
+      color: $sub-title;
+      margin: 20px 0;
+      width: 100%;
+      i{
+        margin-right: 5px;
+      }
+    }
     .post-title {
       color: $title;
       font-size: 36px;
-      margin: 50px 0;
+      margin: 50px 0 20px 0;
       padding: 0;
       text-align: left;
     }
