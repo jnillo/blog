@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get '/filter_by_category/:category', to: 'posts#filter_by_category', as: :filter_by_category
   post '/home/load_info', to: 'home#load_info'
+  post '/post/likes', to: 'posts#new_like'
   post '/post/social-stats', to: 'posts#social_stats'
   get 'feed', to: 'posts#feed'
   get '/blog', to: 'posts#index', as: :blog

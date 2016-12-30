@@ -10,6 +10,7 @@ capybara-*.html
 /spec/tmp
 **.orig
 rerun.txt
+.env*
 pickle-email-*.html
 Gemfile.lock
 .byebug_history

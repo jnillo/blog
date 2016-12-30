@@ -8,8 +8,10 @@
           Title
         %th{ class: 'col-md-2' }
           Publish date
-        %th{ class: 'col-md-2' }
+        %th{ class: 'col-md-1' }
           Visits
+        %th{ class: 'col-md-1' }
+          Likes
         %th{ class: 'col-md-2' }
           Actions
     %tbody
@@ -23,6 +25,8 @@
             = post.published
           %td
             = post.visits
+          %td
+            = post.likes
           %td
             %ul{ class: 'list-inline' }
               %li

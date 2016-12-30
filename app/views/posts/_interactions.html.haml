@@ -1,4 +1,11 @@
-%ul.list-inline.post-actions
+%ul.list-inline.post-interactions
+  %li.likes
+    - if user_likes?(post.slug)
+      %i.fa.fa-heart.fa-2x
+    - else
+      %i.fa.fa-heart-o.fa-2x
+    %button
+      = post.likes
   %li.google.right.social-button{ title: 'Compartir en Google+', 'data-info': 'GooglePlus'}
     = link_to build_share_google_url(@post), target: '_blank', rel: 'no-follow' do
       &nbsp;
@@ -13,4 +20,3 @@
       &nbsp;
   %li.share-postLabel.right{ title: 'Share this post' }
     Si te ha gustado compártelo
-= render partial: 'posts/social_buttons.js'
