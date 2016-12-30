@@ -1,8 +1,8 @@
 = simple_form_for [:administration, post], html: { id: 'clear-form' } do |f|
   .first-step
     .form-group
-      #wmd-button-bar-post_content
-      = f.input :content, input_html: { class: 'big-textarea', id: 'post_content', placeholder: 'Write something amazing!'}, 'autofocus': true, as: :text, label: false
+      #wmd-button-bar-post-content
+      = f.input :content, input_html: { class: 'big-textarea post-content', id: 'post-content', placeholder: 'Write something amazing!'}, 'autofocus': true, as: :text, label: false
     .form-group
       =link_to '#',  class: 'btn btn-primary next-btn right', onclick: 'clean_form.second_step();', id: 'wmd-input-big-textarea' do
         Next
@@ -45,6 +45,6 @@
 
 %script
   clean_form.first_step();
-  post.initialize('#post_content');
+  post.initialize('#post-content');
   $('#post_title').on('change', function(){ post.generateInternalLink(); });
   $('#copyLinkButton').on('click', function(){ post.copyUrlClipboard(); });

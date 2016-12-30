@@ -1,7 +1,7 @@
 @post=
   initialize: (block) ->
-    editor = new MediumEditor('#post_content', post.options())
-    $('#post_content').mediumInsert({
+    editor = new MediumEditor('#post-content', post.options())
+    $('#post-content').mediumInsert({
         editor: editor
     })
     $('#copyLinkButton').hide()

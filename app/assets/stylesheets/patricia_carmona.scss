@@ -255,6 +255,13 @@ a{
         margin: 1em 0;
         text-align: center;
       }
+      ul{
+        list-style: disc ;
+        padding-left: 15px;
+        li {
+          margin: 10px 5px;
+        }
+      }
     }
     .post-resource {
       margin: 10px 0 30px 0;
@@ -837,6 +844,18 @@ a{
 #copyLinkButton{
   color: $link-color;
   cursor: pointer;
+}
+
+#clear-form{
+  .post_content{
+    ul{
+      list-style: disc ;
+      padding-left: 15px;
+      li {
+        margin: 10px 5px;
+      }
+    }
+  }
 }
 
 
