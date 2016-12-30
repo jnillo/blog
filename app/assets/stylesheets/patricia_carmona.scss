@@ -299,7 +299,7 @@ a{
       color: $link-color;
       width: 220px !important;
     }
-    .post-actions {
+    .post-interactions {
       padding: 10px 0;
       li{
         width: 20px;
@@ -307,8 +307,28 @@ a{
         background-position: center top;
         background-size: 100% auto;
         background-repeat: no-repeat;
+        cursor: pointer;
         padding: 0;
         margin-left: 10px;
+        &.likes{
+          height: 30px;
+          margin-left: 0;
+          width: 100px;
+          overflow:hidden;
+          i{
+            border-color: $link-color;
+            color: $link-color;
+            float:left;
+            margin-right: 7px;
+          }
+          button{
+            background: none;
+            border: 0;
+            color: $link-color;
+            font-family: $font-subtitle;
+            padding: 5px 0;
+          }
+        }
         &:last-child{
           border: 0;
           font-size: 16px;
@@ -329,14 +349,15 @@ a{
       padding: 0 1em;
     }
     .tags{
+      margin: 20px 0;
       padding: 10px 0;
       li {
         border-radius: 15px;
-        border: 0;
+        border: 1px $link-color solid;
         color: $link-color;
-        font-family: $font-titleHighlight;
-        font-size: 16px;
-        padding: 0 10px 0 0;
+        font-family: $font-subtitle;
+        font-size: 14px;
+        padding: 3px 15px;
         transition: background-color .35s ease-in-out;
         a:hover, a:active, a:visited {
           background: $link-color;

@@ -23,12 +23,12 @@
           = link_to @post.resource.link, target: '_blank', onclick: 'resourceDownload(event)', "data-ref": @post.resource.id  do
             %i.fa.fa-download
             = @post.resource.title
-      .tags.left
+      .tags
         %ul.list-inline
-          - @post.tags.split(',')[0..2].each do |tag|
+          - @post.tags.split(',').each do |tag|
             %li
               = "##{tag}"
-      = render partial: 'posts/social_buttons', locals: { post: @post }
+      = render partial: 'posts/interactions', locals: { post: @post }
       .row-fluid
         = render partial: 'posts/related_posts', locals: { posts: @related_posts }
 .post-footer

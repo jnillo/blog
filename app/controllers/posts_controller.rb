@@ -70,6 +70,16 @@ class PostsController < ApplicationController
   	render json: true
   end
 
+  def new_like
+    post = Post.find_by_id(params[:ref])
+    post.likes += 1
+    if post.save
+      render body: nil, status: :ok
+    else
+      render body: nil, status: :bad_request
+    end
+  end
+
   def feed
     @posts = Post
                .where('published <= ?', Time.zone.now)
