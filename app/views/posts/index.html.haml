@@ -11,9 +11,9 @@
             = link_to root_path, remote: true do
               %button
                 X
-    .blog-info
-      = render partial: 'posts/list', locals: { all_posts: @all_posts, old_posts: @old_posts, last_post: @last_post, paginate: true  }
-      .col-md-3
+    - cache(action_suffix: "blog_info", :expires_in => 1.hour) do
+      .blog-info
+        = render partial: 'posts/list', locals: { all_posts: @all_posts, old_posts: @old_posts, last_post: @last_post, paginate: true  }
 .row
   .blog-footer
     .container
