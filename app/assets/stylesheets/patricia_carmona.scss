@@ -218,7 +218,7 @@ a{
 
 /* Post */
 
-.post {
+.post{
   .container{
     max-width: 927px;
     .post-date{
@@ -310,10 +310,10 @@ a{
         cursor: pointer;
         padding: 0;
         margin-left: 10px;
-        &.likes{
+        &.likes, &.comments{
           height: 30px;
           margin-left: 0;
-          width: 100px;
+          width: 80px;
           overflow:hidden;
           i{
             border-color: $link-color;
@@ -328,6 +328,9 @@ a{
             font-family: $font-subtitle;
             padding: 5px 0;
           }
+        }
+        &.comments i{
+          margin-top: -2px;
         }
         &:last-child{
           border: 0;
@@ -389,6 +392,83 @@ a{
         float: right;
         font-size: 14px;
         margin-top: 30px;
+      }
+    }
+  }
+}
+
+.post-comments{
+  .container{
+    max-width: 927px;
+    h3{
+      margin: 30px auto;
+      width: 650px;
+    }
+    .comment-form{
+      display: block;
+      margin: 0 auto 50px auto;
+      max-width: 650px;
+      textarea, input[type=text]{
+        border-radius: 5px;
+        border: 1px $border solid;
+        box-shadow: $box-shadow;
+        color: $form-color;
+        display: block;
+        padding: 15px;
+        width: 100%;
+      }
+      textarea{
+        height: 120px;
+      }
+      input[type=text]{
+        padding: 5px 10px;
+      }
+      input[type=submit]{
+        background: white;
+        border-radius: 15px;
+        border: 1px $link-color solid;
+        color: $link-color;
+        padding: 3px 10px;
+      }
+    }
+    .comments-list{
+      margin: 0 auto 30px auto;
+      width: 650px;
+    }
+    .comment {
+      background: white;
+      border: 1px $border solid;
+      border-radius: 5px;
+      box-shadow: $box-shadow;
+      margin: 15px 0;
+      padding: 15px;
+      width: 100%;
+      .head-comment{
+        height: 30px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        .comment-user{
+          float: left;
+          i{
+            border-radius: 50%;
+            border: 1px $sub-title solid;
+            padding: 3px 5px;
+            color: $sub-title;
+          }
+          span{
+            color: $sub-title;
+            font-size: 16px;
+            margin-left: 10px;
+          }
+        }
+        .comment-date{
+          color: $sub-title;
+          float: right;
+        }
+      }
+      .content-comment{
+        font-size: 14px;
+        line-height: 20px;
       }
     }
   }
@@ -540,8 +620,9 @@ a{
 
 /* Subscription Block */
 .subscription {
-  background-color: $dark-block;
+  background-color: transparent;
   .title{
+    color: $content;
     font-family: $font-subtitle;
   }
   form {
@@ -560,7 +641,6 @@ a{
       border-color: $link-color;
     }
   }
-  
 }
 
 .subcription-post{

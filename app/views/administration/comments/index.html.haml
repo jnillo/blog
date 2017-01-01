@@ -1,0 +1,7 @@
+.comments-review
+  .col-md-6.pending
+    - @pending_comments.each do |comment|
+      = render partial: 'pending_comment', locals: { comment: comment }
+  .col-md-6.approved
+    - @approved_comments.each do |comment|
+      = render partial: 'approved_comment', locals: { comment: comment }

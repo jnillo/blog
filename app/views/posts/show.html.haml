@@ -28,7 +28,7 @@
           - @post.tags.split(',').each do |tag|
             %li
               = "##{tag}"
-      = render partial: 'posts/interactions', locals: { post: @post }
+      = render partial: 'posts/interactions', locals: { post: @post, comments: @comments }
       .row-fluid
         = render partial: 'posts/related_posts', locals: { posts: @related_posts }
 .post-footer
@@ -36,12 +36,9 @@
     .post-footer
       .container
         = render partial: 'author/post_info', locals: { author: @post.author }
-  .row
-    .more-posts
-  - if @post.comments.present?
-    .row
-      .comments
-        = render partial: 'posts/comments', locals: { comments: @post.comments}
 .subscription.subcription-post
   .row
     = render partial: 'subscriptions/form'
+#comments
+  .row
+    = render partial: 'comments/list', locals: { comments: @comments, post: @post}
