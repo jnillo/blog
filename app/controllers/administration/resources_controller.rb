@@ -1,6 +1,10 @@
 class Administration::ResourcesController < ApplicationController
   layout 'administration'
 
+  before_action only: [:create, :update] do
+    expire_fragment("resources_info") if fragment_exist?("resources_info")
+  end
+
   def index
   	@resources = Resource.order(:created_at)
   end
