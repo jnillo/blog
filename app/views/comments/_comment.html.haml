@@ -1,0 +1,10 @@
+.comment
+  .head-comment
+    .comment-user
+      %i.fa.fa-user
+      %span
+        = comment.user
+    .comment-date.right
+      = "Publicado en #{comment.created_at.strftime('%d %b %Y')}"
+  %p.content-comment
+    = comment.content

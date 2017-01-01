@@ -1,0 +1,10 @@
+= simple_form_for 'comment', url: comments_path(), html: { id: 'clear-form', class: 'comment-form' }, remote: true do |f|
+  .form-group
+    = hidden_field :comment, :post_id, value: post_id
+    = f.text_field :user, placeholder: '¿Cómo te llamas?', required: true
+  .form-group
+    = text_field :comment, :captcha, placeholder: 'Para descartar que seas un bot, escribe tu nombre al revés, ejemplo:   aicirtaP', required: true
+  .form-group
+    = f.text_area :content, placeholder: 'Díme que te ha parecido el artículo :)', required: true
+  .form-group
+    = f.submit "Publicar"
