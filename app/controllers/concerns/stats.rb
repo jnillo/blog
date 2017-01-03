@@ -15,7 +15,11 @@ module Stats
   end
 
   def add_cookies
-  	cookies[:home] = { value: Time.zone.now.to_date, expires: 30.days.from_now }
+  	cookies[:home] = {
+      value: Time.zone.now.to_date,
+      expires: 30.days.from_now,
+      httponly: true
+    }
   end
 
   def save_share(post_id, social_network)

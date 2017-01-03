@@ -37,7 +37,8 @@ class SubscriptionsController < ApplicationController
   def create_subscription_cookie
     cookies[:subscribed] = {
       value: true,
-      expires: 1.year.from_now
+      expires: 1.year.from_now,
+      httponly: true
     }
   end
 

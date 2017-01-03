@@ -17,6 +17,7 @@ class AdministrationController < ActionController::Base
   def set_cookies_session
     cookies.signed[:username] = true
     cookies.signed[:session_expired] = Time.zone.now + 30.minutes
+    cookies.signed[:httponly] = true
   end
 
   def user_logged
