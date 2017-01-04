@@ -1,12 +1,10 @@
-.comment
+.comment.reply-comment
   .head-comment
     .comment-user
-      %i.fa.fa-user
+      = image_tag(image_path("author.jpg"))
       %span
         = comment.name
     .comment-date.right
       = "Publicado en #{comment.created_at.strftime('%d %b %Y')}"
   %p.content-comment
     = comment.content
-- unless comment.reply.nil?
-  = render partial: 'comments/reply_comment', locals: { comment: comment.reply }

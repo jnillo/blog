@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :resources
     resources :comments
+    post '/approve_comment/:id', to: 'comments#approve_comment', as: :approve_comment
+    delete '/remove_comment/:id', to: 'comments#remove_comment', as: :remove_comment
+    post '/reply_comment', to: 'comments#reply_comment', as: :reply_comment
   end
 
   constraints subdomain: 'm' do

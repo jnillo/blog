@@ -1,0 +1,8 @@
+.comment-reply-form
+  = form_for 'comment', url: administration_reply_comment_path(comment.id), html: { id: "reply_to_#{comment.id}", class: 'hide' } do |f|
+    .form-group
+      = hidden_field :comment, :post_id, value: comment.post_id
+      = hidden_field :comment, :reply_to_id, value: comment.id
+      = f.text_area :content, required: true
+    .form-group
+      = f.submit "Responder"

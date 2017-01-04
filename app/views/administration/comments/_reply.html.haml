@@ -1,0 +1,12 @@
+.comment.comment-reply
+  .comment-info
+    .comment-user
+      %b
+        Respuesta
+    .comment-date
+      = comment.created_at
+  .comment-content
+    = comment.content
+  .comment-actions
+    = link_to administration_remove_comment_path(comment.id), title: 'Eliminar comentario', data: { confirm: 'Estás segura?' }, method: :delete do
+      %i.fa.fa-times

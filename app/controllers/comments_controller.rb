@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    comment_params = params.require(:comment).permit(:user, :content, :post_id)
-    comment_params[:user].reverse == params[:comment][:captcha] ? comment_params : nil
+    comment_params = params.require(:comment).permit(:name, :email, :content, :post_id)
+    comment_params[:name].reverse == params[:comment][:captcha].strip ? comment_params : nil
   end
 end
