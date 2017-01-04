@@ -5,7 +5,6 @@ module Administration
 
     before_action only: [:create, :update] do
       expire_fragment("home_blog_info") if fragment_exist?("home_blog_info")
-      expire_fragment("blog_info") if fragment_exist?("blog_info")
     end
 
     layout 'administration', only: [:new, :edit]
