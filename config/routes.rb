@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     post 'posts/generate_internal_link', to: 'posts#generate_internal_link'
     resources :categories
     resources :resources
+    resources :comments
+    post '/approve_comment/:id', to: 'comments#approve_comment', as: :approve_comment
+    delete '/remove_comment/:id', to: 'comments#remove_comment', as: :remove_comment
+    post '/reply_comment', to: 'comments#reply_comment', as: :reply_comment
   end
 
   constraints subdomain: 'm' do
@@ -29,6 +33,7 @@ Rails.application.routes.draw do
   post '/home/load_info', to: 'home#load_info'
   post '/post/likes', to: 'posts#new_like'
   post '/post/social-stats', to: 'posts#social_stats'
+  resources :comments
   get 'feed', to: 'posts#feed'
   get '/blog', to: 'posts#index', as: :blog
   get '/services', to: 'home#services'

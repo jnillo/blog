@@ -1,0 +1,26 @@
+.comment
+  .post-info
+    = "> #{comment.post.title}"
+  .comment-info
+    .comment-user
+      %i.fa.fa-user
+      %span
+        = comment.name
+    .comment-date
+      = comment.created_at
+  .comment-content
+    = comment.content
+  .comment-actions
+    = link_to administration_remove_comment_path(comment.id), title: 'Eliminar comentario', data: { confirm: 'Estás segura?' }, method: :delete do
+      %i.fa.fa-times
+    - if comment.status == 0
+      = link_to administration_approve_comment_path(comment.id), class: 'right', title: 'Aprobar comentario', method: :post do
+        %i.fa.fa-check
+    - elsif comment.reply.nil?
+      %button{class: 'right',  title: 'Responder al comentario', onclick: "$('#reply_to_#{comment.id}').removeClass('hide')"}
+        %i.fa.fa-comment
+- if comment.status == 1
+  -if comment.reply.nil?
+    = render partial: 'administration/comments/reply_comment_form', locals: { comment: comment }
+  -else
+    = render partial: 'reply', locals: { comment: comment.reply }

@@ -1,4 +1,4 @@
-class Administration::ResourcesController < ApplicationController
+class Administration::ResourcesController < AdministrationController
   layout 'administration'
 
   before_action only: [:create, :update] do

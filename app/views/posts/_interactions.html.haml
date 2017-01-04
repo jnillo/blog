@@ -6,6 +6,11 @@
       %i.fa.fa-heart-o.fa-2x
     %button
       = post.likes
+  %li.comments
+    %a{ href: '#comments', title: "Comments" }
+      %i.fa.fa-comment-o.fa-2x
+      %button
+        = comments.count
   %li.google.right.social-button{ title: 'Compartir en Google+', 'data-info': 'GooglePlus'}
     = link_to build_share_google_url(@post), target: '_blank', rel: 'no-follow' do
       &nbsp;

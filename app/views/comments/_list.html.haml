@@ -1,0 +1,8 @@
+.post-comments
+  .container
+    %h3
+      = "Comentarios"
+    = render partial: 'comments/form', locals: { post_id: post.id }
+    .comments-list
+      - comments.approved.each do |comment|
+        = render comment

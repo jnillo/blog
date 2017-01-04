@@ -1,0 +1,12 @@
+.comments-review
+  .col-md-6.pending
+    %h3
+      Pendientes de revisar
+    - if @pending_comment.nil?
+      No hay commentarios pendientes, well done!
+    - else
+      - @pending_comments.each do |comment|
+        = render comment
+  .col-md-6.approved
+    - @approved_comments.each do |comment|
+      = render partial: 'approved_comment', locals: { comment: comment }

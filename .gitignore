@@ -11,6 +11,11 @@ capybara-*.html
 **.orig
 rerun.txt
 .env*
+.pow*
+dump*
+public/posts/
+public/resource/
+public/uploads/
 pickle-email-*.html
 Gemfile.lock
 .byebug_history
