@@ -9,6 +9,6 @@ class Comment < ApplicationRecord
   validates :email, presence: true
   validates :post_id, presence: true
 
-  scope :approved, -> { where("status = ? AND reply_to_id IS NULL", true).order("created_at desc")}
-  scope :pending, -> { where("status = ? AND reply_to_id IS NULL", false).order("created_at desc")}
+  scope :approved, -> { where("status = ?", true).order("created_at desc")}
+  scope :pending, -> { where("status = ?", false).order("created_at desc")}
 end

@@ -8,5 +8,3 @@
       = "Publicado en #{comment.created_at.strftime('%d %b %Y')}"
   %p.content-comment
     = comment.content
-- unless comment.reply.nil?
-  = render partial: 'comments/reply_comment', locals: { comment: comment.reply }
