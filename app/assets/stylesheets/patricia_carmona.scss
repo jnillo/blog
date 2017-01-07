@@ -816,9 +816,22 @@ a{
 
 /* Pagination */
 #blog div.pagination{
-  .page.current{
-    color: $link-color !important;
-    border-color: $link-color !important;
+  .page,.last, .next, .prev, .first{
+    display: inline-flex;
+    padding: 0;
+    a{
+      height: 40px;
+      min-width: 40px;
+      padding: 10px;
+    }
+    &.current{
+      border-color: $link-color !important;
+      color: $link-color !important;
+      display: inline-block;
+      height: 44px;
+      min-width: 44px;
+      padding: 10px;
+    }
   }
 }
 
