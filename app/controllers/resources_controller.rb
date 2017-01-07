@@ -2,11 +2,7 @@ class ResourcesController < ApplicationController
   RESOURCE_PER_PAGE = 10
 
   def index
-    @resources = Resource
-                   .actives
-                   .order(created_at: :desc)
-                   .page(params[:page] || 0)
-                   .per(RESOURCE_PER_PAGE)
+    @resources = resources_list
     @categories = categories_list
     @category = nil
     render layout: 'small_devise', template: "resources/mobile_index" if params[:subdomain]
@@ -15,20 +11,14 @@ class ResourcesController < ApplicationController
   def filter_by
   	p params[:category]
   	if params[:category] != "all"
-  	  resources = Resource
-        .actives
-        .where(category: params[:category])
-        .order(created_at: :desc)
+  	  resources = resources_list(category: params[:category])
       category = params[:category]
     else
-    	resources = Resource
-       .actives
-       .order(created_at: :desc)
-       .page(0)
-       .per(RESOURCE_PER_PAGE)
+    	resources = resources_list
       category = nil
     end
     categories = categories_list
+
     respond_to do |format|
       format.js {
       	render layout: nil,
@@ -54,5 +44,15 @@ class ResourcesController < ApplicationController
 
   def categories_list
     Resource.actives.map(&:category).uniq.sort
+  end
+
+  def resources_list(filter = nil)
+    resources = Resource
+      .actives
+      .order(created_at: :desc)
+    resources = resources.where(filter) if filter
+
+    resources.page(params[:page] || 0)
+      .per(RESOURCE_PER_PAGE)
   end
 end
