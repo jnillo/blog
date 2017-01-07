@@ -59,6 +59,7 @@ class PostsController < ApplicationController
     @post ||= Post.find_by_slug(params['slug'])
     if @post
       save_visit_blog(@post.id)
+      @comments = @post.comments.approved
       @related_posts = @post.related_posts(2)
       render template: 'posts/show', layout: 'small_devise'
     else

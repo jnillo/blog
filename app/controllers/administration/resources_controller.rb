@@ -42,6 +42,16 @@ class Administration::ResourcesController < AdministrationController
     end
   end
 
+  def destroy
+    resource = Resource.find(params[:id])
+    if resource.destroy
+      flash[:notice] = 'The resource was deleted successful!'
+    else
+      flash[:error] = "The resource couldn't be deleted. Please, try again."
+    end
+    redirect_to administration_resources_path
+  end
+
   private
 
   def resource_params
