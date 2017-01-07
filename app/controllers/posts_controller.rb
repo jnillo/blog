@@ -1,6 +1,6 @@
 # Controller to show posts for users
 class PostsController < ApplicationController
-  POST_PAGE = 10
+  POST_PAGE = 12
 
   def index
     @all_posts = load_posts(params[:page])
@@ -99,7 +99,7 @@ class PostsController < ApplicationController
       .select('posts.*, categories.name as category_name')
       .order(published: :desc)
       .page(page)
-      .per(POST_PAGE)
+      .per(page ? POST_PAGE : 10)
   end
 
   def load_posts_with_category(category)
