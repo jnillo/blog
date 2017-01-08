@@ -56,6 +56,10 @@ module PostHelper
     url_encode("http://www.patriciacarmona.com#{image}")
   end
 
+  def header_meta_image(image)
+    "http://www.patriciacarmona.com#{image}"
+  end
+
   def meta_link(slug)
     url_encode("http://www.patriciacarmona.com/#{slug}")
   end

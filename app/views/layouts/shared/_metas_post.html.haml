@@ -6,7 +6,7 @@
 %meta{ property: 'og:title', content: "Patricia Carmona | #{@post.title}" }
 %meta{ property: 'og:type', content: 'post' }
 %meta{ property: 'og:url', content: "http://www.patriciacarmona.com/#{@post.slug}" }
-%meta{ property: 'og:image', content: meta_image(@post.image.url) || meta_image(image_path('patricia_default.jpg')) }
+%meta{ property: 'og:image', content: header_meta_image(@post.image.url) || header_meta_image(image_path('patricia_default.jpg')) }
 %meta{ property: 'og:site_name', content: 'Patricia Carmona' }
 %meta{ property: 'og:description', content: "#{@post.resume}" }
 
@@ -15,7 +15,7 @@
 %meta{ name: 'twitter:domain', content: 'www.patriciacarmona.com' }
 %meta{ name: 'twitter:title', content: "#{@post.title}" }
 %meta{ name: 'twitter:description', content: "#{@post.resume}" }
-%meta{ name: 'twitter:image', content: meta_image(@post.image.url) || meta_image(image_path('patricia_default.jpg')) }
+%meta{ name: 'twitter:image', content: header_meta_image(@post.image.url) || header_meta_image(image_path('patricia_default.jpg')) }
 
 %meta{ property: 'fb:admins', content: '1567942686751387'}
 %link{rel:"canonical", href:"http://www.patriciacarmona.com/#{@post.slug}"}
