@@ -29,6 +29,17 @@ a{
     color: $content;
   }
 }
+
+.feedly{
+  background: url('icons/feedly-icon.png') no-repeat -2px 0;
+  background-size: cover;
+  display: block;
+  width: 45px;
+  height: 45px;
+}
+.footer-link .feedly{
+  background: url('feedly.png') no-repeat 1px 1px;
+}
 /* Mobile side-nav */
 .side-navbar{
   display: none;
@@ -204,13 +215,13 @@ body.open-sidenav{
   }
   .post-content {
     font-family: $font-content;
-    font-size: 24px;
+    font-size: 18px;
     color: $content;
     .medium-insert-images-progress{
       display:none;
     }
     p {
-      line-height: 33px;
+      line-height: 24px;
       margin-bottom: 25px;
     }
     img {
@@ -223,8 +234,8 @@ body.open-sidenav{
   }
   .post-resource{
     font-family: $content;
-    font-size: 20px;
-    padding: 30px 10px;
+    font-size: 14px;
+    padding: 15px 10px;
     font-weight: bold;
     a{
       font-weight: 200px;
@@ -236,8 +247,8 @@ body.open-sidenav{
     width: 100%;
     margin: 30px 0 !important;
     li{
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       background-position: center top;
       background-size: 100% auto;
       background-repeat: no-repeat;
@@ -288,7 +299,7 @@ body.open-sidenav{
       margin-bottom: 20px;
       overflow: hidden;
       .post-resume-content{
-        display: none;
+        font-size: 18px;
       }
       .post-readmore{
         font-size: 14px;
@@ -502,9 +513,12 @@ body.open-sidenav{
 }
 
 /* Subscription Block */
+.subcription-post{
+  border-top: 1px $border-light solid;
+  padding: 0 30px;
+}
 .subscription {
   background-color: $light-color;
-  border-top: 1px $border-light solid;
   .title{
     color: $content;
     font-family: $font-title;
