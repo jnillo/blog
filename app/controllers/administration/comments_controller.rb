@@ -1,4 +1,6 @@
 class Administration::CommentsController < ApplicationController
+  layout 'administration'
+  
   def index
     @pending_comments = Comment.pending
     @approved_comments = Comment.approved
