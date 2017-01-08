@@ -72,7 +72,7 @@ var createCookieWindowSize = function(browser_type){
 $(document).ready(function(){
     contentLinkObserver.load_content_modal('cookies-policy-link', 'layouts/shared/cookies_policy');
     //checkWindowSize();
-    //$(window).resize(function(){
-    //  checkWindowSize();
-    //})
+    $(window).resize(function(){
+      checkWindowSize();
+    })
 });
