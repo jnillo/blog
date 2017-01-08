@@ -11,6 +11,7 @@
     <%= favicon_link_tag image_path('favicon.png'), :rel => 'shortcut icon' %>
   </head>
   <body id='blog'>
+    <%= javascript_include_tag "application" %>
     <div class="container">
       <%= bootstrap_flash %>
       <%= yield %>
@@ -18,7 +19,6 @@
     <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
-    <%= javascript_include_tag "application" %>
     <%= render partial: 'layouts/shared/main_modal' %>
     <%= render partial: 'layouts/shared/analytics'%>
   </body>
