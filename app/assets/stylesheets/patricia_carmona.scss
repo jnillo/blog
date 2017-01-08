@@ -953,12 +953,35 @@ a{
         margin-bottom: 15px;
       }
       .resource-link {
+        display: block;
         a {
+          display: flex;
           font-family: $font-title;
           font-size: 14px;
           vertical-align: middle;
-          i {
-            font-size: 18px;
+          span{
+            font-family: "Roboto Light";
+            padding: 5px 0 0 5px;
+          }
+        }
+        .likes{
+          cursor: pointer;
+          height: 30px;
+          margin-left: 0;
+          overflow:hidden;
+          width: 80px;
+          i{
+            border-color: $link-color;
+            color: $link-color;
+            float:left;
+            margin-right: 7px;
+          }
+          button{
+            background: none;
+            border: 0;
+            color: $link-color;
+            font-family: $font-subtitle;
+            padding: 5px 0;
           }
         }
       }

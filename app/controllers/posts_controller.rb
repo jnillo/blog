@@ -2,6 +2,8 @@
 class PostsController < ApplicationController
   POST_PAGE = 12
 
+  include Interactions
+
   def index
     @all_posts = load_posts(params[:page])
     if params[:page].nil?
@@ -76,6 +78,7 @@ class PostsController < ApplicationController
     post = Post.find_by_id(params[:ref])
     post.likes += 1
     if post.save
+      cookies_likes(post.slug)
       render body: nil, status: :ok
     else
       render body: nil, status: :bad_request

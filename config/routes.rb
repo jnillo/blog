@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/resources', to: 'resources#index'
   get '/resources/filter_by/:category', to: 'resources#filter_by', as: :filter_resources
   get '/resources/download/:id', to: 'resources#increment_stats'
+  post '/resources/likes', to: 'resources#new_like'
 
   root to: 'home#index', to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'

@@ -10,7 +10,7 @@ $('.social-button').click(function(){
   });
 });
 
-$('.likes').click(function(){
+$('#single-post').find('.likes').click(function(){
   if($('li.likes > i').hasClass('fa-heart-o')) {
     $.ajax({
       url: '/post/likes?ref='+$('body').data('post'),
