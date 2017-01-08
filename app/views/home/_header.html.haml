@@ -22,10 +22,12 @@
           %li.last
             = link_to "Contacto", "/services#contact-me"
         .right.social-networks
-          = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank' do
+          = link_to 'http://twitter.com/patricrp', rel: 'no-follow', target: '_blank', title: 'Sígueme en Twitter' do
             %i.fa.fa-twitter.twitter.fa-2x
-          = link_to 'https://ie.linkedin.com/in/carmonapulidopatricia/en', rel: 'no-follow', target: '_blank' do
+          = link_to 'https://ie.linkedin.com/in/carmonapulidopatricia/en', rel: 'no-follow', target: '_blank', title: 'Sígueme en LinkedIn' do
             %i.fa.fa-linkedin.linkedin.fa-2x
+          = link_to 'http://feedly.com/i/subscription/feed/http://patriciacarmona.com/feed/', rel: 'no-follow', target: '_blank', title: 'Sígueme en Feedly' do
+            %i.fa.feedly.fa-2x
     .row-fluid
       .col-md-12.col-xs-12
         .col-md-8.col-xs-6.lead
