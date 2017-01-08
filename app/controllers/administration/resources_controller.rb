@@ -6,7 +6,7 @@ class Administration::ResourcesController < AdministrationController
   end
 
   def index
-  	@resources = Resource.order(:created_at)
+  	@resources = Resource.order(published: :desc)
   end
 
   def show

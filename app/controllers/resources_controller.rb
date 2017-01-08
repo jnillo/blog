@@ -62,7 +62,7 @@ class ResourcesController < ApplicationController
   def resources_list(filter = nil)
     resources = Resource
       .actives
-      .order(created_at: :desc)
+      .order(published: :desc)
     resources = resources.where(filter) if filter
 
     resources.page(params[:page] || 0)
