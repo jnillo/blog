@@ -26,7 +26,7 @@ xml.rss :version => "2.0",
       xml.item do
         xml.title post.title
         xml.tag!('dc:creator', "Patricia Carmona" )
-        xml.pubDate post.created_at.to_s(:rfc822)
+        xml.pubDate post.published.rfc822
         xml.link "http://www.patriciacarmona.com/" + post.slug
         xml.guid("http://www.patriciacarmona.com/" + post.slug, isPermaLink: false)
 
