@@ -1,6 +1,6 @@
 # Controller to show posts for users
 class PostsController < ApplicationController
-  POST_PAGE = 12
+  POST_PAGE = 10
 
   include Interactions
 
@@ -103,7 +103,7 @@ class PostsController < ApplicationController
       .select('posts.*, categories.name as category_name')
       .order(published: :desc)
       .page(page)
-      .per(page ? POST_PAGE : 10)
+      .per(page ? POST_PAGE )
   end
 
   def load_posts_with_category(category)
