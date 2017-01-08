@@ -1,6 +1,8 @@
 class ResourcesController < ApplicationController
   RESOURCE_PER_PAGE = 10
 
+  include Interactions
+
   def index
     @resources = resources_list
     @categories = categories_list
@@ -38,6 +40,17 @@ class ResourcesController < ApplicationController
       resource.save
     end
     render nothing: true
+  end
+
+  def new_like
+    resource = Resource.find_by_id(params[:ref])
+    resource.likes += 1
+    if resource.save
+      cookies_likes(resource.link)
+      render body: nil, status: :ok
+    else
+      render body: nil, status: :bad_request
+    end
   end
 
   private

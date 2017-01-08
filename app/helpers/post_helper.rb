@@ -59,8 +59,4 @@ module PostHelper
   def meta_link(slug)
     url_encode("http://www.patriciacarmona.com/#{slug}")
   end
-
-  def user_likes?(slug)
-    false
-  end
 end

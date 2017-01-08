@@ -8,5 +8,10 @@
       - @pending_comments.each do |comment|
         = render comment
   .col-md-6.approved
-    - @approved_comments.each do |comment|
-      = render partial: 'approved_comment', locals: { comment: comment }
+    %h3
+      Aprobados
+    - if @approved_comments.nil?
+      No hay commentarios publicados aun.
+    - else
+      - @approved_comments.each do |comment|
+        = render comment

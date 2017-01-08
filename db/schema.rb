@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103130040) do
+ActiveRecord::Schema.define(version: 20170107125211) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -24,16 +24,20 @@ ActiveRecord::Schema.define(version: 20170103130040) do
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "user"
-    t.text     "content",    limit: 65535
-    t.integer  "status",                   default: 0
+    t.string   "name"
+    t.text     "content",     limit: 65535
+    t.integer  "status",                    default: 0
     t.integer  "post_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "email"
+    t.integer  "reply_to_id"
+    t.index ["email"], name: "index_comments_on_email", using: :btree
+    t.index ["name"], name: "index_comments_on_name", using: :btree
     t.index ["post_id", "status"], name: "index_comments_on_post_id_and_status", using: :btree
     t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["reply_to_id"], name: "index_comments_on_reply_to_id", using: :btree
     t.index ["status"], name: "index_comments_on_status", using: :btree
-    t.index ["user"], name: "index_comments_on_user", using: :btree
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170103130040) do
     t.datetime "updated_at",                               null: false
     t.boolean  "status",                    default: true
     t.string   "category"
+    t.integer  "likes",                     default: 0
     t.index ["category"], name: "index_resources_on_category", using: :btree
     t.index ["status", "category"], name: "index_resources_on_status_and_category", using: :btree
     t.index ["status"], name: "index_resources_on_status", using: :btree
