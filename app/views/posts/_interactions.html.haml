@@ -4,7 +4,7 @@
       %i.fa.fa-heart.fa-2x
     - else
       %i.fa.fa-heart-o.fa-2x
-    %button
+    %button{"data-action": 'show-recommends'}
       = post.likes
   %li.comments
     %a{ href: '#comments', title: "Comments" }

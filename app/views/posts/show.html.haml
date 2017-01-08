@@ -3,11 +3,9 @@
     %div{ id: "post_#{@post.id}", class: 'container' }
       %h1.post-title
         = @post.title
-
       %span.post-date
         %i.fa.fa-calendar
         = "Publicado en #{@post.published.strftime('%d %b %Y')}"
-
       %h3.post-subtitle
         = @post.resume
       - if @post.image.url
