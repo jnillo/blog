@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   post '/post/likes', to: 'posts#new_like'
   post '/post/social-stats', to: 'posts#social_stats'
   resources :comments
-  get 'feed', to: 'posts#feed', :defaults => { :format => "rss" }
+  get 'feed', to: 'posts#feed', :defaults => { :format => "xml" }
   get '/blog', to: 'posts#index', as: :blog
   get '/services', to: 'home#services'
   get '/resources', to: 'resources#index'
