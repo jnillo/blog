@@ -217,6 +217,19 @@ a{
       }
     }
   }
+  .feedly{
+    background: url('icons/feedly-icon.png') no-repeat -2px 0;
+    background-size: cover;
+    display: block;
+    width: 30px;
+    height: 30px;
+    &:hover{
+      background: url('feedly.png') no-repeat 1px 5px;
+    }
+  }
+  .footer-link .feedly{
+    background: url('feedly.png') no-repeat 1px 1px;
+  }
 }
 
 /* Post */
@@ -350,6 +363,7 @@ a{
         }
       }
       .linkedin { background-image: url('icons/linkedin.png') }
+      .feedly { background-image: url('icons/feedly.png') }
       .facebook { background-image: url('icons/facebook.png') }
       .twitter { background-image: url('icons/twitter.png') }
       .google { background-image: url('icons/google.png') }
