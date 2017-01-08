@@ -103,7 +103,7 @@ class PostsController < ApplicationController
       .select('posts.*, categories.name as category_name')
       .order(published: :desc)
       .page(page)
-      .per(page ? POST_PAGE )
+      .per(POST_PAGE)
   end
 
   def load_posts_with_category(category)

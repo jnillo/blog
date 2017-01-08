@@ -4,5 +4,12 @@ class Resource < ApplicationRecord
 
 	has_many :posts
 
-  scope :actives, -> { where(status: true) }
+  validates :title, presence: true, uniqueness: true
+  validates :description, presence: true
+  validates :link, presence: true
+  validates :image, presence: true
+  validates :published, presence: true
+  validates :category_id, presence: true
+
+  scope :actives, -> { where("status = ? AND published <= ?", true, Time.now) }
 end

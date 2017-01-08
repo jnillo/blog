@@ -56,9 +56,9 @@ class Administration::ResourcesController < AdministrationController
 
   def resource_params
     if params["resource"]["image"].is_a?(ActionDispatch::Http::UploadedFile)
-      params.require(:resource).permit(:title, :description, :link, :image, :category, :status)
+      params.require(:resource).permit(:title, :description, :link, :image, :category, :status, :published)
     else
-      params.require(:resource).permit(:title, :description, :link, :category, :status)
+      params.require(:resource).permit(:title, :description, :link, :category, :status, :published)
     end
   end
 end

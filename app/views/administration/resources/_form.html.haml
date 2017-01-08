@@ -11,6 +11,8 @@
   .form-group
     = f.input :link, input_html: { class: 'form-control col-md-4' }, as: :string
   .form-group
+    = f.input :published, as: :datetime, order: [:day, :month, :year, :hour, :minute]
+  .form-group
     = f.label :category, 'Categoria'
     %br
     = collection_radio_buttons(:resource, :category, resources_categories, :to_s, :to_s)
