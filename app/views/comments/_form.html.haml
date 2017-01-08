@@ -3,8 +3,13 @@
     = hidden_field :comment, :post_id, value: post_id
     = f.input :name, placeholder: '¿Cómo te llamas?', required: true, label: false, error: "Necesito saber cómo te llamas para poder responderte."
   .form-group
-    = text_field :comment, :captcha, placeholder: 'Para descartar que seas un bot, escribe tu nombre al revés, ejemplo:   aicirtaP', required: true
+    = f.input :email, placeholder: 'Email', required: true, label: false, error: 'El email es obligatorio. No voy a usarlo para fines comerciales.'
   .form-group
-    = f.text_area :content, placeholder: 'Díme que te ha parecido el artículo :)', required: true
+    = f.input :captcha, placeholder: 'Para descartar que seas un bot, escribe tu nombre al revés, ejemplo:   aicirtaP', required: true, label: false, error: "¡No es complicado! Patricia -> aicirtaP"
+  .form-group
+    = f.input :content, placeholder: 'Díme que te ha parecido el artículo :)', required: true, label: false, as: :text, error: "Debes escribir algo en el comentario"
+  .form-group
+    .note
+      * Tus datos nos serán añadidos a ninguna lista de suscriptores o similar.
   .form-group
     = f.submit "Publicar"

@@ -11,6 +11,14 @@ $('.social-button').click(function(){
 });
 
 $('#single-post').find('.likes').click(function(){
+  add_new_like();
+});
+
+$('#blog').find('.likes').click(function(){
+  add_new_like();
+});
+
+function add_new_like(){
   if($('li.likes > i').hasClass('fa-heart-o')) {
     $.ajax({
       url: '/post/likes?ref='+$('body').data('post'),
@@ -25,4 +33,4 @@ $('#single-post').find('.likes').click(function(){
       }.bind(this),
     });
   }
-});
+}

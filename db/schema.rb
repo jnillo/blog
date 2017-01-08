@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107125211) do
+ActiveRecord::Schema.define(version: 20170108135311) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -93,7 +93,9 @@ ActiveRecord::Schema.define(version: 20170107125211) do
     t.boolean  "status",                    default: true
     t.string   "category"
     t.integer  "likes",                     default: 0
+    t.datetime "published"
     t.index ["category"], name: "index_resources_on_category", using: :btree
+    t.index ["published"], name: "index_resources_on_published", using: :btree
     t.index ["status", "category"], name: "index_resources_on_status_and_category", using: :btree
     t.index ["status"], name: "index_resources_on_status", using: :btree
   end

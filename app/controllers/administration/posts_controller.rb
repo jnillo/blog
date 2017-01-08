@@ -10,7 +10,7 @@ module Administration
     layout 'administration', only: [:new, :edit]
 
     def index
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(published: :desc)
     end
 
     def show
