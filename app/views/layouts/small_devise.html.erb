@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "mobile", :media => "all" %>
   </head>
-  <body id='blog'>
+  <body id='blog' data-post='<%= @post ? @post.id : nil %>'>
     <%= render partial: 'layouts/shared/mobile_main_navbar' %>
     <div class="container">
       <%= bootstrap_flash %>

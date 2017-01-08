@@ -5,6 +5,6 @@
       %span
         = comment.name
     .comment-date.right
-      = "Publicado en #{comment.created_at.strftime('%d %b %Y')}"
+      = "#{comment.created_at.strftime('%d %b %Y')}"
   %p.content-comment
     = comment.content

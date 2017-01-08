@@ -184,6 +184,10 @@ body.open-sidenav{
     text-align: left;
     color: $title;
     margin-top: 60px;
+    padding: 10px !important;
+  }
+  .post-date{
+    padding: 0 10px;
   }
   .post-subtitle {
     color: $sub-title;
@@ -220,13 +224,13 @@ body.open-sidenav{
   .post-resource{
     font-family: $content;
     font-size: 20px;
-    padding: 0 10px;
+    padding: 30px 10px;
     font-weight: bold;
     a{
       font-weight: 200px;
     }
   }
-  .post-actions {
+  .post-interactions {
     padding: 10px 0;
     text-align: center;
     width: 100%;
@@ -246,6 +250,27 @@ body.open-sidenav{
         display: block;
         width: 100%;
       }
+      &.likes, &.comments{
+          display: inline-flex;
+          cursor: pointer;
+          float: left;
+          height: 30px;
+          margin-left: 10px;
+          overflow:hidden;
+          width: 60px;
+          i{
+            border-color: $link-color;
+            color: $link-color;
+            float:left;
+            margin-right: 2px;
+          }
+          button{
+            background: none;
+            border: 0;
+            color: $link-color;
+            font-family: $font-subtitle;
+          }
+        }
     }
     .linkedin { background-image: url('icons/linkedin.png') }
     .facebook { background-image: url('icons/facebook.png') }
@@ -279,7 +304,7 @@ body.open-sidenav{
 .post-footer{
   margin-top: 30px;
   .container{
-    background-color: #f5f5f5 !important;
+    background-color: $light-color !important;
     .author-info{
       color: #3b444f;
       padding: 10px;
@@ -380,6 +405,97 @@ body.open-sidenav{
   }
 }
 
+.post-comments{
+  background-color: white;
+  padding: 0 15px;
+  .container{
+    max-width: 927px;
+    h3{
+      margin: 30px auto;
+      width: 100%;
+    }
+    .comment-form{
+      display: block;
+      margin: 0 auto 50px auto;
+      max-width: 100%;
+      textarea, input[type=text], input.email{
+        border-radius: 5px;
+        border: 1px $border solid;
+        box-shadow: $box-shadow;
+        color: $form-color;
+        display: block;
+        padding: 15px;
+        width: 100%;
+      }
+      textarea{
+        height: 120px;
+      }
+      input[type=text], input.email{
+        padding: 5px 10px;
+      }
+      input[type=submit]{
+        background: white;
+        border-radius: 15px;
+        border: 1px $link-color solid;
+        color: $link-color;
+        padding: 3px 10px;
+      }
+      .note{
+        font-size: 10px;
+        margin-bottom: 15px;
+      }
+    }
+    .comments-list{
+      margin: 0 auto 30px auto;
+      width: 100%;
+    }
+    .comment {
+      background: white;
+      border: 1px $border solid;
+      border-radius: 5px;
+      box-shadow: $box-shadow;
+      margin: 15px 0;
+      padding: 15px;
+      width: 100%;
+      .head-comment{
+        height: 30px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        .comment-user{
+          float: left;
+          i{
+            border-radius: 50%;
+            border: 1px $sub-title solid;
+            padding: 3px 5px;
+            color: $sub-title;
+          }
+          span{
+            color: $sub-title;
+            font-size: 16px;
+            margin-left: 10px;
+          }
+        }
+        .comment-date{
+          color: $sub-title;
+          float: right;
+        }
+      }
+      .content-comment{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .reply-comment{
+      border-left: 5px $content solid;
+      margin: 0 -15px 0 15px;
+      img{
+        border-radius: 50%;
+        width: 25px;
+      }
+    }
+  }
+}
+
 /* Footer */
 .footer {
   display:none;
@@ -387,8 +503,10 @@ body.open-sidenav{
 
 /* Subscription Block */
 .subscription {
-  background-color: $dark-block;
+  background-color: $light-color;
+  border-top: 1px $border-light solid;
   .title{
+    color: $content;
     font-family: $font-title;
   }
   form {
@@ -397,8 +515,8 @@ body.open-sidenav{
     }
     input[type=submit] {
       font-family: $font-subtitle;
-      background-color: #cb2027;
-      border: 1px #cb2027 solid;
+      background-color: $primary-button;
+      border: 1px $primary-button solid;
       cursor: pointer;
       transition: background-color 0.5s ease;
     }
@@ -410,7 +528,7 @@ body.open-sidenav{
 }
 
 .subcription-post{
-  padding: 2em;
+  overflow:hidden;
 }
 
 /* About */
@@ -544,8 +662,15 @@ body.open-sidenav{
         margin-top: 30px;
       }
       .resource-category{
+        display: inline-flex;
         color: $link-color;
         margin: 15px 0;
+        width: 49%;
+      }
+      .resource-date{
+        display: inline-block;
+        margin: 15px 0;
+        width: 50%;
       }
       .resource-link{
         float: right;
@@ -554,9 +679,15 @@ body.open-sidenav{
         }
         i{
           font-size: 24px;
+          color: $link-color;
         }
         a{
-          color: $content;
+          color: $link-color;
+        }
+        button{
+          background: transparent;
+          border: 0;
+          color: $link-color;
         }
       }
     }

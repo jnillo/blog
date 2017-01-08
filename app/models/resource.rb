@@ -9,7 +9,6 @@ class Resource < ApplicationRecord
   validates :link, presence: true
   validates :image, presence: true
   validates :published, presence: true
-  validates :category_id, presence: true
 
   scope :actives, -> { where("status = ? AND published <= ?", true, Time.now) }
 end
