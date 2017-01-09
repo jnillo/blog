@@ -795,6 +795,11 @@ a{
       }
     }
   }
+  .confirmation{
+    h2{
+      color: $content;
+    }
+  }
   .contact-section {
     background: #ebebeb url("patri_header.jpg") no-repeat top center;
     background-size: cover;
