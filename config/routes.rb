@@ -42,6 +42,6 @@ Rails.application.routes.draw do
   get '/resources/download/:id', to: 'resources#increment_stats'
   post '/resources/likes', to: 'resources#new_like'
 
-  root to: 'home#index', to: 'home#index'
+  root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'
 end
