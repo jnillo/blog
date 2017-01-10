@@ -15,7 +15,7 @@ module PostHelper
   end
 
   def build_post_url(post)
-    return 'http://patriciacarmona.com/'+post.slug
+    return 'https://patriciacarmona.com/'+post.slug
   end
 
   def build_share_twitter_url(post)
@@ -53,14 +53,14 @@ module PostHelper
   end
 
   def meta_image(image)
-    url_encode("http://www.patriciacarmona.com#{image}")
+    url_encode("https://patriciacarmona.com#{image}")
   end
 
   def header_meta_image(image)
-    "http://www.patriciacarmona.com#{image}"
+    "https://patriciacarmona.com#{image}"
   end
 
   def meta_link(slug)
-    url_encode("http://www.patriciacarmona.com/#{slug}")
+    url_encode("https://patriciacarmona.com/#{slug}")
   end
 end

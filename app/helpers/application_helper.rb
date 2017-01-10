@@ -7,4 +7,8 @@ module ApplicationHelper
   def home_page?
     params[:controller] == 'home'
   end
+
+  def build_url(uri='')
+    return 'https://patriciacarmona.com/'+uri
+  end
 end

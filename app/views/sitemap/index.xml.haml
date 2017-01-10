@@ -1,0 +1,28 @@
+!!! XML
+%urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
+  %url
+    %loc #{build_url}
+    %lastmod=DateTime.now.strftime('%Y-%m-%d')
+    %changefreq daily
+    %priority 0.1
+  %url
+    %loc #{build_url('blog')}
+    %lastmod=DateTime.now.strftime('%Y-%m-%d')
+    %changefreq weekly
+    %priority 0.25
+  %url
+    %loc #{build_url('services')}
+    %lastmod=DateTime.now.strftime('%Y-%m-%d')
+    %changefreq monthly
+    %priority 0.25
+  %url
+    %loc #{build_url('resources')}
+    %lastmod=DateTime.now.strftime('%Y-%m-%d')
+    %changefreq weekly
+    %priority 0.25
+  - @posts.each do |post|
+    %url
+      %loc #{build_post_url(post)}
+      %lastmod=post.updated_at.strftime('%Y-%m-%d')
+      %changefreq weekly
+      %priority 0.5
