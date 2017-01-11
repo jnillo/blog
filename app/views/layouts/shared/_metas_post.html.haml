@@ -1,22 +1,22 @@
-%meta{ name: 'author', content: "#{@post.author}" }
-%meta{ name: 'publisher', content: "#{@post.author}"  }
-%meta{ name: 'description', content: "#{@post.resume}"  }
-%meta{ name: 'keywords', content: "#{@post.category.name}"  }
+%meta{ name: 'author', content: "#{content_for?(:author) ? yield(:author) : nil}" }
+%meta{ name: 'publisher', content: "#{content_for?(:author) ? yield(:author) : nil}"  }
+%meta{ name: 'description', content: "#{content_for?(:resume) ? yield(:resume) : nil}"  }
+%meta{ name: 'keywords', content: "#{content_for?(:category) ? yield(:category) : nil}"  }
 
-%meta{ property: 'og:title', content: "Patricia Carmona | #{@post.title}" }
+%meta{ property: 'og:title', content: "Patricia Carmona | #{content_for?(:title) ? yield(:title) : nil}" }
 %meta{ property: 'og:type', content: 'post' }
 %meta{ property: 'og:url', content: "http://www.patriciacarmona.com/#{@post.slug}" }
-%meta{ property: 'og:image', content: header_meta_image(@post.image.url) || header_meta_image(image_path('author.jpg')) }
+%meta{ property: 'og:image', content: header_meta_image(content_for?(:image) ? yield(:image) : image_path('author.jpg')) }
 %meta{ property: 'og:site_name', content: 'Patricia Carmona' }
-%meta{ property: 'og:description', content: "#{@post.resume}" }
+%meta{ property: 'og:description', content: "#{content_for?(:resume) ? yield(:resume) : nil}" }
 
 %meta{ name: 'twitter:card', content: 'summary_large_image' }
 %meta{ name: 'twitter:site', content: '@patricrp' }
 %meta{ name: 'twitter:domain', content: 'www.patriciacarmona.com' }
-%meta{ name: 'twitter:title', content: "#{@post.title}" }
-%meta{ name: 'twitter:description', content: "#{@post.resume}" }
-%meta{ name: 'twitter:image', content: header_meta_image(@post.image.url) || header_meta_image(image_path('author.jpg')) }
+%meta{ name: 'twitter:title', content: "#{content_for?(:title) ? yield(:title) : nil}" }
+%meta{ name: 'twitter:description', content: "#{content_for?(:resume) ? yield(:resume) : nil}" }
+%meta{ name: 'twitter:image', content: header_meta_image(content_for?(:image) ? yield(:image) : image_path('author.jpg')) }
 
 %meta{ property: 'fb:admins', content: '1567942686751387'}
-%link{rel:"canonical", href:"http://www.patriciacarmona.com/#{@post.slug}"}
+%link{rel:"canonical", href:"http://www.patriciacarmona.com/#{content_for?(:slug) ? yield(:slug) : nil}"}
 %meta{name: "robots", content:"noodp" }

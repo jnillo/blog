@@ -1,3 +1,10 @@
+- content_for(:title, @post.title)
+- content_for(:image, @post.image.url || nil)
+- content_for(:slug, @post.slug)
+- content_for(:author, @post.author)
+- content_for(:category, @post.category.name)
+- content_for(:resume, @post.resume.truncate(170))
+
 .post
   .row
     %div{ id: "post_#{@post.id}", class: 'container' }
