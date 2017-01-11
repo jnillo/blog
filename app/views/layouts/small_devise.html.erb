@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
     <%= render partial: 'layouts/shared/metas_blog' %>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "mobile", :media => "all" %>
   </head>
   <body id='blog' data-post='<%= @post ? @post.id : nil %>'>
     <%= render partial: 'layouts/shared/mobile_main_navbar' %> 
@@ -15,7 +16,6 @@
       <%= yield %>
     </div> <!-- /container -->
     <%= javascript_include_tag "application" %>
-    <%= stylesheet_link_tag "mobile", :media => "all" %>
     <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
