@@ -9,17 +9,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body id='blog' data-post='<%= @post ? @post.id : nil %>'>
-    <%= render partial: 'layouts/shared/mobile_main_navbar' %>
+    <%= render partial: 'layouts/shared/mobile_main_navbar' %> 
     <div class="container">
       <%= bootstrap_flash %>
       <%= yield %>
     </div> <!-- /container -->
+    <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "mobile", :media => "all" %>
     <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
     <%= render partial: 'layouts/shared/main_modal' %>
-    <%= javascript_include_tag "application" %>
     <%= render partial: 'layouts/shared/analytics'%>
   </body>
 </html>

@@ -34,3 +34,7 @@ function add_new_like(){
     });
   }
 }
+
+$('.post-link').click(function(element){ 
+  $(location).attr('href',$(this).attr('data-ref'));
+});
