@@ -19,8 +19,7 @@ module PostHelper
   end
 
   def build_share_twitter_url(post)
-    url = post.external_link || meta_link(post.slug)
-    twitter_url = TWITTER_SHARE_URL + "url=#{url}"
+    twitter_url = TWITTER_SHARE_URL + "url=#{post_link(post)}"
     twitter_url += '&text='+post.title
     twitter_url += '&via=patricrp'
     twitter_url += '&hashtags='+post.category.name.gsub(' ','')
@@ -29,8 +28,7 @@ module PostHelper
   end
 
   def build_share_facebook_url(post)
-    url = post.external_link || meta_link(post.slug)
-    facebook_url = FACEBOOK_SHARE_URL + "u=#{url}"
+    facebook_url = FACEBOOK_SHARE_URL + "u=#{post_link(post)}"
     facebook_url += '&picture=' + meta_image(post.image.url)
     facebook_url += '&title=' + url_encode(post.title)
     facebook_url += '&description=' + url_encode(post.resume)
@@ -38,8 +36,7 @@ module PostHelper
   end
 
   def build_share_linkedin_url(post)
-    url = post.external_link || meta_link(post.slug)
-    linkedin_url = LINKEDIN_SHARE_URL + "mini=true&url=#{url}"
+    linkedin_url = LINKEDIN_SHARE_URL + "mini=true&url=#{post_link(post)}"
     linkedin_url += '&title=' + url_encode(post.title)
     linkedin_url += '&picture=' + meta_image(post.image.url)
     linkedin_url += '&summary=' + url_encode(post.resume)
@@ -48,8 +45,7 @@ module PostHelper
   end
 
   def build_share_google_url(post)
-    url = post.external_link || meta_link(post.slug)
-    GOOGLE_SHARE_URL+ "url=" + url
+    GOOGLE_SHARE_URL+ "url=" + post_link(post)
   end
 
   def meta_image(image)
@@ -62,5 +58,9 @@ module PostHelper
 
   def meta_link(slug)
     url_encode("https://patriciacarmona.com/#{slug}")
+  end
+
+  def post_link(post)
+    !post.external_link.empty? ? post.external_link : meta_link(post.slug)
   end
 end
