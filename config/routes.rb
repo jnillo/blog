@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get '/resources/filter_by/:category', to: 'resources#filter_by', as: :filter_resources
   get '/resources/download/:id', to: 'resources#increment_stats'
   post '/resources/likes', to: 'resources#new_like'
+  get '/glossary', to: 'glossary#index'
   get '/sitemap.xml', to: 'sitemap#index', defaults: { format: 'xml' }
   root to: 'home#index'
   get ':slug', to: 'posts#show', as: 'show_post'

@@ -1,0 +1,9 @@
+.glossary-nav
+  .container
+    %ul.nav.nav-tabs
+      - ('a'..'z').each do |letter|
+        %li{ class: "letter #{letter == active_letter ? 'active' : nil}" }
+          = link_to glossary_path(letter: letter) do 
+            =letter
+      %li.searcher.right
+        %input{ type: 'text', placeholder: 'Buscar término' }

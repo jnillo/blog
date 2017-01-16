@@ -1,0 +1,13 @@
+.row
+  = render partial: 'layouts/shared/main_navbar'
+.row
+  #glossary
+    .container
+      .row
+        = render partial: 'header'
+      .row#glossary_nav
+        = render partial: 'navigation', locals: { active_letter: @letter }
+      .row#terms_list
+        = render partial: 'terms', locals: { terms: @terms }
+.row
+  = render partial: 'layouts/shared/footer'
