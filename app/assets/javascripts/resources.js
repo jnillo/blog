@@ -14,10 +14,10 @@ $('#resources').find('.likes').click(function(){
       type: "POST",
       cache: false,
       complete: function(response, status) {
-        var likes = parseInt($('li.likes > button').text()) + 1;
-        $('li.likes > i').removeClass('fa-heart-o');
-        $('li.likes > i').addClass('fa-heart');
-        $('li.likes > button').html(likes);
+        var likes = parseInt($(this).find('button').text()) + 1;
+        $(this).find('i').removeClass('fa-heart-o');
+        $(this).find('i').addClass('fa-heart');
+        $(this).find('button').html(likes);
       }.bind(this),
     });
   }
