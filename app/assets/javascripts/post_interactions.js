@@ -1,3 +1,20 @@
+function add_new_like(like_block){
+  if($(like_block).find('i').hasClass('fa-heart-o')) {
+    $.ajax({
+      url: '/post/likes?ref='+$('body').data('post'),
+      dataType: 'json',
+      type: "POST",
+      cache: false,
+      complete: function(response, status) {
+        var likes = parseInt($(like_block).find('button').text()) + 1;
+        $(like_block).find('i').removeClass('fa-heart-o');
+        $(like_block).find('i').addClass('fa-heart');
+        $(like_block).find('button').html(likes);
+      }.bind(this),
+    });
+  }
+}
+
 $('.social-button').click(function(){
 	$.ajax({
     url: '/post/social-stats?ref='+$('body').data('post')+'&source='+$(this).data('info'),
@@ -11,30 +28,13 @@ $('.social-button').click(function(){
 });
 
 $('#single-post').find('.likes').click(function(){
-  add_new_like();
+  add_new_like(this);
 });
 
 $('#blog').find('.likes').click(function(){
-  add_new_like();
+  add_new_like(this);
 });
 
-function add_new_like(){
-  if($('li.likes > i').hasClass('fa-heart-o')) {
-    $.ajax({
-      url: '/post/likes?ref='+$('body').data('post'),
-      dataType: 'json',
-      type: "POST",
-      cache: false,
-      complete: function(response, status) {
-        var likes = parseInt($('li.likes > button').text()) + 1;
-        $('li.likes > i').removeClass('fa-heart-o');
-        $('li.likes > i').addClass('fa-heart');
-        $('li.likes > button').html(likes);
-      }.bind(this),
-    });
-  }
-}
-
-$('.post-link').click(function(element){ 
+$('.post-link').click(function(element){
   $(location).attr('href',$(this).attr('data-ref'));
 });

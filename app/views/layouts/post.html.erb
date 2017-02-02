@@ -9,7 +9,6 @@
     <%= csrf_meta_tags %>
     <%= render partial: 'layouts/shared/metas_post' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application", :media => "all" %>
   </head>
   <body id='single-post' data-post='<%= @post.id%>'>
     <%= render partial: 'layouts/shared/main_navbar' %>
@@ -24,6 +23,7 @@
     <% unless cookies[:viewed_cookie_policy] %>
       <%= render partial: 'layouts/shared/cookies_alert' %>
     <% end %>
+    <%= javascript_include_tag "application", :media => "all" %>
     <%= render partial: 'layouts/shared/analytics'%>
   </body>
 </html>
