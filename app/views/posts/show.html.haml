@@ -25,7 +25,7 @@
         .post-resource
           %span
             Recurso:
-          = link_to @post.resource.link, target: '_blank', onclick: 'resourceDownload(event)', "data-ref": @post.resource.id  do
+          = link_to @post.resource.link, target: '_blank', onclick: 'downloadResource(event)', "data-ref": @post.resource.id  do
             %i.fa.fa-download
             = @post.resource.title
       .tags

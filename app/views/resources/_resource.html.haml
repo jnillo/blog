@@ -17,7 +17,7 @@
     .resource-link
       %ul.list-inline
         %li
-          = link_to resource.link, onclick: 'resourceDownload(event)', "data-ref": resource.id, target: '_blank' do
+          = link_to resource.link, onclick: 'downloadResource(event)', "data-ref": resource.id, target: '_blank' do
             %i.fa.fa-download.fa-2x
             %span.hidden-xs
               Descargar
