@@ -1,4 +1,4 @@
-const downloadResource = function(event) {
+function downloadResource(event) {
   $.ajax({
       url: '/resources/download/' + event.target.dataset.ref,
       dataType: 'json',
