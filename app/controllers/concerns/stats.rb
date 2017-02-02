@@ -2,16 +2,16 @@ module Stats
   extend ActiveSupport::Concern
 
   def save_visit
-  	save_visit_data if new_visit?
+  	save_visit_data if new_visit? && !user_logged
   	#add_cookies
   end
 
   def save_visit_blog(post_id)
-    StatData.save_visit_blog(user_ip, post_id)
+    StatData.save_visit_blog(user_ip, post_id) unless user_logged
   end
 
   def save_visit_data
-    StatData.save_visit(Time.zone.now.to_date, user_ip)
+    StatData.save_visit(Time.zone.now.to_date, user_ip) unless user_logged
   end
 
   def add_cookies

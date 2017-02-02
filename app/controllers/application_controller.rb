@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
   	session[:user_ip] ||= request.remote_ip
   end
 
+  def user_logged
+    cookies.signed[:username].present? &&
+      cookies.signed[:session_expired] &&
+      cookies.signed[:session_expired] >= Time.zone.now
+  end
+
 end
