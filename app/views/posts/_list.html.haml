@@ -1,7 +1,8 @@
 .row_fluid
   - if defined?(last_post) && last_post
-    .row-fluid
-      = render partial: 'posts/resume_post_last', locals: { post: last_post }
+    - cache(action_suffix: "post_#{last_post.title}", :expires_in => 24.hour) do
+      .row-fluid
+        = render partial: 'posts/resume_post_last', locals: { post: last_post }
 .row
   .blog-infoTitle
     = @title_list || "Mi últimos artículos"
@@ -9,7 +10,8 @@
     - old_posts.in_groups_of(3, false) do |posts|
       .blog-newRow
         - posts.each do |post|
-          = render partial: 'posts/resume_post', locals: { post: post }
+          - cache(action_suffix: "post_#{post.title}", :expires_in => 24.hour) do
+            = render partial: 'posts/resume_post', locals: { post: post }
 - if paginate
   .pagination
     = paginate all_posts
