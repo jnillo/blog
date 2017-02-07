@@ -1,6 +1,8 @@
 .row
   - cache(action_suffix: "home_header_mobile", :expires_in => 1.hour) do
     = render partial: 'home/header'
+.row-fluid.promotion-home
+  = render partial: 'home/promotions/course_barcelona_march_17'
 .row.blog-section
   - cache(action_suffix: "home_blog_info_mobile", :expires_in => 1.hour) do
     .blog-info.col-xs-12

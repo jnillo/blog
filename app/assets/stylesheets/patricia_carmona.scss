@@ -163,6 +163,57 @@ a{
       }
     }
   }
+  .promotion-home{
+    background-color: $form-color;
+    color: white;
+    .container{
+      background-color: transparent;
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      width: $break-large;
+      .description{
+        padding: 0;
+        h4{
+          font-family: $font-titleHighlight;
+        }
+        p {
+          font-family: $font-subtitle;
+        }
+        .details{
+          span{
+            font-family: $font-titleHighlight;
+            margin-right: 10px;
+            margin-left: 15px;
+            &:first-child{
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .action{
+        float:right;
+        padding: 30px 15px;
+        a{
+          background-color: $promotions-action;
+          border-color: $promotions-action-hover;
+          border-radius: 5px;
+          display: block;
+          color: white;
+          font-family: $font-title;
+          font-size: 18px;
+          margin: 0 auto;
+          padding: 7px 12px;
+          text-align: center;
+          width: 90%;
+          &:hover{
+            background-color: $promotions-action-hover;
+          }
+        }
+      }
+    }
+  }
   .filter_by {
     font-family: $font-titleHighlight;
     margin: 20px 0;

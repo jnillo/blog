@@ -1,0 +1,58 @@
+@import 'patricia_carmona_colors';
+@import "fonts";
+
+.promotion{
+  background-size: cover !important;
+  @media only screen and (min-width: 992px) {
+    background: url("patri_header.jpg") no-repeat top right;
+    background-position-x: 100px;
+  }
+  background-color: #F8F8FA;
+  border: 1px $form-color solid;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: block;
+  padding: 15px;
+  overflow: hidden;
+  .title{
+  	font-family: $font-titleHighlight;
+  	font-size: 36px;
+  	padding: 0;
+  	width: 100%;
+  }
+  .lead{
+  	font-family: $font-subtitle;
+  	font-size: 18px;
+  	width: 100%;
+  }
+  .details{
+  	display: inline;
+  	font-family: $font-subtitle;
+  	padding: 8px 15px;
+  	span{
+  	  &:first-child{
+  	    margin-left: 0;
+  	  }
+  	  font-family: $font-title;
+  	  margin-left: 15px;
+  	}
+  }
+  .action{
+  	float:right;
+  	padding: 0 15px;
+  	a{
+  	  background-color: $promotions-action;
+      border-color: $promotions-action-hover;
+      border-radius: 5px;
+      display: block;
+  	  color: white;
+  	  font-family: $font-title;
+  	  font-size: 18px;
+  	  padding: 7px 12px;
+  	  text-align: center;
+  	  width: 100%;
+  	  &:hover{
+  	  	background-color: $promotions-action-hover;
+  	  }
+  	}
+  }
+}
