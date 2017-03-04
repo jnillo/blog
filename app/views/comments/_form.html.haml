@@ -5,11 +5,11 @@
   .form-group
     = f.input :email, placeholder: 'Email', required: true, label: false, error: 'El email es obligatorio. No voy a usarlo para fines comerciales.'
   .form-group
-    = f.input :captcha, placeholder: 'Para descartar que seas un bot, escribe tu nombre al revés, ejemplo:   aicirtaP', required: true, label: false, error: "¡No es complicado! Patricia -> aicirtaP"
-  .form-group
     = f.input :content, placeholder: 'Díme que te ha parecido el artículo :)', required: true, label: false, as: :text, error: "Debes escribir algo en el comentario"
   .form-group
     .note
       * Tus datos nos serán añadidos a ninguna lista de suscriptores o similar.
+  .form-group
+    = recaptcha_tags
   .form-group
     = f.submit "Publicar"

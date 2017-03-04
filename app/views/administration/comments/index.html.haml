@@ -2,16 +2,16 @@
   .col-md-6.pending
     %h3
       Pendientes de revisar
-    - if @pending_comment.nil?
-      No hay commentarios pendientes, well done!
-    - else
+    - if @pending_comments.any?
       - @pending_comments.each do |comment|
         = render comment
+    - else
+      No hay commentarios pendientes, well done!
   .col-md-6.approved
     %h3
       Aprobados
-    - if @approved_comments.nil?
-      No hay commentarios publicados aun.
-    - else
+    - if @approved_comments.any?
       - @approved_comments.each do |comment|
         = render comment
+    - else
+      No hay commentarios publicados aun.
