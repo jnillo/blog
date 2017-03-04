@@ -248,6 +248,8 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    recaptcha (4.1.0)
+      json
     redis (3.3.0)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
@@ -375,6 +377,7 @@ DEPENDENCIES
   puma
   rails (> 5.x)
   rails-controller-testing
+  recaptcha
   redis
   redis-namespace
   rspec-rails (~> 3.0)
