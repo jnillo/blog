@@ -39,7 +39,7 @@ module Administration
 
     def update
       post = Post.find(params[:id])
-      if post.update_attributes(post_params)
+      if post.update_attributes!(post_params)
         flash[:notice] = 'The post was updated successful.'
         redirect_to administration_posts_path
       else
