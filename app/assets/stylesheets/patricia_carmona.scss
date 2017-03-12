@@ -544,6 +544,7 @@ a{
       .content-comment{
         font-size: 14px;
         line-height: 20px;
+        overflow-wrap: break-word;
       }
     }
     .reply-comment{
@@ -1137,6 +1138,7 @@ a{
       font-size: 14px;
       line-height: 20px;
       margin-bottom: 15px;
+      overflow-wrap: break-word;
     }
     .comment-actions{
       a{
