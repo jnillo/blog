@@ -14,27 +14,28 @@ function add_new_like(like_block){
     });
   }
 }
-
-$('.social-button').click(function(){
-	$.ajax({
-    url: '/post/social-stats?ref='+$('body').data('post')+'&source='+$(this).data('info'),
-    dataType: 'json',
-    type: "POST",
-    cache: false,
-    complete: function(response, status) {
-    	//
-    }.bind(this),
+$( document ).ready(function() {
+  $('.social-button').click(function(){
+  	$.ajax({
+      url: '/post/social-stats?ref='+$('body').data('post')+'&source='+$(this).data('info'),
+      dataType: 'json',
+      type: "POST",
+      cache: false,
+      complete: function(response, status) {
+      	//
+      }.bind(this),
+    });
   });
-});
 
-$('#single-post').find('.likes').click(function(){
-  add_new_like(this);
-});
+  $('#single-post').find('.likes').click(function(){
+    add_new_like(this);
+  });
 
-$('#blog').find('.likes').click(function(){
-  add_new_like(this);
-});
+  $('#blog').find('.likes').click(function(){
+    add_new_like(this);
+  });
 
-$('.post-link').click(function(element){
-  $(location).attr('href',$(this).attr('data-ref'));
+  $('.post-link').click(function(element){
+    $(location).attr('href',$(this).attr('data-ref'));
+  });
 });
