@@ -13,5 +13,7 @@ class CommentsController < ApplicationController
 
   def comment_params
     comment_params = params.require(:comment).permit(:name, :email, :content, :post_id)
+    comment_params[:status] = false
+    comment_params
   end
 end
