@@ -3,7 +3,7 @@ class Administration::CommentsController < ApplicationController
   
   def index
     @pending_comments = Comment.pending
-    @approved_comments = Comment.approved
+    @approved_comments = Comment.original.approved
   end
 
   def approve_comment
