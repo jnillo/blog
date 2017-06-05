@@ -1,8 +1,6 @@
 .row
   - cache(action_suffix: "home_header", :expires_in => 1.hour) do
     = render partial: 'home/header'
-.row.promotion-home
-  = render partial: 'home/promotions/course_barcelona_march_17'
 .row.blog-section
   .blog-info
     = render partial: 'posts/list', locals: { old_posts: @posts, last_post: @last_post, paginate: false  }

@@ -12,8 +12,6 @@
               %button
                 X
     .blog-info
-      .row-fluid
-        = render partial: 'posts/promotions/course_barcelona_march_17'
       = render partial: 'posts/list', locals: { all_posts: @all_posts, old_posts: @old_posts, last_post: @last_post, paginate: true  }
 .row
   .blog-footer
