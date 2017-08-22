@@ -1,0 +1,31 @@
+- if podcasts.present?
+  %table{ class: 'table'}
+    %thead
+      %tr
+        %th{ class: 'col-md-3' }
+          Title
+        %th{ class: 'col-md-7' }
+          Description
+        %th{ class: 'col-md-2' }
+          Actions
+    %tbody
+      - podcasts.each do |podcast_file|
+        %tr
+          %td
+            = podcast_file.title
+          %td
+            = podcast_file.description
+          %td
+            %ul{ class: 'list-inline' }
+              %li
+                =link_to edit_administration_podcast_path(id: podcast_file.id) do
+                  %i{ class: 'fa fa-pencil fa-2x' }
+              %li
+                =link_to administration_podcast_path(id: podcast_file.id) do
+                  %i{ class: 'fa fa-eye fa-2x' }
+              %li
+                =link_to administration_podcast_path(id: podcast_file.id), method: 'DELETE', data: { confirm: 'Are you sure?' } do
+                  %i{ class: 'fa fa-trash fa-2x' }
+- else
+  %p
+    No podcasts files published yet

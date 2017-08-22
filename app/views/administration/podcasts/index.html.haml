@@ -1,0 +1,6 @@
+= link_to new_administration_podcast_path(), class: 'btn btn-primary right' do
+  %i{ class: 'fa fa-pencil' }
+  = t('new_podcast_episode')
+%h3
+  Podcasts
+= render partial: 'administration/podcasts/list_podcasts', locals: { podcasts: @podcasts }

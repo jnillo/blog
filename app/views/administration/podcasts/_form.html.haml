@@ -1,0 +1,15 @@
+= simple_form_for [:administration, podcast], html: { id: 'podcast-form' } do |f|
+  .form-group
+    = f.input :title, input_html: { placeholder: 'Title', class: 'form-control'}, 'autofocus': true
+  .form-group
+    = f.input :description, input_html: { placeholder: 'Description', class: 'form-control' }, as: :text
+  .form-group
+    = f.input :file, input_html: { class: 'form-control'}, as: :file
+  .form-group
+    = f.simple_fields_for :external_links, {} do |ff|
+      = ff.input :itunes, input_html: { placeholder: 'Itunes link', class: 'form-control' }, required: false
+      = ff.input :ivox, input_html: { placeholder: 'Ivox link', class: 'form-control' }, required: false
+  .form-group
+    = link_to root_path(),  class: 'btn btn-lg btn-default' do
+      Back
+    = f.submit 'Guardar', class: 'btn btn-lg btn-primary submit-btn right'

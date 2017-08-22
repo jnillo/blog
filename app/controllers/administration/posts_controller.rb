@@ -66,9 +66,9 @@ module Administration
 
     def post_params
       post = if params["post"]["image"].is_a?(ActionDispatch::Http::UploadedFile)
-               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image, :resource_id)
+               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :image, :resource_id, :podcast_id)
              else
-               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :resource_id)
+               params.require(:post).permit(:content, :title, :published, :resume, :author, :tags, :category, :external_link, :resource_id, :podcast_id)
              end
       post['published'] = build_published_date(params)
       post['category'] = Category.find params['post']['category'] if params['post']['category']

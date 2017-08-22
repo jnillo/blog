@@ -14,7 +14,5 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_index :posts, :category_id
-
   end
 end

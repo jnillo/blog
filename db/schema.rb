@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304143954) do
+ActiveRecord::Schema.define(version: 20170821202439) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -62,6 +62,17 @@ ActiveRecord::Schema.define(version: 20170304143954) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "podcasts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "description",    limit: 65535
+    t.string   "file"
+    t.text     "external_links", limit: 65535
+    t.integer  "post_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["post_id"], name: "index_podcasts_on_post_id", using: :btree
+  end
+
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "title",         limit: 65535
     t.text     "resume",        limit: 65535
@@ -78,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170304143954) do
     t.string   "image"
     t.integer  "resource_id"
     t.integer  "likes",                       default: 0
+    t.integer  "podcast_id"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
     t.index ["slug"], name: "index_posts_on_slug", using: :btree
   end

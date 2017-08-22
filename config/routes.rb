@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :administration do
   	get '/', to: 'posts#index'
     resources :posts
+    resources :podcasts
     post 'posts/generate_internal_link', to: 'posts#generate_internal_link'
     resources :categories
     resources :resources
