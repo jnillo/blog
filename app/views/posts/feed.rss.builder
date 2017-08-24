@@ -17,7 +17,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
       xml.item do
         xml.title post.title
         xml.tag!('dc:creator', "Patricia Carmona" )
-        xml.pubDate post.published.to_utc.rfc2822
+        xml.pubDate post.published
         xml.link "http://www.patriciacarmona.com/" + post.slug
         xml.guid("http://www.patriciacarmona.com/" + post.slug, isPermaLink: false)
 

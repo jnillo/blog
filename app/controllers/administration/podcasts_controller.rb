@@ -1,4 +1,4 @@
-class Administration::PodcastsController < ApplicationController
+class PodcastsController < ApplicationController
   layout 'administration'
 
   def index
