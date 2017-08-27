@@ -18,6 +18,8 @@
       - if @post.image.url
         %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
           &nbsp;
+      - if @post.podcast.present?
+        %audio{ src: image_path(@post.podcast.file.url), preload: :auto }
       .post-content#post-content
         = raw @post.content
         %p{ class: 'post_content', id: 'post_content'}
@@ -47,3 +49,9 @@
 #comments
   .row
     = render partial: 'comments/list', locals: { comments: @comments, post: @post}
+
+- if @post.podcast.present?
+  = stylesheet_link_tag "audio", media: "all"
+  = javascript_include_tag "audio.min", media: "all"
+  %script
+    audiojs.events.ready(function() { var as = audiojs.createAll(); })
