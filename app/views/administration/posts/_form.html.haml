@@ -35,6 +35,9 @@
       = f.label :resource, 'Recurso'
       = select("post", "resource_id", Resource.all.collect {|r| [ r.title, r.id ] }, { prompt: 'Selecciona un recurso'}, class: 'form-control')
     .form-group
+      = f.label :podcast, 'Pocast'
+      = select("post", "podcast_id", Podcast.all.collect {|p| [ p.title, p.id ] }, { prompt: 'Selecciona un podcast'}, class: 'form-control')
+    .form-group
       = f.input :published, as: :datetime, order: [:day, :month, :year, :hour, :minute]
     .form-group
       =link_to '#',  class: 'btn btn-lg btn-default', onclick: 'clean_form.first_step();' do

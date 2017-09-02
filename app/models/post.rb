@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_one :seo_data
   belongs_to :resource
+  belongs_to :podcast
 
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true

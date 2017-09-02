@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :administration do
   	get '/', to: 'posts#index'
     resources :posts
+    resources :podcasts
     post 'posts/generate_internal_link', to: 'posts#generate_internal_link'
     resources :categories
     resources :resources
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   post '/post/social-stats', to: 'posts#social_stats'
   resources :comments
   get 'feed', to: 'posts#feed', :defaults => { :format => "xml" }
+  get 'podcast_feed', to: 'podcasts#feed', :defaults => { :format => "xml" }
   get '/blog', to: 'posts#index', as: :blog
   get '/services', to: 'home#services'
   get '/resources', to: 'resources#index'
