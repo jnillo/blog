@@ -40,7 +40,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
 
         xml.description { xml.cdata! "<p>" + podcast.description + "</p>" }
         xml.language 'es'
-        xml.enclosure "https://www.patriciacarmona.com" + podcast.file.url, type: "audio/mp3"
+        xml.enclosure url: "https://www.patriciacarmona.com" + podcast.file.url, type: "audio/mp3"
         xml.tag!("itunes:summary", podcast.description)
         xml.tag!("itunes:imagehref", "https://patriciacarmona.com" + image_path('author.jpg'))
       end
