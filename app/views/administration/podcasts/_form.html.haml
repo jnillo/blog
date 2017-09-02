@@ -8,7 +8,7 @@
   .form-group
     = f.simple_fields_for :external_links, {} do |ff|
       = ff.input :itunes, input_html: { placeholder: 'Itunes link', class: 'form-control' }, required: false
-      = ff.input :ivox, input_html: { placeholder: 'Ivox link', class: 'form-control' }, required: false
+      = ff.input :ivoox, input_html: { placeholder: 'Ivox link', class: 'form-control' }, required: false
   .form-group
     = link_to root_path(),  class: 'btn btn-lg btn-default' do
       Back

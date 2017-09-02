@@ -1,0 +1,72 @@
+.podcast {
+  border-radius: 5px;
+  margin: 15px 0 30px 0;
+  padding: 15px 0;
+  .player-title {
+  	margin: 0;
+  	padding: 0;
+  	font-weight: bold;
+  	display: none;
+  }
+
+  .player-content {
+  	margin: 0;
+  	padding: 0;
+  	display: none;
+    .audiojs {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      margin-top: 18px;
+
+      .play {
+        background: url(audio-icons.gif) -2px -1px no-repeat;
+      }
+      .pause{
+        background: url(audio-icons.gif) -2px -91px no-repeat;
+      }
+      .loading {
+        background: url(audio-icons.gif) -2px -31px no-repeat;
+      }
+      .error{
+        background: url(audio-icons.gif) -2px -61px no-repeat;
+      }
+
+      .play-pause {
+        width: 35px;
+      }
+    }
+  }
+  .rrss {
+  	margin-bottom: 15px;
+  	padding: 15px;
+  	.rrss-title {
+  	  display:none;
+  	}
+
+  	.rrss-title-mobile {
+  	  margin-top: 15px;
+  	  padding: 0;
+  	  font-weight: bold;
+  	}
+
+  	.rrss-content {
+  	  margin: 0;
+  	  padding: 0;
+  	  text-align: center;
+
+	  .podcast-button {
+	    display: block;
+	    margin-top: 15px;
+	    overflow: hidden;
+	    width: 100%;
+
+	    img {
+	      max-width: 100%;
+	      max-height: 45px;
+	    }
+	  }
+	}
+  }
+}

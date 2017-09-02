@@ -1,0 +1,29 @@
+.podcast.col-md-12
+  .col-md-7.col-xs-12.player
+    .col-md-12.col-xs-12.player-title
+      %i.fa.fa-podcast
+      Escuchar:
+      = title
+    .col-md-12.col-xs-12.player-content
+      %audio{ src: image_path(@post.podcast.file.url), preload: :auto }
+  .col-md-5.col-xs-12.rrss
+    .col-md-12.rrss-title
+      Puedes escucharlo también en tu plataforma favorita:
+    .col-md-12.rrss-title-mobile
+      Escúchalo en tu plataforma favorita:
+    - if podcast.external_links[:itunes]
+      .col-md-6.col-xs-6.rrss-content
+        .podcast-button.itunes
+          = link_to podcast.external_links[:itunes], taget: '_blank', title: 'Escuchar en Itunes' do
+            = image_tag(image_path('apple_podcast_icon.png'))
+    - if podcast.external_links[:ivox]
+      .col-md-6.col-xs-6.rrss-content
+        .podcast-button.ivoox
+          = link_to podcast.external_links[:ivoox], taget: '_blank', title: 'Escuchar en Ivoox' do
+            = image_tag(image_path('ivoox_podcast_icon.png'))
+
+
+= stylesheet_link_tag "audio", media: "all"
+= javascript_include_tag "audio.min", media: "all"
+%script
+  audiojs.events.ready(function() { var as = audiojs.createAll(); })
