@@ -19,7 +19,7 @@
         %div.post-image.col-md-12{style: "background: url('#{@post.image.url}')"}
           &nbsp;
       - if @post.podcast.present?
-        = render partial: 'podcasts/podcast_resource', locals: { podcast: @post.podcast, title: @post.title }
+        = render partial: 'podcasts/podcast_resource', locals: { podcast: @post.podcast }
       .post-content#post-content
         = raw @post.content
         %p{ class: 'post_content', id: 'post_content'}

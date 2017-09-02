@@ -3,7 +3,7 @@
     .col-md-12.col-xs-12.player-title
       %i.fa.fa-podcast
       Escuchar:
-      = title
+      = podcast.title
     .col-md-12.col-xs-12.player-content
       %audio{ src: image_path(@post.podcast.file.url), preload: :auto }
   .col-md-5.col-xs-12.rrss
