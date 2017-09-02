@@ -16,7 +16,7 @@
         .podcast-button.itunes
           = link_to podcast.external_links[:itunes], taget: '_blank', title: 'Escuchar en Itunes' do
             = image_tag(image_path('apple_podcast_icon.png'))
-    - if podcast.external_links[:ivox]
+    - if podcast.external_links[:ivoox]
       .col-md-6.col-xs-6.rrss-content
         .podcast-button.ivoox
           = link_to podcast.external_links[:ivoox], taget: '_blank', title: 'Escuchar en Ivoox' do
