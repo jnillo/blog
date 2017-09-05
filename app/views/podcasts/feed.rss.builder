@@ -23,7 +23,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
       xml.tag!('itunes:email', 'laanalistadel.com@gmail.com')
     end
     xml.tag!("itunes:explicit", 'no')
-    xml.tag!("itunes:imagehref", "https://patriciacarmona.com" + image_path('author.jpg'))
+    xml.tag!("itunes:image", href: "https://patriciacarmona.com" + image_path('author.jpg'))
     xml.tag!("itunes:category", text: 'Business')
     xml.tag!("itunes:category", text: 'Management & Marketing')
 
