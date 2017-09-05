@@ -12,13 +12,11 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
     xml.description "Podcast de la Analísta del punto com, dirigído por Patricia Carmona"
     xml.link "https://www.patriciacarmona.com"
     xml.language "es"
+    xml.category 'Marketing'
     xml.tag!("sy:updatePeriod","hourly")
     xml.tag!("sy:updateFrequency","1")
     xml.tag!('atom:link', nil, { href: 'https://patriciacarmona.com/podcast_feed/', rel:"self" } )
     xml.tag!("webfeeds:analytics", nil, {id: ENV['ANALYTICS_CODE'], engine: "GoogleAnalytics"})
-
-
-
     xml.tag!("itunes:author", "La Analísta del punto com")
     xml.tag!("itunes:summary", "Podcast de la Analísta del com")
     xml.tag!("itunes:owner") do
@@ -27,7 +25,7 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
     end
     xml.tag!("itunes:explicit", 'no')
     xml.tag!("itunes:imagehref", "https://patriciacarmona.com" + image_path('author.jpg'))
-    xml.tag!("itunes:categorytext", 'Marketing')
+    xml.tag!("itunes:category", text: 'Marketing')
 
 
     for podcast in @podcasts
@@ -40,7 +38,9 @@ xml.rss :version => "2.0", "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "x
 
         xml.description { xml.cdata! "<p>" + podcast.description + "</p>" }
         xml.language 'es'
+        xml.category 'Marketing'
         xml.enclosure url: "https://www.patriciacarmona.com" + podcast.file.url, type: "audio/mp3"
+        xml.tag!("itunes:category", text: 'Marketing')
         xml.tag!("itunes:summary", podcast.description)
         xml.tag!("itunes:imagehref", "https://patriciacarmona.com" + image_path('author.jpg'))
       end
